@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./style.css";
 
@@ -28,15 +29,15 @@ export const Nav = () => {
           <div id="navLinks" className={isActive ? `active` : null}>
             <ul>
               <li>
-                <a href="#">Home</a>
+                <a href="/">Home</a>
               </li>
 
               <li>
-                <a href="#">Get Help</a>
+                <a href="/gethelp">Get Help</a>
               </li>
 
               <li>
-                <a href="#">Give Help</a>
+                <a href="/givehelp">Give Help</a>
               </li>
 
               <li>
