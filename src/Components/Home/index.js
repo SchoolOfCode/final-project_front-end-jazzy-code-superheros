@@ -1,3 +1,4 @@
+import AboutUs from "../About";
 import Button from "../Button";
 import "./style.css"
 
@@ -8,6 +9,7 @@ const Home = () => {
       <Button nameButton="Get Help"/>
       <Button nameButton="Give Help"/>
       </div>
+      <AboutUs/>
     </div>
   
   );

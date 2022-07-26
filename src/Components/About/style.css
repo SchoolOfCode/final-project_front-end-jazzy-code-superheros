@@ -1,0 +1,10 @@
+.AboutUsContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+.ImgAboutUs{
+    height: 300px;
+    width: 350px;
+}
