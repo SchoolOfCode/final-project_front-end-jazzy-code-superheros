@@ -12,11 +12,12 @@ export const Nav = ()=> {
   }
 
   return (
+
     <div id='outerNavDiv' className='?'>
 
       <div id='innerNavDiv' className='?'>
 
-        <nav>
+        <nav id='navBar'>
 
           <div>
 
@@ -38,7 +39,7 @@ export const Nav = ()=> {
 
           <div id='navLinks' className={isActive ? `active` : null}>
 
-            <ul >
+            <ul>
 
               <li>Home</li>
 
