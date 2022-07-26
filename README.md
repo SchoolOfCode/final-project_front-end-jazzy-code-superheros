@@ -75,10 +75,25 @@ Once the necessary nodes have been installed you can spin up the app! First open
     - Navbar
 - Home
   - Give help button
+    - Items List
+      - Item 
+    - Enquiry for volunteers form
   - Get help button
     - Eligibility criteria card
     - Map image
-    - Items List
   - Image 
   - Information card
- 
+    - Address 
+    - Foodbank contact info
+  - Footer
+    - Address
+    - Socials
+- CMS
+
+## Authors
+
+- [@Simran Toor](https://www.github.com/simran-toor)
+- [@Skandy](https://github.com/skandog)
+- [@Claudia Gonzalez-Casales](https://github.com/ClaudiaGC1339)
+- [@Jim Wynn](https://github.com/jimlikesjazz)
+- [@Joshua Langford](https://github.com/J05hL)
