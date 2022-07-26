@@ -1,5 +1,13 @@
+import Button from "../Button";
+
 const Home = () => {
-  return <p>Home page</p>;
+  return(
+    <div className="home">
+      <Button nameButton="Get Help"/>
+      <Button nameButton="Give Help"/>
+    </div>
+  
+  );
 };
 
 export default Home;
