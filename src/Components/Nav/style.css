@@ -1,0 +1,102 @@
+#outerNavDiv {
+  background-color: #F2F1F2;
+}
+
+
+.toggleButton {
+
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+
+}
+
+
+.toggleButton .bar {
+
+  height: 3px;
+  width: 100%;
+  background-color: black;
+  border-radius: 10px;
+
+}
+
+#navBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* 
+    align items flex start using to force image to sit on left
+    different to how we expected this to work
+  */
+  align-items: flex-start;
+}
+
+#navLinks {
+  width: 100%;
+  display: none;
+  align-items: center;
+
+}
+
+#navLinks.active {
+  display: flex;
+
+}
+
+#navLinks ul {
+  padding: 0;
+  width: 100%;
+}
+
+#navLinks li {
+  list-style: none;
+  text-align: center;
+}
+
+@media(min-width: 800px) {
+  .toggleButton {
+
+    display: none;
+
+  }
+
+  #navBar {
+
+    flex-direction: row;
+
+  }
+
+  #navLinks li {
+
+    display: block;
+
+  }
+
+  #navLinks li a {
+    padding: 1rem;
+    display: block;
+    text-decoration: none;
+
+
+  }
+
+  #navLinks ul {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+  }
+
+  #innerNavDiv {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+
+}
