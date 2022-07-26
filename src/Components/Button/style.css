@@ -2,6 +2,8 @@
     color:white;
     background-color: #219D80;
     font-size: 20px;
-    border-radius: 3px;
-    border: #81e1cb;
+    border-radius: 10px;
+    border-color: #6cd9c0;
+    height: 55px;
+    width: 120px;
 }
