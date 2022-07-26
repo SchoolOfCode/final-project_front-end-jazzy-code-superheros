@@ -1,64 +1,55 @@
-import {useState} from 'react'
+import { useState } from "react";
 
-import './style.css'
+import "./style.css";
 
+export const Nav = () => {
+  const [isActive, setIsActive] = useState(`false`);
 
-export const Nav = ()=> {
-
-  const [isActive, setIsActive] = useState(`false`)
-
-  const handleToggle = ()=> {
-    setIsActive(!isActive)
-  }
+  const handleToggle = () => {
+    setIsActive(!isActive);
+  };
 
   return (
-
-    <div id='outerNavDiv' className='?'>
-
-      <div id='innerNavDiv' className='?'>
-
-        <nav id='navBar'>
-
+    <div id="outerNavDiv" className="?">
+      <div id="innerNavDiv" className="?">
+        <nav id="navBar">
           <div>
-
-            <span>
-              Logo PlaceHolder
-            </span>
-
+            <span>Your Local Food Bank</span>
           </div>
 
-          <a href='#' className = 'toggleButton' onClick={handleToggle}> 
-          
-            <span className='bar'/>
+          <a href="#" className="toggleButton" onClick={handleToggle}>
+            <span className="bar" />
 
-            <span className='bar'/>
+            <span className="bar" />
 
-            <span className='bar'/>
-
+            <span className="bar" />
           </a>
 
-          <div id='navLinks' className={isActive ? `active` : null}>
-
+          <div id="navLinks" className={isActive ? `active` : null}>
             <ul>
+              <li>
+                <a href="#">Home</a>
+              </li>
 
-              <li>Home</li>
+              <li>
+                <a href="#">Get Help</a>
+              </li>
 
-              <li>Get Help</li>
+              <li>
+                <a href="#">Give Help</a>
+              </li>
 
-              <li>Give Help</li>
+              <li>
+                <a href="#">FAQs</a>
+              </li>
 
-              <li>FAQ</li>
-
-              <li>Contact Us</li>
-
+              <li>
+                <a href="#">Contact Us</a>
+              </li>
             </ul>
-
           </div>
-
         </nav>
-
       </div>
-
     </div>
-  )
-}
+  );
+};
