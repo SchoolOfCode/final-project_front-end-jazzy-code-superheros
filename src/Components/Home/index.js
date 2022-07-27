@@ -3,6 +3,8 @@ import {useState, useEffect} from 'react'
 
 import AboutUs from "../About";
 import Button from "../Button";
+import Carousel from '../Carousel/Carousel';
+import { CarouselData } from '../Carousel/CarouselData';
 import "./style.css"
 
 
@@ -49,6 +51,7 @@ const Home = () => {
       </div>
       <AboutUs
         foodBankData={foodBankData} /> 
+      <Carousel slides={CarouselData}/>  
     </div> 
   
   );
