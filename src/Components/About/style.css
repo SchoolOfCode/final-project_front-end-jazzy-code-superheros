@@ -1,0 +1,27 @@
+.AboutUsContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+.ImgAboutUs{
+    height: 300px;
+    width: 350px;
+}
+.TextContainer>p{
+    margin: 2px;
+}
+.TextContainer>h3{
+    margin: 10px;
+
+}
+
+@media(max-width: 800px) {
+    .AboutUsContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }  
+}
+  

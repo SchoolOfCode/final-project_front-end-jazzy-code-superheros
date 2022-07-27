@@ -1,0 +1,16 @@
+.ButtonContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+  
+}
+.Home{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Home>h1{
+    margin:10px
+}

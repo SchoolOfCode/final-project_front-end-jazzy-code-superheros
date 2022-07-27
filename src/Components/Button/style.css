@@ -1,0 +1,9 @@
+.MainButton{
+    color:white;
+    background-color: #219D80;
+    font-size: 20px;
+    border-radius: 10px;
+    border-color: #6cd9c0;
+    height: 55px;
+    width: 120px;
+}
