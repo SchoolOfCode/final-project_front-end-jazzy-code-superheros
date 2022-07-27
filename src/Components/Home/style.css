@@ -9,5 +9,8 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-   padding-top: 15px; 
+}
+
+.Home>h1{
+    margin:10px
 }

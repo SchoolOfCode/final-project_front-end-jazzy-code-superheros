@@ -42,14 +42,14 @@ const Home = () => {
 
   return(
     <div className="Home">
-      <div className="ButtonContainer">
+   <h1> {foodBankData ? foodBankData.name : null} </h1>
+     <div className="ButtonContainer">
       <Button nameButton="Get Help"/>
       <Button nameButton="Give Help"/>
       </div>
       <AboutUs
-        foodBankData={foodBankData}
-      />
-    </div>
+        foodBankData={foodBankData} /> 
+    </div> 
   
   );
 };

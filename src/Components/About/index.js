@@ -17,9 +17,9 @@ const AboutUs = ({foodBankData}) => {
             <p className="Message">"The secret to happiness lies in helping others. Never
             underestimate the difference YOU can make in the
             lives of the poor, the abused and the helpless."</p>
-            
-            <h1>{foodBankData.name}</h1>    
         
+            <br></br>
+
             <p>Address: {foodBankData.address}</p>
             
             <p>Email: {foodBankData.email}</p>
