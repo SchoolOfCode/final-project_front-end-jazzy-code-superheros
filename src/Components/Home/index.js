@@ -20,6 +20,8 @@ const Home = () => {
   const response = await fetch(`${url}${foodbankName}/`)
 
   const data = await response.json();
+
+  //dev feedback only remove
   console.log(`data in func >>>`, data)
 
   setFoodBankData(data)
@@ -31,6 +33,7 @@ const Home = () => {
 
 }, [])
 
+  //dev feedback only remove
   console.log(`foodBankData state >>>`, foodBankData)
 
   return(
@@ -39,7 +42,9 @@ const Home = () => {
       <Button nameButton="Get Help"/>
       <Button nameButton="Give Help"/>
       </div>
-      <AboutUs/>
+      <AboutUs
+        foodBankData={foodBankData}
+      />
     </div>
   
   );
