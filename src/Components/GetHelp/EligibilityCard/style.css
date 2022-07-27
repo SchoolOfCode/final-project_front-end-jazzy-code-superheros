@@ -1,0 +1,14 @@
+.EligibilityContainer {
+ display:flex;
+ flex-direction: column;
+ align-items: center;
+ margin: 0 10% 0 10%;
+ border-color: black;
+border-width: 1px;
+border-style: solid;
+/* width:50%; */
+}
+
+img {
+    width:100%;
+}
