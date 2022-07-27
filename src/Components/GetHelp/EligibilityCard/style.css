@@ -1,3 +1,4 @@
+
 .EligibilityContainer {
  display:flex;
  flex-direction: column;
@@ -6,9 +7,19 @@
  border-color: black;
 border-width: 1px;
 border-style: solid;
+
 /* width:50%; */
 }
 
 img {
     width:100%;
+}
+
+h1, h2, h3 {
+    margin-bottom: 0;
+    margin-top: 5%;
+}
+
+p {
+    font-size: 16px;
 }
