@@ -8,13 +8,17 @@ import "./style.css"
 
 
 const Home = () => {
-
+  
+  //This use state is being used to get the data fetched from the foodbank API
   const [foodBankData, setFoodBankData] = useState()
 
+   
   const foodbankName = 'vauxhall'
 
   let url = `https://www.givefood.org.uk/api/2/foodbank/`
 
+
+  //Fetch request to request the data from the API
   const getFoodBank = async ()=> {
 
   const response = await fetch(`${url}${foodbankName}/`)
@@ -27,7 +31,7 @@ const Home = () => {
   setFoodBankData(data)
 
   }
-
+  //Render the data with the home page
   useEffect(()=> {
     getFoodBank()
 

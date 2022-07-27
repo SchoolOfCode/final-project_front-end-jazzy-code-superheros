@@ -11,3 +11,10 @@
 .TextContainer>p{
     margin: 2px;
 }
+.TextContainer>h1{
+    margin:10px
+}
+.TextContainer>h3{
+    margin: 10px;
+    
+}

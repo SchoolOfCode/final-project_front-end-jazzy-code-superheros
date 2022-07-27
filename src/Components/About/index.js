@@ -1,5 +1,7 @@
 import "./style.css"
 
+//The props from the home page are being passed down to render on the About Us component, This page on line 10 is being condicional 
+//Because of the async function on the home page
 const AboutUs = ({foodBankData}) => {
     return (
     
@@ -12,7 +14,7 @@ const AboutUs = ({foodBankData}) => {
         
             <h3>Your Support is Really Powerful.​</h3>
             
-            <p>"The secret to happiness lies in helping others. Never
+            <p className="Message">"The secret to happiness lies in helping others. Never
             underestimate the difference YOU can make in the
             lives of the poor, the abused and the helpless."</p>
             
