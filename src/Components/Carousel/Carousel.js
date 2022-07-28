@@ -28,7 +28,7 @@ function previousSlide() {
 
     return (
     <div className="Carousel-Container">      
-    <h2>Our community :</h2>
+    <h2><i>Our community :</i></h2>
     <div className="Carousel">
         < FaArrowAltCircleRight className="right-arrow" onClick={nextSlide}/>
         <FaArrowAltCircleLeft className="left-arrow" onClick={previousSlide}/>

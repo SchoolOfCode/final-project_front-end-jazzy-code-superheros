@@ -23,11 +23,11 @@ const AboutUs = ({foodBankData}) => {
         
             <br></br>
 
-            <p>Address: {foodBankData.address}</p>
+            <p className="justify"><b>Address: </b>{foodBankData.address}</p>
             
-            <p>Email: {foodBankData.email}</p>
+            <p className="justify" ><b>Email:</b> {foodBankData.email}</p>
         
-            <p>Phone: {foodBankData.phone}</p>
+            <p className="justify"><b>Phone:</b> {foodBankData.phone}</p>
         
         </div>
         
