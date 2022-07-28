@@ -1,5 +1,7 @@
-import EligibilityCard from "./EligibilityCard";
+// import EligibilityCard from "./EligibilityCard";
 import ToggleCard from "./ToggleCard";
+import ToggleCardKids from "./ToggleCardChildren";
+import "./style.css";
 
 const getHelpData = [
   {
@@ -27,36 +29,18 @@ const getHelpData = [
   },
 ];
 
-/*     
-     
-
-      <h3></h3>
-      <p>
-        
-        <ul>
-          <li>doctors</li>
-          <li>health visitors</li>
-          <li>social workers</li>
-          <li>citizens advice</li>
-        </ul>
-      </p>
-      <h3></h3>
-      <p></p>
-
-      <h3></h3>
-      
-*/
-
 const GetHelp = () => {
   return (
     <>
       <h1 className="page-header">Get Help</h1>
       <div className="imageDiv">
         <img
+          className="bannerImage"
           src="https://i.imgur.com/VWCzSCo.jpeg"
           alt="container-cover-image"
         ></img>
       </div>
+
       {getHelpData.map((cardData) => {
         return (
           <ToggleCard
@@ -65,8 +49,11 @@ const GetHelp = () => {
           />
         );
       })}
-
-      {/* <EligibilityCard /> */}
+      <img
+        className="mapImage"
+        src="https://www.givefood.org.uk/needs/at/vauxhall/map.png"
+        alt="map-image"
+      />
     </>
   );
 };
