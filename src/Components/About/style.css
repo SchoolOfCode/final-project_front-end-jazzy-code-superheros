@@ -1,12 +1,16 @@
 .AboutUsContainer{
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    align-items: center;
+    justify-content: space-evenly;
+   
 }
 .ImgAboutUs{
     height: 300px;
     width: 350px;
+    border-radius: 10px;
+}
+.TextContainer{
+    align-self: center;
 }
 .TextContainer>p{
     margin: 2px;
@@ -15,6 +19,11 @@
     margin: 10px;
 
 }
+.Message{
+    max-width: 600px;
+}
+
+
 
 @media(max-width: 800px) {
     .AboutUsContainer{
