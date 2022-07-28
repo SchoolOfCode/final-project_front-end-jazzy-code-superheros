@@ -14,7 +14,7 @@ const ToggleCard = ({ cardTitle, cardBody }) => {
         This is a title
       </button>
       <div className={isTogged ? "togged" : "panel"}>
-        <p>This is some text</p>
+        <p className="toggleText">This is some text</p>
       </div>
     </div>
   );
