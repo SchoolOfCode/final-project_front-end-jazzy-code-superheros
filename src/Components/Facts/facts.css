@@ -5,10 +5,11 @@
     align-items: center;
         flex-grow: 1;
         flex-basis: 0;
-        /* border: 1px solid #ccc;
-        box-shadow: 10%; */
+        background-color: rgb(224, 239, 224);
+       
 }
 .Fact-container>img{
+    margin-top: 10px;
     width: 100px;
     height: 100px;
     border-radius: 10px;
@@ -30,4 +31,23 @@
     gap:10px;
     align-items: center;
     margin: 0px 200px 0px 200px;
+}
+@media(max-width:800px) {
+    .Main-container{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        align-items: center;
+        margin: 0px 50px 0px 50px;
+    }
+    .Fact-container{
+        border-radius: 3px;
+    }
+    .Fact-container>p{
+        font-size: 10px;
+        width: 80%;
+        height: fit-content;
+        
+    }
+   
 }
