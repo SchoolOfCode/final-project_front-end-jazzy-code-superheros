@@ -51,6 +51,7 @@ const Home = () => {
       <AboutUs
         foodBankData={foodBankData} /> 
       <Carousel slides={CarouselData}/>  
+      <Facts/>
     </div> 
   
   );
