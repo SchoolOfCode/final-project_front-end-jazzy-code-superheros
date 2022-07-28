@@ -1,6 +1,6 @@
 import {ListItem} from '../ListItem'
 
-export const List = () => {
+export const List = ({foodBankData}) => {
 
   return (
     <ul>

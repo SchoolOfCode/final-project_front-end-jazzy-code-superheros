@@ -1,10 +1,10 @@
 import {List} from '../List'
 
-const GiveHelp = () => {
+const GiveHelp = ({foodBankData}) => {
   return (
     <>
       <p>Give Help Body</p>
-      <List/>
+      <List foodBankData={foodBankData}/>
     </>
   )
 };

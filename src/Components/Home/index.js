@@ -2,8 +2,6 @@
 //more functionality - remove once dev complete
 import {useState, useEffect} from 'react'
 
-import {useFetch} from '../../hooks/useFetch'
-
 import AboutUs from "../About";
 import Button from "../Button";
 import Carousel from '../Carousel/Carousel';
@@ -13,19 +11,9 @@ import "./style.css"
 
 
 
-const Home = () => {
+const Home = ({foodBankData}) => {
    
-  const foodbankName = 'vauxhall'
-
-  const rootUrl = `https://www.givefood.org.uk/api/2/foodbank/`
-
-  const url = `${rootUrl}${foodbankName}/`
-
-  //Fetch hook to request the data from the API
-  const foodBankData = useFetch(url) 
-
-  //dev feedback only remove
-  console.log(`foodBankData state >>>`, foodBankData)
+  
 
   return(
     <div className="Home">
