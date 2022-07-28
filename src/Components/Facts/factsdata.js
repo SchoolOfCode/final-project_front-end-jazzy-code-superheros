@@ -6,7 +6,7 @@ export const factsData=[
 {
     img: vision,
     fact:"Our Vision",
-    explanation:"Our vision is to end the need for food banks."
+    explanation:"Our vision is to end the need for food banks. We will achieve that by increasing community engagement."
 
 },
 
