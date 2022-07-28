@@ -12,6 +12,7 @@ import {
 import Home from "./Components/Home";
 import GetHelp from "./Components/GetHelp";
 import GiveHelp from "./Components/GiveHelp";
+import Footer from "./Components/Footer/footer";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/givehelp" element={<GiveHelp />}></Route>
         </Routes>
       </Router>
+      <Footer/>
     </div>
   );
 }
