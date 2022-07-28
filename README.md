@@ -66,6 +66,8 @@ Once the necessary nodes have been installed you can spin up the app! First open
 **Upcoming Features:**
 
 - Navbar
+- Home page 
+- Get Help section
 
 
 ## Component Tree
