@@ -6,21 +6,14 @@
   border-radius: 5px;
   margin-top: 20px;
   margin-bottom: 20px;
-
 }
 
 .button-accordion-title {
   font-weight: 600;
   display: inline;
-
-
-
 }
 
-
-
 .accordion {
-
   color: #219d80;
   width: 100%;
   cursor: pointer;
@@ -31,16 +24,11 @@
   transition: 0.1s;
   background-color: transparent;
   font-size: 1.5em;
-
-
 }
 
 .toggleArrow {
-
   position: absolute;
   right: 10%;
-
-
 }
 
 .togged {
@@ -51,7 +39,8 @@
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .togged,
-.accordion:hover {}
+.accordion:hover {
+}
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
