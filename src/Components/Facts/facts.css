@@ -1,6 +1,4 @@
 .Fact-container{
-    background-color: #219D80;
-    opacity: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
