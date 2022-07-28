@@ -1,9 +1,16 @@
 import { factsData } from "./factsdata";
+import "./facts.css";
 
 const Facts = () => {
     return (
-        <div>
-            {factsData}
+        <div className="Main-container">
+            {factsData.map((fact =>{ return (
+                <div className="Fact-container">
+                <img src={fact.img}/>
+                <h3>{fact.fact}</h3>
+                <p>{fact.explanation}</p>
+                </div>
+            )}))}
         </div>
       );
 }

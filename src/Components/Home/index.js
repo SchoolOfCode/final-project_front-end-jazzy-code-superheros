@@ -51,7 +51,7 @@ const Home = () => {
       <AboutUs
         foodBankData={foodBankData} /> 
       <Carousel slides={CarouselData}/> 
-      {/* <Facts/>  */}
+       <Facts/>  
     </div> 
   
   );
