@@ -1,4 +1,9 @@
+//this import no longer required unless we add
+//more functionality - remove once dev complete
 import {useState, useEffect} from 'react'
+
+import {useFetch} from '../../hooks/useFetch'
+
 import AboutUs from "../About";
 import Button from "../Button";
 import Carousel from '../Carousel/Carousel';
@@ -9,34 +14,15 @@ import "./style.css"
 
 
 const Home = () => {
-  
-  //This use state is being used to get the data fetched from the foodbank API
-  const [foodBankData, setFoodBankData] = useState()
-
    
   const foodbankName = 'vauxhall'
 
-  let url = `https://www.givefood.org.uk/api/2/foodbank/`
+  const rootUrl = `https://www.givefood.org.uk/api/2/foodbank/`
 
+  const url = `${rootUrl}${foodbankName}/`
 
-  //Fetch request to request the data from the API
-  const getFoodBank = async ()=> {
-
-  const response = await fetch(`${url}${foodbankName}/`)
-
-  const data = await response.json();
-
-  //dev feedback only remove
-  console.log(`data in func >>>`, data)
-
-  setFoodBankData(data)
-
-  }
-  //Render the data with the home page
-  useEffect(()=> {
-    getFoodBank()
-
-}, [])
+  //Fetch hook to request the data from the API
+  const foodBankData = useFetch(url) 
 
   //dev feedback only remove
   console.log(`foodBankData state >>>`, foodBankData)
