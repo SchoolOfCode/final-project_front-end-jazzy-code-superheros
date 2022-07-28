@@ -13,9 +13,8 @@ const ToggleCard = ({ cardTitle, cardBody }) => {
   return (
     <div className="ToggleCardContainer">
       <button className="accordion" onClick={handleToggle}>
-        <div></div>
+        <div className="button-accordion-title">{cardTitle}</div>
 
-        <div className="button-accordion-title">Eligibility Criteria</div>
         {isTogged ? (
           <FaArrowCircleUp className="toggleArrow" />
         ) : (
@@ -23,10 +22,7 @@ const ToggleCard = ({ cardTitle, cardBody }) => {
         )}
       </button>
       <div className={isTogged ? "togged" : "panel"}>
-        <p className="toggleText">
-          something about how food banks are there for anyone in the community
-          who needs them
-        </p>
+        <p className="toggleText">{cardBody}</p>
       </div>
     </div>
   );

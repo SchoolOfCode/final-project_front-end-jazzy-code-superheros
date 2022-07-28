@@ -11,7 +11,13 @@
 
 .button-accordion-title {
   font-weight: 600;
+  display: inline;
+
+
+
 }
+
+
 
 .accordion {
 
@@ -25,16 +31,16 @@
   transition: 0.1s;
   background-color: transparent;
   font-size: 1.5em;
-  display: flex;
-  justify-content: space-between;
-  justify-items: center;
-  align-items: center;
 
 
 }
 
 .toggleArrow {
-  padding-right: 20px;
+
+  position: absolute;
+  right: 10%;
+
+
 }
 
 .togged {
