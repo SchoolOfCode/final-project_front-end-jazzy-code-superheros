@@ -3,10 +3,7 @@ import "./style.css";
 function EligibilityCard() {
   return (
     <div className="EligibilityContainer">
-      <img
-        src="https://i.imgur.com/VWCzSCo.jpeg"
-        alt="container-cover-image"
-      ></img>
+
       <h1>Eligibility Criteria</h1>
       <p>
         something about how food banks are there for anyone in the community who
