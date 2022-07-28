@@ -50,8 +50,7 @@ const Home = () => {
       </div>
       <AboutUs
         foodBankData={foodBankData} /> 
-      <Carousel slides={CarouselData}/> 
-       <Facts/>  
+      <Carousel slides={CarouselData}/>  
     </div> 
   
   );
