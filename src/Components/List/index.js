@@ -2,10 +2,24 @@ import {ListItem} from '../ListItem'
 
 export const List = ({foodBankData}) => {
 
+  const itemsNeeded = foodBankData ? foodBankData.need.needs.split(`\n`) : []
+
+  //dev feedback only - remove
+  console.log(itemsNeeded)
+
   return (
-    <ul>
-      <ListItem listItemText='ListItem'/>
-    </ul>
+    <section className = {foodBankData ? `itemsNeededList` : null}>
+      <ul>
+        
+          {itemsNeeded.map((item, index)=> {
+            return <ListItem 
+              listItemText={item}
+              key={index}  
+              />}
+          )}
+          
+      </ul>
+    </section>
   )
 
 }
