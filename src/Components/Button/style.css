@@ -7,3 +7,9 @@
     height: 55px;
     width: 120px;
 }
+.MainButton:hover{
+    cursor: pointer;
+    opacity: 2;
+    transition-duration: 1s;
+    transform: scale(1.3);
+}

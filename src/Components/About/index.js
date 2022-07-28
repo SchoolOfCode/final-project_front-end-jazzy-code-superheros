@@ -15,8 +15,7 @@ const AboutUs = ({foodBankData}) => {
             <h3>Your Support is Really Powerful.​</h3>
             
             <p className="Message">"The secret to happiness lies in helping others. Never
-            underestimate the difference YOU can make in the
-            lives of the poor, the abused and the helpless."</p>
+            underestimate the difference YOU can make "</p>
         
             <br></br>
 
