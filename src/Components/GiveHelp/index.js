@@ -8,7 +8,15 @@ const GiveHelp = ({foodBankData}) => {
 
   return (
     <>
-      <h1>Give Help Body</h1>
+      <h1>Give Help</h1>
+
+      <div className="imageDiv">
+        <img
+          className="bannerImage"
+          src="https://i.imgur.com/VWCzSCo.jpeg"
+          alt="container-cover-image"
+        ></img>
+      </div>
 
       <ToggleCardKids 
         cardTitle='Donate Your Money' 
@@ -20,8 +28,16 @@ const GiveHelp = ({foodBankData}) => {
         <List foodBankData={foodBankData}/>
       </ToggleCardKids>
 
-      <ToggleCardKids cardTitle='Donate Your Time' cardBody='Placeholder for form'/>
+      <ToggleCardKids 
+        cardTitle='Donate Your Time' 
+        cardBody='Placeholder for form'
+      />
 
+      <img
+        className="mapImage"
+        src="https://www.givefood.org.uk/needs/at/vauxhall/map.png"
+        alt="map-image"
+      />
 
       
     </>
