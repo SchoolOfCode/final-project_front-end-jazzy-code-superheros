@@ -179,7 +179,7 @@ This is a Dumb component that displays a single listed item.
 -ListItemText 
 
 *Behaviour*
--It returns an <li> element based on the props returned. It takes props of ListItemText  which is the text to be displayed within this component
+-It returns an li element based on the props returned. It takes props of ListItemText  which is the text to be displayed within this component
 
 ---
 ## List Section
@@ -187,13 +187,12 @@ This is a Dumb component that displays a single listed item.
 This is where we display all of the items our Food bank is in need of and requires as donations.
 
 *props*
+
 foodBankData
 
 *Behaviour*
 
--It takes props as the object passed down via prop drilling from the fetch request to the API
-It returns a <section> and <ul> containing a number of <ListItem> returned from a map of the data supplied by the API. 
-Based on the structure of the the data supplied by the API it is conditionally split into an array at this level.
+-It takes props as the object passed down via prop drilling from the fetch request to the API. It returns a section and ul containing a number of ListItem returned from a map of the data supplied by the API. Based on the structure of the the data supplied by the API it is conditionally split into an array at this level.
 
 
 
