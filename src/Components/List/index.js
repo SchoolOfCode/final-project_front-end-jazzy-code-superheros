@@ -1,4 +1,5 @@
 import {ListItem} from '../ListItem'
+import './style.css'
 
 export const List = ({foodBankData}) => {
 
