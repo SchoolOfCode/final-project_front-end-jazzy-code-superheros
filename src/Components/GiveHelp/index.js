@@ -7,7 +7,7 @@ import './style.css'
 const GiveHelp = ({foodBankData}) => {
 
   return (
-    <>
+    <div className='give-help'>
       <h1>Give Help</h1>
 
       <div className="imageDiv">
@@ -40,7 +40,7 @@ const GiveHelp = ({foodBankData}) => {
       />
 
       
-    </>
+    </div>
   )
 };
 
