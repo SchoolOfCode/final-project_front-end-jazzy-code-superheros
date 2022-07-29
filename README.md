@@ -91,6 +91,10 @@ Once the necessary nodes have been installed you can spin up the app! First open
     - Address
     - Socials
 - CMS
+- Carousel
+  
+  # Components
+  - Carousel: Use UseState to keep track of the number of slides as well as which slide will be displayed. The props being passed down is the data from the CarouselData, so we can know the lenght of it.
 
 ## Authors
 
