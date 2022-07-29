@@ -67,10 +67,14 @@
   list-style: none;
   text-align: center;
 }
+#navLinks li a{
+  color: black;
+  font-weight: 600;
+}
 
 #nav-logo {
-
-  height: 80%;
+  display: flex;
+  height: 70px;
 }
 
 
@@ -79,6 +83,15 @@
 
     display: none;
 
+  }
+  #nav-logo {
+    display: flex;
+    align-items: center;
+    height: 70px;
+  }
+  #logo-container{
+    display: flex;
+    align-items: center;
   }
 
   #navBar {
@@ -123,6 +136,7 @@
   #innerNavDiv {
     max-width: 1200px;
     margin: 0 auto;
+    padding-bottom: 10px;
   }
 
 

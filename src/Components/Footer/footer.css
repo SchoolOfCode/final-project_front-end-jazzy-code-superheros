@@ -2,10 +2,10 @@
     background-color: #252A34;
     color: white;
     height: 80px;
-    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    padding-top: 10px;
     
 }
 .img-footer{
