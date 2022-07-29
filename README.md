@@ -93,6 +93,13 @@ Once the necessary nodes have been installed you can spin up the app! First open
     - Socials
 - CMS
 
+# Custom Hooks
+
+## useFetch
+
+We have a custom useFetch in our app - it takes a url as a parameter and currently returns data from the state to be used at App level for prop drilling to pass down the foodBankData object for use in the other components
+As the url is a parameter this can be used elsewhere for other fetches to get different data from other APIs.
+
   
   
 # Components
@@ -162,6 +169,35 @@ The carousel is a pure component that displays text and an image.
 *props*
 
 *Behaviour*
+
+---
+## ListItem Section
+
+This is a Dumb component that displays a single listed item.
+
+*props*
+-ListItemText 
+
+*Behaviour*
+-It returns an <li> element based on the props returned. It takes props of ListItemText  which is the text to be displayed within this component
+
+---
+## List Section
+
+This is where we display all of the items our Food bank is in need of and requires as donations.
+
+*props*
+foodBankData
+
+*Behaviour*
+
+-It takes props as the object passed down via prop drilling from the fetch request to the API
+It returns a <section> and <ul> containing a number of <ListItem> returned from a map of the data supplied by the API. 
+Based on the structure of the the data supplied by the API it is conditionally split into an array at this level.
+
+
+
+
 
 
 ## Authors
