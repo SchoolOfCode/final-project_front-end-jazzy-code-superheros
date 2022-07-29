@@ -87,14 +87,82 @@ Once the necessary nodes have been installed you can spin up the app! First open
   - Information card
     - Address 
     - Foodbank contact info
+  - Carousel
   - Footer
     - Address
     - Socials
 - CMS
-- Carousel
+
   
-  # Components
-  - Carousel: Use UseState to keep track of the number of slides as well as which slide will be displayed. The props being passed down is the data from the CarouselData, so we can know the lenght of it.
+  
+# Components
+
+## App Component
+ Our App component displays these following components:
+   - Header
+   - Navbar
+   - Home
+   - Get Help 
+   - Give Help
+   - Image 
+   - Information card
+   - Carousel
+   - Footer
+
+  *Behaviour*
+
+
+---
+## Header Component
+
+*state*
+
+*props*
+
+*Behaviour*
+
+---
+## Home
+
+*state*
+
+*props*
+
+*Behaviour*
+
+
+---
+## Carousel
+
+The carousel is a pure component that displays text and an image.  
+
+*state*
+- slide
+
+*props*
+- slides
+
+*Behaviour*
+- Use slide state to keep track of the number of slides as well as which slide will be displayed. The props being passed down is the data from the CarouselData, so we can know the lenght of it.
+
+---
+## Get Help Section
+
+*state*
+
+*props*
+
+*Behaviour*
+
+---
+## Give Help Section
+
+*state*
+
+*props*
+
+*Behaviour*
+
 
 ## Authors
 
