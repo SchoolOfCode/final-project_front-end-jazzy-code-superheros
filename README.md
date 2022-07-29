@@ -92,6 +92,40 @@ Once the necessary nodes have been installed you can spin up the app! First open
     - Socials
 - CMS
 
+## Components
+
+
+### Get Help Page
+
+This is the page where users will be directed who are looking to access the service of the foodbank.
+
+The page will display information on: 
+
+- Eligibility criteria
+- The process for accessing food vouchers
+- Website
+- (optional) Specific information supplied by the foodbank admin
+
+
+There is a banner image on the page, and below that  a reusable card component with accordion features is rendered for each info block that is provided. At the bottom of the page is a map displaying the location of the foodbank.
+
+This page still need
+
+#### ToggleCard
+
+_state_
+
+- isTogged
+
+_behaviour_ 
+
+The toggle card is designed to be a resuable accordion card component which takes in title and body props. This card has been designed to display text only. There may be a more generic component created in the future.
+
+The card is designed in such a way that should display just the title in a bold green, which opens up to reveal the text when clicked. The arrow symbol (react-icons/fa) should rotate 180º when toggled.
+
+
+
+
 ## Authors
 
 - [@Simran Toor](https://www.github.com/simran-toor)
