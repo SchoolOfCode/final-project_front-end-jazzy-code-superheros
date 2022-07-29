@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import foodbanklogo from "../../img/ylfb1.png";
 
 import "./style.css";
 
@@ -14,8 +14,12 @@ export const Nav = () => {
     <div id="outerNavDiv" className="?">
       <div id="innerNavDiv" className="?">
         <nav id="navBar">
-          <div>
-            <span>Your Local Food Bank</span>
+          <div id="logo-container">
+            <img
+              id="nav-logo"
+              src={foodbanklogo}
+              alt="Your Local Food Bank Logo"
+            />
           </div>
 
           <a href="#" className="toggleButton" onClick={handleToggle}>

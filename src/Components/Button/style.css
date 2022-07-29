@@ -5,7 +5,8 @@
     border-radius: 10px;
     border-color: #6cd9c0;
     height: 55px;
-    width: 120px;
+    width: 110px;
+    margin-bottom: 10px;
 }
 @media (min-width:800px) {
     .MainButton:hover{

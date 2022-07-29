@@ -1,4 +1,5 @@
 import "./style.css"
+import vegetables from "../../img/vegetables.jpg"
 
 //The props from the home page are being passed down to render on the About Us component, This page on line 10 is being condicional 
 //Because of the async function on the home page
@@ -6,7 +7,7 @@ const AboutUs = ({foodBankData}) => {
     return (
     
     <div className="AboutUsContainer">
-        <img className="ImgAboutUs" src="https://img.freepik.com/free-photo/flat-lay-batch-cooking-composition_23-2148765597.jpg?w=2000"/>
+        <img className="ImgAboutUs" src={vegetables} alt="vegetables picture"/>
         
         {foodBankData ? 
         
