@@ -1,7 +1,7 @@
 .AboutUsContainer{
     display: flex;
     flex-direction: row;
-    margin: 0px 150px 0px 150px;
+    margin: 0 auto;
     gap:10px;
    }
 .ImgAboutUs{
