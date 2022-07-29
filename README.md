@@ -87,15 +87,74 @@ Once the necessary nodes have been installed you can spin up the app! First open
   - Information card
     - Address 
     - Foodbank contact info
+  - Carousel
   - Footer
     - Address
     - Socials
 - CMS
 
-## Components
+# Custom Hooks
+
+## useFetch
+
+We have a custom useFetch in our app - it takes a url as a parameter and currently returns data from the state to be used at App level for prop drilling to pass down the foodBankData object for use in the other components
+As the url is a parameter this can be used elsewhere for other fetches to get different data from other APIs.
+
+  
+  
+# Components
+
+## App Component
+ Our App component displays these following components:
+   - Header
+   - Navbar
+   - Home
+   - Get Help 
+   - Give Help
+   - Image 
+   - Information card
+   - Carousel
+   - Footer
+
+  *Behaviour*
 
 
-### Get Help Page
+---
+## Header Component
+
+*state*
+
+*props*
+
+*Behaviour*
+
+---
+## Home
+
+*state*
+
+*props*
+
+*Behaviour*
+
+
+---
+## Carousel
+
+The carousel is a pure component that displays text and an image.  
+
+*state*
+- slide
+
+*props*
+- slides
+
+*Behaviour*
+- Use slide state to keep track of the number of slides as well as which slide will be displayed. The props being passed down is the data from the CarouselData, so we can know the lenght of it.
+
+---
+
+## Get Help Page
 
 This is the page where users will be directed who are looking to access the service of the foodbank.
 
@@ -111,17 +170,52 @@ There is a banner image on the page, and below that  a reusable card component w
 
 This page still need
 
-#### ToggleCard
+### ToggleCard
 
-_state_
+*state*
 
 - isTogged
 
-_behaviour_ 
+*Behaviour*
 
 The toggle card is designed to be a resuable accordion card component which takes in title and body props. This card has been designed to display text only. There may be a more generic component created in the future.
 
 The card is designed in such a way that should display just the title in a bold green, which opens up to reveal the text when clicked. The arrow symbol (react-icons/fa) should rotate 180º when toggled.
+
+---
+## Give Help Section
+
+*state*
+
+*props*
+
+*Behaviour*
+
+---
+## ListItem Section
+
+This is a Dumb component that displays a single listed item.
+
+*props*
+-ListItemText 
+
+*Behaviour*
+-It returns an li element based on the props returned. It takes props of ListItemText  which is the text to be displayed within this component
+
+---
+## List Section
+
+This is where we display all of the items our Food bank is in need of and requires as donations.
+
+*props*
+
+foodBankData
+
+*Behaviour*
+
+-It takes props as the object passed down via prop drilling from the fetch request to the API. It returns a section and ul containing a number of ListItem returned from a map of the data supplied by the API. Based on the structure of the the data supplied by the API it is conditionally split into an array at this level.
+
+
 
 
 
