@@ -54,8 +54,19 @@
 
 #navLinks.active {
   display: flex;
-
+ 
 }
+#navLinks.active a{
+  justify-content: center;
+  display: flex;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+
+
 
 #navLinks ul {
   padding: 0;
@@ -79,6 +90,8 @@
 
 
 @media(min-width: 800px) {
+
+  
   .toggleButton {
 
     display: none;

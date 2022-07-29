@@ -16,7 +16,8 @@
     margin: 2px;
 }
 .justify{
-    text-align: justify;
+
+    text-align: center;
 }
 .TextContainer>h3{
     margin: 10px;
@@ -36,8 +37,10 @@
         align-items: center;
     }  
     .ImgAboutUs{
-        height: 170px;
-        width: 190px;
+        border-radius: 0px;
+        height: 150px;
+        width: 100%;
+        object-fit: cover;
     }
 }
   
