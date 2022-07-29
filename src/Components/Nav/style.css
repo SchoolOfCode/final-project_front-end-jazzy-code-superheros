@@ -30,17 +30,25 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
   /* 
     align items flex start using to force image to sit on left
     different to how we expected this to work
   */
   align-items: flex-start;
+  /*
+  justify-content: center;
+
+  margin: 0px 10px 10px 10px;
+*/
+
 }
 
 #navLinks {
   width: 100%;
   display: none;
   align-items: center;
+  height: 100%;
 
 }
 
@@ -52,12 +60,19 @@
 #navLinks ul {
   padding: 0;
   width: 100%;
+  flex-direction: column;
 }
 
 #navLinks li {
   list-style: none;
   text-align: center;
 }
+
+#nav-logo {
+
+  height: 80%;
+}
+
 
 @media(min-width: 800px) {
   .toggleButton {
@@ -69,8 +84,20 @@
   #navBar {
 
     flex-direction: row;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 0 20px 0 20px;
 
   }
+
+  #logo-container {
+
+    height: 100%;
+  }
+
+
 
   #navLinks li {
 
