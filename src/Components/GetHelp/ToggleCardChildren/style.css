@@ -18,6 +18,7 @@
   width: 100%;
   cursor: pointer;
   height: 100px;
+  max-height: 100px;
   text-align: center;
   border: none;
   outline: none;
@@ -35,6 +36,7 @@
   text-align: center;
   margin: 0 auto;
   width: 100%;
+  padding-bottom: 20px;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -54,4 +56,6 @@
   margin-top: 0;
   padding: 40px;
   border: 0;
+
 }
+

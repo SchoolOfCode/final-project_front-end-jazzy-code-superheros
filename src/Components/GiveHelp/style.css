@@ -1,0 +1,57 @@
+/* Style the buttons that are used to open and close the accordion panel */
+.ToggleCardContainer {
+  width: 90%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.button-accordion-title {
+  font-weight: 600;
+  display: inline;
+}
+
+.accordion {
+  color: #219d80;
+  width: 100%;
+  cursor: pointer;
+  height: 100px;
+  text-align: center;
+  border: none;
+  outline: none;
+  transition: 0.1s;
+  background-color: transparent;
+  font-size: 1.5em;
+}
+
+.toggleArrow {
+  position: absolute;
+  right: 10%;
+}
+
+.togged {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.togged,
+.accordion:hover {
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+
+  display: none;
+  overflow: hidden;
+}
+
+.toggleText {
+  margin-top: 0;
+  padding: 40px;
+  border: 0;
+}

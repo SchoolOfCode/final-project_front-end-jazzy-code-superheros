@@ -22,7 +22,9 @@ const ToggleCardKids = ({ cardTitle, cardBody, children }) => {
         )}
       </button>
       <div className={isTogged ? "togged" : "panel"}>
-        {/* <p className="toggleText">{cardBody}</p> */}
+        {cardBody ?
+        <p className="toggleText">{cardBody}</p> :
+        null}
         {children}
       </div>
     </div>
