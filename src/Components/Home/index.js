@@ -13,6 +13,7 @@ const Home = ({ foodBankData }) => {
   return (
     <div className="Home">
       <h1> {foodBankData ? foodBankData.name : null} </h1>
+      {/* <h2>Your Support is Really Powerful.</h2> */}
       <div className="ButtonContainer">
         <Button nameButton="Get Help" />
         <Button nameButton="Give Help" />
