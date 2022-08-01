@@ -19,6 +19,7 @@ import Footer from "./Components/Footer/footer";
 
 function App() {
   let [inputFoodBank, setInputFoodBank] = useState("waterloo");
+  let [submitedBank, setSubmitedBank]= useState(inputFoodBank);
 
   function handleChange(e) {
     setInputFoodBank(e.target.value)
@@ -29,9 +30,9 @@ function App() {
 function handleEnter(e){
   if (e.key==="Enter"){
     e.preventDefault();
-    
     const firstNameInput = document.getElementById('postcode');
     // 👇️ clear input field
+    setSubmitedBank(inputFoodBank);
     firstNameInput.value = '';
 
     console.log(inputFoodBank)
@@ -40,6 +41,7 @@ function handleEnter(e){
 
 
 function handleClick(e){
+
     e.preventDefault();
     const firstNameInput = document.getElementById('postcode');
 
@@ -47,11 +49,13 @@ function handleClick(e){
     console.log(firstNameInput.value);
   
     // 👇️ clear input field
+   
+    setSubmitedBank(inputFoodBank);
     firstNameInput.value = '';
 }
 
 
-  const foodbankName = inputFoodBank;
+  const foodbankName = submitedBank;
 
   const rootUrl = `https://www.givefood.org.uk/api/2/foodbank/`;
 
