@@ -1,0 +1,9 @@
+.inputfoodbank{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+}

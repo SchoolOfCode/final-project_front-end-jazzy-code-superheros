@@ -1,18 +1,12 @@
-import { useState } from "react";
-import Button from "../Button";
 
-const InputFoodBank = () => {
-    let [inputFoodBank, setInputFoodBank] = useState("")
+import "./Input.css"
 
-    function handleChange(e) {
-        setInputFoodBank(e.target.value)
-        console.log(inputFoodBank)
-        
-    }
+const InputFoodBank = ({handleChange, handleClick, handleEnter}) => {
+  
     return ( 
         <div className="inputfoodbank">
-            <input placeholder="Type your post code" onChange={handleChange}/>
-            <button >Submit</button>
+            <input placeholder="Type your post code" id="postcode" onChange={handleChange} onKeyPress={handleEnter}/>
+            <button onClick={handleClick} >Submit</button>
         </div>
      );
 }

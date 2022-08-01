@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 //this import no longer required unless we add
 //more functionality - remove once dev complete
-// import { useState } from "react";
+import { useState } from "react";
 
 //custom hooks
 import { useFetch } from "./hooks/useFetch";
@@ -18,7 +18,40 @@ import GiveHelp from "./Components/GiveHelp";
 import Footer from "./Components/Footer/footer";
 
 function App() {
-  const foodbankName = "vauxhall";
+  let [inputFoodBank, setInputFoodBank] = useState("waterloo");
+
+  function handleChange(e) {
+    setInputFoodBank(e.target.value)
+    
+}
+
+
+function handleEnter(e){
+  if (e.key==="Enter"){
+    e.preventDefault();
+    
+    const firstNameInput = document.getElementById('postcode');
+    // 👇️ clear input field
+    firstNameInput.value = '';
+
+    console.log(inputFoodBank)
+  }
+}
+
+
+function handleClick(e){
+    e.preventDefault();
+    const firstNameInput = document.getElementById('postcode');
+
+    // Send value to server
+    console.log(firstNameInput.value);
+  
+    // 👇️ clear input field
+    firstNameInput.value = '';
+}
+
+
+  const foodbankName = inputFoodBank;
 
   const rootUrl = `https://www.givefood.org.uk/api/2/foodbank/`;
 
@@ -38,7 +71,7 @@ function App() {
           <Route
             exact
             path="/"
-            element={<Home foodBankData={foodBankData} />}
+            element={<Home foodBankData={foodBankData} handleChange={handleChange} handleClick={handleClick} handleEnter={handleEnter} />}
           ></Route>
           <Route path="/gethelp" element={<GetHelp />}></Route>
           <Route
