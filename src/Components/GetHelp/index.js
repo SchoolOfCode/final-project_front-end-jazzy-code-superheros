@@ -1,6 +1,6 @@
 // import EligibilityCard from "./EligibilityCard";
 import ToggleCard from "./ToggleCard";
-import ToggleCardKids from "./ToggleCardChildren";
+// import ToggleCardKids from "./ToggleCardChildren";
 import "./style.css";
 
 const getHelpData = [
@@ -37,7 +37,7 @@ const GetHelp = () => {
         <img
           className="bannerImage"
           src="https://i.imgur.com/VWCzSCo.jpeg"
-          alt="container-cover-image"
+          alt="container cover, people giving help"
         ></img>
       </div>
 
@@ -52,7 +52,7 @@ const GetHelp = () => {
       <img
         className="mapImage"
         src="https://www.givefood.org.uk/needs/at/vauxhall/map.png"
-        alt="map-image"
+        alt="map location"
       />
     </div>
   );

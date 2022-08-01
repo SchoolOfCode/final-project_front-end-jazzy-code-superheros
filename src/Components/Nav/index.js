@@ -22,7 +22,7 @@ export const Nav = () => {
             />
           </div>
 
-          <a href="#" className="toggleButton" onClick={handleToggle}>
+          <a href="/" className="toggleButton" onClick={handleToggle}>
             <span className="bar" />
 
             <span className="bar" />
@@ -45,11 +45,11 @@ export const Nav = () => {
               </li>
 
               <li>
-                <a href="#">FAQs</a>
+                <a href="/faq">FAQs</a>
               </li>
 
               <li>
-                <a href="#">Contact Us</a>
+                <a href="/contact">Contact Us</a>
               </li>
             </ul>
           </div>
