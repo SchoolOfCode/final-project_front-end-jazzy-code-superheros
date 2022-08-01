@@ -58,7 +58,7 @@ function handleClick(e){
   const url = `${rootUrl}${foodbankName}/`;
 
   //Fetch hook to request the data from the API
-  const foodBankData = useFetch(url,foodbankName);
+  const foodBankData = useFetch(url);
 
   //dev feedback only remove
   console.log(`foodBankData state >>>`, foodBankData);
