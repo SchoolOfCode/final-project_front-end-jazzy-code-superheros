@@ -70,9 +70,7 @@ function handleClick(e){
 
   //dev feedback only remove
   console.log(`foodBankData from fetch >>>`, foodBankData);
-
   console.log(`inputFoodBank state >>>`, inputFoodBank);
-
   console.log(`submitedBank state >>>`, submitedBank);
 
   //dev feedback only remove
