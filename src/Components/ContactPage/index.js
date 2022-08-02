@@ -52,7 +52,7 @@ const ContactPage = () => {
             }}
           >
             {() => (
-              <Form>
+              <Form name="contact" data-netlify="true" method="POST">
                 <div className="row">
                   <div className="col-25">
                     <label htmlFor="name">Name: </label>
@@ -86,10 +86,11 @@ const ContactPage = () => {
                     <ErrorMessage name="message" />
                   </p>
                 </div>
-
+                <div className="col-100">
                 <button type="submit" className="submit-admin">
                   Send
                 </button>
+                </div>
               </Form>
             )}
           </Formik>
