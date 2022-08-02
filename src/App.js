@@ -16,6 +16,7 @@ import Home from "./Components/Home";
 import GetHelp from "./Components/GetHelp";
 import GiveHelp from "./Components/GiveHelp";
 import Footer from "./Components/Footer/footer";
+import ContactPage from "./Components/ContactPage";
 
 function App() {
   const foodbankName = "vauxhall";
@@ -45,6 +46,7 @@ function App() {
             path="/givehelp"
             element={<GiveHelp foodBankData={foodBankData} />}
           ></Route>
+          <Route path="/contact" element={<ContactPage/>} />
         </Routes>
       </Router>
       <Footer />
