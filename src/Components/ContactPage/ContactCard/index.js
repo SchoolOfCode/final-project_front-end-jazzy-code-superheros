@@ -1,15 +1,13 @@
 import React from "react";
-import './style.css';
+import "./style.css";
 
-function ContactCard() {
-    return(
-        <div className="contact-container">
-        <h1>Contact **** </h1>
-        <p>Address:</p>
-        <p>Phone:</p>
-        <p>Email:</p>
-        </div>
-    )
-};
+function ContactCard(props) {
+  return (
+    <div className="contact-container">
+      <div className="contact-title">{props.title}</div>
+      <div>{props.children}</div>
+    </div>
+  );
+}
 
 export default ContactCard;

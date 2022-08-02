@@ -1,9 +1,17 @@
-.contact-container{
+.contact-container {
   width: 90%;
   margin: 0 auto;
   background-color: white;
   border-radius: 5px;
   margin-top: 20px;
   margin-bottom: 20px;
+  height: fit-content;
+  padding: 20px;
 
+}
+
+.contact-title {
+  color: #219d80;
+  font-weight: 600;
+  padding-bottom: 20px;
 }
