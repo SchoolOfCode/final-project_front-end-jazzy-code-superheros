@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 //this import no longer required unless we add
 //more functionality - remove once dev complete
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 //custom hooks
 import { useFetch } from "./hooks/useFetch";
@@ -19,8 +19,11 @@ import Footer from "./Components/Footer/footer";
 import LandingPage from "./Components/LandingPage";
 
 function App() {
+
   let [inputFoodBank, setInputFoodBank] = useState("waterloo");
   let [submitedBank, setSubmitedBank]= useState(inputFoodBank);
+
+  console.log(`App rerenders`)
 
   function handleChange(e) {
     setInputFoodBank(e.target.value)
@@ -66,19 +69,31 @@ function handleClick(e){
   const foodBankData = useFetch(url,foodbankName);
 
   //dev feedback only remove
-  console.log(`foodBankData state >>>`, foodBankData);
+  console.log(`foodBankData from fetch >>>`, foodBankData);
+
+  console.log(`inputFoodBank state >>>`, inputFoodBank);
+
+  console.log(`submitedBank state >>>`, submitedBank);
+
+  //dev feedback only remove
+  useEffect(()=> {
+    return ()=> {
+      console.log(`App is unmounting!`)
+    }
+  },[])
 
   return (
     <div className="App">
-      <Nav />
+
       <Router>
+        <Nav />
         <Routes>
-          <Route path="/"
+          <Route path="/landingpage"
           element={<LandingPage handleChange={handleChange} handleClick={handleClick} handleEnter={handleEnter} />}
           ></Route>
           <Route
             exact
-            path="/home"
+            path="/"
             element={<Home foodBankData={foodBankData} handleChange={handleChange} handleClick={handleClick} handleEnter={handleEnter} />}
           ></Route>
           <Route path="/gethelp" element={<GetHelp />}></Route>
