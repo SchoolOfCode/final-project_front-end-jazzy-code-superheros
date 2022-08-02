@@ -16,6 +16,7 @@ import Home from "./Components/Home";
 import GetHelp from "./Components/GetHelp";
 import GiveHelp from "./Components/GiveHelp";
 import Footer from "./Components/Footer/footer";
+import LandingPage from "./Components/LandingPage";
 
 function App() {
   let [inputFoodBank, setInputFoodBank] = useState("waterloo");
@@ -72,9 +73,12 @@ function handleClick(e){
       <Nav />
       <Router>
         <Routes>
+          <Route path="/"
+          element={<LandingPage handleChange={handleChange} handleClick={handleClick} handleEnter={handleEnter} />}
+          ></Route>
           <Route
             exact
-            path="/"
+            path="/home"
             element={<Home foodBankData={foodBankData} handleChange={handleChange} handleClick={handleClick} handleEnter={handleEnter} />}
           ></Route>
           <Route path="/gethelp" element={<GetHelp />}></Route>
