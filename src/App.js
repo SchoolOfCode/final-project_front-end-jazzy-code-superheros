@@ -30,10 +30,11 @@ function App() {
 function handleEnter(e){
   if (e.key==="Enter"){
     e.preventDefault();
-    const firstNameInput = document.getElementById('postcode');
+    const inputBox = document.getElementById('inputbox');
+
+    setSubmitedBank(inputFoodBank);    
     // 👇️ clear input field
-    setSubmitedBank(inputFoodBank);
-    firstNameInput.value = '';
+    inputBox.value = '';
 
     console.log(inputFoodBank)
   }
@@ -43,15 +44,14 @@ function handleEnter(e){
 function handleClick(e){
 
     e.preventDefault();
-    const firstNameInput = document.getElementById('postcode');
+    const inputBox = document.getElementById('inputbox');
 
     // Send value to server
-    console.log(firstNameInput.value);
-  
-    // 👇️ clear input field
-   
+    console.log(inputBox.value);
+
     setSubmitedBank(inputFoodBank);
-    firstNameInput.value = '';
+    // 👇️ clear input field
+    inputBox.value = '';
 }
 
 
