@@ -13,11 +13,13 @@ import InputFoodBank from "../Input/Input";
 import { useNavigate } from "react-router-dom";
 
 
-const navigate = useNavigate();
 
 
 
 const Home = ({ foodBankData, handleChange, handleClick, handleEnter }) => {
+  
+  const navigate = useNavigate();
+  
   return (
     <div className="Home">
       <InputFoodBank handleChange={handleChange} handleClick={handleClick} handleEnter={handleEnter}/>
