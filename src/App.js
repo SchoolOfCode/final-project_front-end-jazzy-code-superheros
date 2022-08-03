@@ -22,8 +22,8 @@ import ContactPage from "./Components/ContactPage";
 
 function App() {
 
-  let [inputFoodBank, setInputFoodBank] = useState("waterloo");
-  let [submitedBank, setSubmitedBank]= useState(inputFoodBank);
+  let [inputFoodBank, setInputFoodBank] = useState();
+  let [submitedBank, setSubmitedBank]= useState();
 
   console.log(`App rerenders`)
 
@@ -84,7 +84,7 @@ function handleClick(e){
 
   return (
     <div className="App">
-
+      {foodBankData?
       <Router>
         <Nav />
         <Routes>
@@ -107,7 +107,10 @@ function handleClick(e){
           />
         </Routes>
       </Router>
+        :<LandingPage handleChange={handleChange} handleClick={handleClick} handleEnter={handleEnter} />
+      }
       <Footer />
+
     </div>
   );
 }
