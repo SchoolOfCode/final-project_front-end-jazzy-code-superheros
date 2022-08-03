@@ -1,6 +1,8 @@
 import { useState } from "react";
 import foodbanklogo from "../../img/ylfb1.png";
 
+import {Link} from "react-router-dom";
+
 import "./style.css";
 
 export const Nav = () => {
@@ -33,23 +35,27 @@ export const Nav = () => {
           <div id="navLinks" className={isActive ? `active` : null}>
             <ul>
               <li>
-                <a href="/">Home</a>
+                <Link to="/">Home</Link>
               </li>
 
               <li>
-                <a href="/gethelp">Get Help</a>
+                <Link to="/landingpage">Landing Page</Link>
               </li>
 
               <li>
-                <a href="/givehelp">Give Help</a>
+                <Link to="/gethelp">Get Help</Link>
               </li>
 
               <li>
-                <a href="/faq">FAQs</a>
+                <Link to="/givehelp">Give Help</Link>
               </li>
 
               <li>
-                <a href="/contact">Contact Us</a>
+                <Link to="/faq">FAQs</Link>
+              </li>
+
+              <li>
+                <Link to="/contact">Contact Us</Link>
               </li>
             </ul>
           </div>

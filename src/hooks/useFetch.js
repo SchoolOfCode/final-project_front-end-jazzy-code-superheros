@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 
-export const useFetch = (url) => {
+export const useFetch = (url,dependency) => {
   //This use state is being used to get the data
   //fetched from the API
 
-  const renderOnceVar = 1;
   const [data, setData] = useState();
 
   const getData = async () => {
@@ -21,7 +20,7 @@ export const useFetch = (url) => {
   useEffect(() => {
     getData();
     // eslint-disable-next-line
-  }, [renderOnceVar]);
+  }, [dependency]);
 
   return data;
 };
