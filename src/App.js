@@ -89,6 +89,8 @@ function App() {
               path="/landingpage"
               element={
                 <LandingPage
+                  searchArray={searchArray}
+                  setFoodBankData={setFoodBankData}
                   handleChange={handleChange}
                   handleClick={handleClick}
                   handleEnter={handleEnter}
@@ -120,8 +122,9 @@ function App() {
         </Router>
       ) : (
         <div>
-          <button onClick={() => searchDemo()}>CLICK THIS ONE</button>
           <LandingPage
+            searchArray={searchArray}
+            setFoodBankData={setFoodBankData}
             handleChange={handleChange}
             handleClick={handleClick}
             handleEnter={handleEnter}
