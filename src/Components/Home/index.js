@@ -7,16 +7,20 @@ import Button from "../Button";
 import Carousel from "../Carousel/Carousel";
 import { CarouselData } from "../Carousel/CarouselData";
 import Facts from "../Facts/facts";
-import { useNavigate } from "react-router-dom";
-import "./style.css";
 
-const Home = ({ foodBankData }) => {
+import "./style.css";
+import InputFoodBank from "../Input/Input";
+import { useNavigate } from "react-router-dom";
+
 
 const navigate = useNavigate();
- 
 
+
+
+const Home = ({ foodBankData, handleChange, handleClick, handleEnter }) => {
   return (
     <div className="Home">
+      <InputFoodBank handleChange={handleChange} handleClick={handleClick} handleEnter={handleEnter}/>
       <h1> {foodBankData ? foodBankData.name : null} </h1>
       {/* <h2>Your Support is Really Powerful.</h2> */}
       <div className="ButtonContainer">
