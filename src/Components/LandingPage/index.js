@@ -23,14 +23,16 @@ const LandingPage = ({
       {searchArray ? <h2>Please select a Food Bank: </h2> : null}
       {array.map((item, index) => {
         return (
-          <div
-            className="results"
-            key={index}
-            onClick={() => setFoodBankData(searchArray[index])}
-          >
-            <h3>{item.name}</h3>
-            <p>{item.address}</p>
-            <p>Distance from you {item.distance_mi.toFixed(1)} miles</p>
+          <div className="search-results-container">
+            <div
+              className="search-results"
+              key={index}
+              onClick={() => setFoodBankData(searchArray[index])}
+            >
+              <h3>{item.name}</h3>
+              <p>{item.address}</p>
+              <p>Distance from you {item.distance_mi.toFixed(1)} miles</p>
+            </div>
           </div>
         );
       })}

@@ -86,7 +86,7 @@ function App() {
           <Nav />
           <Routes>
             <Route
-              path="/landingpage"
+              path="/search"
               element={
                 <LandingPage
                   searchArray={searchArray}

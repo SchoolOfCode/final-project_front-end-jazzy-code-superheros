@@ -1,11 +1,19 @@
-.results {
-    margin-top: 20px;
+.search-results {
+    margin-top: 30px;
     margin-bottom: 20px;
     width: 90%;
-    background-color: aquamarine;
+    background-color: white;
     border-radius: 5px;
     margin: 0 auto;
 
 }
 
-.landing-container {}
+.landing-container {
+    background-color: #cfcfcf;
+    height: 100%;
+
+}
+
+.search-results-container {
+    padding-bottom: 5px;
+}

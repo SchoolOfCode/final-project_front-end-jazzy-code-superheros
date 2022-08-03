@@ -1,7 +1,7 @@
 import { useState } from "react";
 import foodbanklogo from "../../img/ylfb1.png";
 
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./style.css";
 
@@ -39,7 +39,7 @@ export const Nav = () => {
               </li>
 
               <li>
-                <Link to="/landingpage">Landing Page</Link>
+                <Link to="/search">Search</Link>
               </li>
 
               <li>
