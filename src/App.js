@@ -17,6 +17,8 @@ import GetHelp from "./Components/GetHelp";
 import GiveHelp from "./Components/GiveHelp";
 import Footer from "./Components/Footer/footer";
 import LandingPage from "./Components/LandingPage";
+import ContactPage from "./Components/ContactPage";
+
 
 function App() {
 
@@ -99,6 +101,10 @@ function handleClick(e){
             path="/givehelp"
             element={<GiveHelp foodBankData={foodBankData} />}
           ></Route>
+          <Route
+            path="/contact"
+            element={<ContactPage foodBankData={foodBankData} />}
+          />
         </Routes>
       </Router>
       <Footer />
