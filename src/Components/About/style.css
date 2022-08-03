@@ -1,46 +1,43 @@
-.AboutUsContainer{
+.AboutUsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 10px;
+  width: 100%;
+}
+.ImgAboutUs {
+  height: 300px;
+  width: 350px;
+  border-radius: 10px;
+}
+.TextContainer {
+  align-self: center;
+}
+.TextContainer > p {
+  margin: 2px;
+}
+.justify {
+  text-align: center;
+}
+.TextContainer > h3 {
+  margin: 10px;
+}
+.Message {
+  max-width: 600px;
+}
+
+@media (max-width: 800px) {
+  .AboutUsContainer {
     display: flex;
-    flex-direction: row;
-    margin: 0 auto;
-    gap:10px;
-   }
-.ImgAboutUs{
-    height: 300px;
-    width: 350px;
-    border-radius: 10px;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .ImgAboutUs {
+    border-radius: 0px;
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+  }
 }
-.TextContainer{
-    align-self: center;
-}
-.TextContainer>p{
-    margin: 2px;
-}
-.justify{
-
-    text-align: center;
-}
-.TextContainer>h3{
-    margin: 10px;
-
-}
-.Message{
-    max-width: 600px;
-}
-
-
-
-@media(max-width: 800px) {
-    .AboutUsContainer{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }  
-    .ImgAboutUs{
-        border-radius: 0px;
-        height: 150px;
-        width: 100%;
-        object-fit: cover;
-    }
-}
-  
