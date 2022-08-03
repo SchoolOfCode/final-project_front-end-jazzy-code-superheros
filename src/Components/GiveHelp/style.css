@@ -1,10 +1,12 @@
 .give-help{
   background-color: #cfcfcf;
-
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 h1 {
   margin-top: 0;
+  color: #454545
 }
 
 /* Style the buttons that are used to open and close the accordion panel */

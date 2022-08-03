@@ -6,15 +6,16 @@ img {
   max-height: 100px;
   object-fit: cover;
 }
-.gethelp{
+
+.gethelp {
   background-color: #cfcfcf;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-.page-header{
+
+.page-header {
   margin-top: 0;
 }
 
-@media(min-width: 800px) {
-img {
-    max-width: 80%
-}
-}
+
+@media(min-width: 800px) {}
