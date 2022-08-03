@@ -4,7 +4,7 @@ import ContactCard from "./ContactCard";
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
-const ContactPage = () => {
+const ContactPage = ({ foodBankData }) => {
   return (
     <div className="contact">
       <h1 className="page-header">Contact Us</h1>
@@ -15,10 +15,10 @@ const ContactPage = () => {
           alt="container cover, people giving help"
         ></img>
       </div>
-      <ContactCard title="*** Foodbank">
-        <p>Address:</p>
-        <p>Phone:</p>
-        <p>Email:</p>
+      <ContactCard title={foodBankData ? foodBankData.name : null}>
+        <p>Address: {foodBankData ? foodBankData.address : null}</p>
+        <p>Phone: {foodBankData ? foodBankData.phone : null}</p>
+        <p>Email: {foodBankData ? foodBankData.email : null}</p>
       </ContactCard>
       <ContactCard title="Website Admin">
         <p>

@@ -46,7 +46,10 @@ function App() {
             path="/givehelp"
             element={<GiveHelp foodBankData={foodBankData} />}
           ></Route>
-          <Route path="/contact" element={<ContactPage/>} />
+          <Route
+            path="/contact"
+            element={<ContactPage foodBankData={foodBankData} />}
+          />
         </Routes>
       </Router>
       <Footer />
