@@ -74,7 +74,7 @@
 @media (max-width: 800px) {
   .Carousel {
     position: relative;
-    height: 40vh;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,6 +87,6 @@
   }
 
   .testimony-container{
-    width: 200px;
+    width: 300px;
   }
 }
