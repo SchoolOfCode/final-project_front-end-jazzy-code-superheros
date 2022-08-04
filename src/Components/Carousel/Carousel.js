@@ -36,9 +36,11 @@ function previousSlide() {
           return (
               <section className={index === slide ? "slide-active" : "slide" } key={index}>
                 {index === slide && <><img src={testimony.urlImg} alt="testimony" className="img-slider"/>
+                <div className="testimony-container">
                 <h3>{testimony.name}</h3>
                 <p>{testimony.job}</p>
                 <p><i>" {testimony.testimony} "</i></p>
+                </div>
                 </>
                 }
             
