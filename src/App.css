@@ -1,9 +1,14 @@
 .App {
   text-align: center;
-
+  position: relative;
+  min-height: 100vh;
+ 
   
   height: 100%;
 
+}
+.container{
+  padding-bottom: 4rem;
 }
 
 .App-logo {
@@ -30,6 +35,20 @@
 
 .App-link {
   color: #61dafb;
+}
+@media (max-width:800px) {
+  .container{
+    padding-bottom: 6rem;
+  }
+  .App {
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+  
+    
+    height: 100%;
+  
+  }
 }
 
 @keyframes App-logo-spin {

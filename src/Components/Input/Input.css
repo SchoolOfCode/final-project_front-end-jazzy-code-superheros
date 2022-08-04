@@ -1,10 +1,35 @@
 .inputfoodbank{
+    gap: 5px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     width: 300px;
     margin: 0 auto;
     padding: 10px;
-    gap: 5px;
+}
+#inputbox{
+    height:50px;
+    border-radius: 10px ;
+    border-color: #6cd9c0;
+    text-align: center;
+
+}
+.button-input{
+   text-align: center;
+    color:white;
+    background-color: #219D80;
+    font-size: 15px;
+    border-radius: 15px;
+    border-color: #6cd9c0;
+    height: 40px;
+    width: 90px;
+    margin-bottom: 10px;
+}
+@media (max-width:800px) {
+ .inputfoodbank{
+    display: flex;
+    flex-direction: column;
+   
+ }   
 }

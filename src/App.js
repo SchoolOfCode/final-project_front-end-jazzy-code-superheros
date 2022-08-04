@@ -78,6 +78,7 @@ function App() {
 
   return (
     <div className="App">
+      <div className="container">
       {foodBankData ? (
         <Router>
           <Nav />
@@ -129,6 +130,7 @@ function App() {
         </div>
       )}
       <Footer />
+      </div>
     </div>
   );
 }

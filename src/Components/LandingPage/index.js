@@ -14,13 +14,13 @@ const LandingPage = ({
   console.log(searchArray);
   return (
     <div className="landing-container">
-      <img src={foodbanklogo} alt="logo"></img>
+      <img src={foodbanklogo} className="img-logo" alt="logo"></img>
       <Input
         handleClick={handleClick}
         handleChange={handleChange}
         handleEnter={handleEnter}
-      />
-      {searchArray ? <h2>Please select a Food Bank: </h2> : null}
+       className="input-landing"/>
+      {searchArray ? <h2 className="margin0">Please select a Food Bank: </h2> : null}
       {array.map((item, index) => {
         return (
           <div className="search-results-container">
