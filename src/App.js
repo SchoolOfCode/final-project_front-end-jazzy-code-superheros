@@ -63,9 +63,6 @@ function App() {
 
   //Fetch hook to request the data from the API
   const searchArray = useFetch(url, foodbankName);
-  function searchDemo() {
-    setFoodBankData(searchArray[0]);
-  }
 
   //dev feedback only remove
   console.log(`foodBankData from fetch >>>`, foodBankData);
