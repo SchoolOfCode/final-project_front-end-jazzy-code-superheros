@@ -31,7 +31,7 @@ const getHelpData = [
   },
 ];
 
-const GetHelp = () => {
+const GetHelp = ({ foodBankData }) => {
   return (
     <div className="gethelp">
       <h1 className="page-header">Get Help</h1>
@@ -56,7 +56,8 @@ const GetHelp = () => {
         src="https://www.givefood.org.uk/needs/at/vauxhall/map.png"
         alt="map location"
       /> */}
-      <Container />
+      
+      <Container foodBankData={foodBankData}/>
     </div>
   );
 };

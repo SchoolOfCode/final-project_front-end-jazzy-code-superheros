@@ -107,7 +107,11 @@ function App() {
                 />
               }
             ></Route>
-            <Route path="/gethelp" element={<GetHelp />}></Route>
+            <Route path="/gethelp" element={<GetHelp 
+            foodBankData={foodBankData} 
+                />
+              }
+            ></Route>
             <Route
               path="/givehelp"
               element={<GiveHelp foodBankData={foodBankData} />}

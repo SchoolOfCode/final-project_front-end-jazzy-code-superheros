@@ -1,27 +1,28 @@
 import React from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import "./Map.css";
 
 const containerStyle = {
   width: '400px',
   height: '400px'
 };
 
-const center = {
-  lat: -3.745,
-  lng: -38.523
-};
 
-function MyComponent({ foodBankData }) {
-  const center = {
-    lat: foodBankData,
-    lng: -38.523
-  };
-
+const MyComponent = ({ foodBankData }) => {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   })
+
+  console.log(foodBankData.lat_lng);
+  const latLng = foodBankData ? foodBankData.lat_lng.split(`,`) : [];
+  console.log(latLng);
+
+  let center = {
+    lat: Number(latLng[0]),
+    lng: Number(latLng[1])
+  }
 
   const [map, setMap] = React.useState(null)
 
@@ -30,13 +31,16 @@ function MyComponent({ foodBankData }) {
     map.fitBounds(bounds);
     setMap(map)
   }, [])
+  console.log(map)
 
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null)
   }, [])
 
   return isLoaded ? (
-      <GoogleMap
+    <div ClassName='map'>
+      <GoogleMap 
+        ClassName='map'
         mapContainerStyle={containerStyle}
         center={center}
         zoom={10}
@@ -44,9 +48,8 @@ function MyComponent({ foodBankData }) {
         onUnmount={onUnmount}
       >
         { /* Child components, such as markers, info windows, etc. */ }
-        <></>
       </GoogleMap>
-  ) : <></>
+      </div>
+  ) : <div ClassName='map'></div>
 }
-// test line 
 export default React.memo(MyComponent)
