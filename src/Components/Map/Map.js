@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
@@ -12,7 +11,13 @@ const center = {
   lng: -38.523
 };
 
-function MyComponent() {
+function MyComponent({ foodBankData }) {
+  const center = {
+    lat: foodBankData,
+    lng: -38.523
+  };
+
+
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,

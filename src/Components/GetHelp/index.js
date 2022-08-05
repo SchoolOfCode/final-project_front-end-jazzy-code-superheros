@@ -3,7 +3,7 @@ import ToggleCard from "./ToggleCard";
 // import ToggleCardKids from "./ToggleCardChildren";
 import "./style.css";
 
-import Container from "../Map/index.js";
+import Container from "../Map/Map.js";
 
 const getHelpData = [
   {
