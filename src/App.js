@@ -20,6 +20,8 @@ import LandingPage from "./Components/LandingPage";
 import ContactPage from "./Components/ContactPage";
 import Cms from "./Components/Cms";
 import { useAuth0 } from "@auth0/auth0-react";
+import Profile from "./Components/Cms/UserProfile";
+
 
 function App() {
   let [inputFoodBank, setInputFoodBank] = useState();

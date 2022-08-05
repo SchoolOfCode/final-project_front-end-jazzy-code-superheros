@@ -1,18 +1,20 @@
 import { Auth0Provider } from "@auth0/auth0-react";
-import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogOutButton";
+import Profile from "./UserProfile";
 
 const Cms = () => {
   return (
     <Auth0Provider
       domain="ylfb.eu.auth0.com"
       clientId="zrlZu6p7qj4yAdHBVzmFyygtZoYTIyfW"
-      redirectUri={window.location.origin}
+      redirectUri="http://localhost:3000/admin"
     >
-      <LoginButton />
+      <LoginButton/>
       <LogoutButton />
+      <Profile/>
     </Auth0Provider>
+
   );
 };
 
