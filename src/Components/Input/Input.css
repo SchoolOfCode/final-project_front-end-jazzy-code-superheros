@@ -26,6 +26,9 @@
     width: 90px;
     margin-bottom: 10px;
 }
+.button-input:hover{
+ cursor: pointer;
+}
 @media (max-width:800px) {
  .inputfoodbank{
     display: flex;
