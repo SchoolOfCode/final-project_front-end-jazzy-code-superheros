@@ -18,6 +18,8 @@ import GiveHelp from "./Components/GiveHelp";
 import Footer from "./Components/Footer/footer";
 import LandingPage from "./Components/LandingPage";
 import ContactPage from "./Components/ContactPage";
+import Cms from "./Components/Cms";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
   let [inputFoodBank, setInputFoodBank] = useState();
@@ -76,60 +78,71 @@ function App() {
     };
   }, []);
 
+  const { isAuthenticated } = useAuth0();
+
+  console.log("isLoggedIn >>>", isAuthenticated);
   return (
     <div className="App">
       <div className="container">
-      {foodBankData ? (
         <Router>
-          <Nav />
+          {foodBankData ? <Nav /> : null}
           <Routes>
-            <Route
-              path="/search"
-              element={
-                <LandingPage
-                  searchArray={searchArray}
-                  setFoodBankData={setFoodBankData}
-                  handleChange={handleChange}
-                  handleClick={handleClick}
-                  handleEnter={handleEnter}
+            <Route path="/admin" element={<Cms />}></Route>
+            <Route path="/">
+              {foodBankData ? (
+                <>
+                  <Route
+                    path="/search"
+                    element={
+                      <LandingPage
+                        searchArray={searchArray}
+                        setFoodBankData={setFoodBankData}
+                        handleChange={handleChange}
+                        handleClick={handleClick}
+                        handleEnter={handleEnter}
+                      />
+                    }
+                  ></Route>
+                  <Route
+                    exact
+                    path="/"
+                    element={
+                      <Home
+                        foodBankData={foodBankData}
+                        handleChange={handleChange}
+                        handleClick={handleClick}
+                        handleEnter={handleEnter}
+                      />
+                    }
+                  ></Route>
+                  <Route path="/gethelp" element={<GetHelp />}></Route>
+                  <Route
+                    path="/givehelp"
+                    element={<GiveHelp foodBankData={foodBankData} />}
+                  ></Route>
+                  <Route
+                    path="/contact"
+                    element={<ContactPage foodBankData={foodBankData} />}
+                  />
+                </>
+              ) : (
+                <Route
+                  path="/"
+                  element={
+                    <LandingPage
+                      searchArray={searchArray}
+                      setFoodBankData={setFoodBankData}
+                      handleChange={handleChange}
+                      handleClick={handleClick}
+                      handleEnter={handleEnter}
+                    />
+                  }
                 />
-              }
-            ></Route>
-            <Route
-              exact
-              path="/"
-              element={
-                <Home
-                  foodBankData={foodBankData}
-                  handleChange={handleChange}
-                  handleClick={handleClick}
-                  handleEnter={handleEnter}
-                />
-              }
-            ></Route>
-            <Route path="/gethelp" element={<GetHelp />}></Route>
-            <Route
-              path="/givehelp"
-              element={<GiveHelp foodBankData={foodBankData} />}
-            ></Route>
-            <Route
-              path="/contact"
-              element={<ContactPage foodBankData={foodBankData} />}
-            />
+              )}
+            </Route>
           </Routes>
         </Router>
-      ) : (
-        <div>
-          <LandingPage
-            searchArray={searchArray}
-            setFoodBankData={setFoodBankData}
-            handleChange={handleChange}
-            handleClick={handleClick}
-            handleEnter={handleEnter}
-          />
-        </div>
-      )}
-      <Footer />
+        <Footer />
       </div>
     </div>
   );
