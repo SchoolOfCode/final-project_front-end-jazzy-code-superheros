@@ -6,6 +6,7 @@ import D from "../StyledDiv";
 import "./style.css";
 
 const GetHelp = ({ foodBankData }) => {
+  console.log("foodBankData :>> ", foodBankData);
   return (
     <div className="gethelp">
       <h1 className="page-header">Get Help</h1>
@@ -51,7 +52,7 @@ const GetHelp = ({ foodBankData }) => {
             If you are in urgent need of assistance please contact your local
             community foodbank directly. Even if they are not able to
             accommodate you, they will be best placed to help relieve the
-            immediate pressure. Otherwise, as a rule, you will need someone to
+            immediate pressure.<br/><br/> Otherwise, as a rule, you will need someone to
             provide a referral. For example: a charity, GP, or social worker.
             One of the easiest ways to ask for a referral (which we would
             recommend), regardless of your location, is to contact your{" "}
@@ -89,7 +90,7 @@ const GetHelp = ({ foodBankData }) => {
       <ToggleCardGeneral cardTitle={"Additional Support"}>
         <D>
           <p>
-            Hunger is a critical need. But asometimes there are other issues
+            Hunger is a critical need. But sometimes there are other issues
             which cause distress.
             <br />
             <br />
