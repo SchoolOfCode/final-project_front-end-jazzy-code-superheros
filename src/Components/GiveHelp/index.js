@@ -1,7 +1,7 @@
 import { List } from "../List";
 import ToggleCardKids from "../GetHelp/ToggleCardChildren";
 import Button from "../Button";
-
+import Container from "../Map/Map.js"
 import "./style.css";
 
 const GiveHelp = ({ foodBankData }) => {
@@ -32,12 +32,7 @@ const GiveHelp = ({ foodBankData }) => {
         cardTitle="Donate Your Time"
         cardBody="Placeholder for form"
       />
-
-      <img
-        className="mapImage"
-        src="https://www.givefood.org.uk/needs/at/vauxhall/map.png"
-        alt="map location"
-      />
+      <Container foodBankData={foodBankData}/>
     </div>
   );
 };

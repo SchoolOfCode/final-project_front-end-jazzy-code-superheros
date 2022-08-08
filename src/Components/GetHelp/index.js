@@ -1,9 +1,8 @@
 // import EligibilityCard from "./EligibilityCard";
 import ToggleCard from "./ToggleCard";
 // import ToggleCardKids from "./ToggleCardChildren";
-import "./style.css";
-
 import Container from "../Map/Map.js";
+import "./style.css";
 
 const getHelpData = [
   {
@@ -51,12 +50,6 @@ const GetHelp = ({ foodBankData }) => {
           />
         );
       })}
-      {/* <img
-        className="mapImage"
-        src="https://www.givefood.org.uk/needs/at/vauxhall/map.png"
-        alt="map location"
-      /> */}
-      
       <Container foodBankData={foodBankData}/>
     </div>
   );
