@@ -1,12 +1,19 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import needsData from "./needsData";
 
 const FormData = () => {
   return (
     <Formik
       initialValues={{
         name: "",
-        email: "",
-        message: "",
+        address: "",
+        postcode: "",
+        phone:"",
+        email:"",
+        imgUrl:"",
+        needs:[""],
+        distance:"",
+        lat_lng:"",
       }}
       onSubmit={(values, actions) => {
         alert(JSON.stringify(values, null, 2));
@@ -41,22 +48,93 @@ const FormData = () => {
             </div>
           </div>
           <div className="col-25">
-            <label htmlFor="email">Email: </label>
+            <label htmlFor="address">Address: </label>
           </div>
           <div className="col-75">
-            <Field className="inputs" name="email" placeholder="Email" />
+            <Field className="inputs" name="address" placeholder="Address" />
             <p className="error-message">
-              <ErrorMessage name="email" />
+              <ErrorMessage name="address" />
             </p>
           </div>
           <div className="col-25">
-            <label htmlFor="message">Message: </label>
+            <label htmlFor="postcode">Post-code </label>
           </div>
           <div className="col-75">
-            <Field name="message" component="textarea" placeholder="Message" />
+            <Field className="inputs" name="postcode" placeholder="Post-Code" />
             <p className="error-message">
-              <ErrorMessage name="message" />
+              <ErrorMessage name="postcode" />
             </p>
+          </div>
+          <div className="row">
+            <div className="col-25">
+              <label htmlFor="phone">Phone </label>
+            </div>
+            <div className="col-75">
+              <Field className="inputs" name="phone" placeholder="Phone" />
+              <p className="error-message">
+                <ErrorMessage name="phone" />
+              </p>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-25">
+              <label htmlFor="email">Email</label>
+            </div>
+            <div className="col-75">
+              <Field className="inputs" name="email" placeholder="Email" />
+              <p className="error-message">
+                <ErrorMessage name="email" />
+              </p>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-25">
+              <label htmlFor="imgurl">Image Url </label>
+            </div>
+            <div className="col-75">
+              <Field className="inputs" name="imgurl" placeholder="Image Url" />
+              <p className="error-message">
+                <ErrorMessage name="imgurl" />
+              </p>
+            </div>
+          </div>
+       { needsData.map((needsData)=>{
+        return (  <div className="row">
+        <div className="col-25">
+          <label htmlFor="needs">Needs </label>
+        </div>
+        <div className="col-75">
+          <Field className="inputs" name="needs" placeholder="Needs" />
+          <button>-</button>
+          <button>+</button>
+          <p className="error-message">
+            <ErrorMessage name="needs" />
+          </p>
+        </div>
+      </div>)
+       })}
+
+          <div className="row">
+            <div className="col-25">
+              <label htmlFor="distance">Distance </label>
+            </div>
+            <div className="col-75">
+              <Field className="inputs" name="distance" placeholder="Distance" />
+              <p className="error-message">
+                <ErrorMessage name="distance" />
+              </p>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-25">
+              <label htmlFor="lat_lng">Latitude and Longitude</label>
+            </div>
+            <div className="col-75">
+              <Field className="inputs" name="lat_lng" placeholder="Latitude and Longitude" />
+              <p className="error-message">
+                <ErrorMessage name="lat_lng" />
+              </p>
+            </div>
           </div>
           <div className="col-100">
             <button type="submit" className="submit-admin">
