@@ -1,6 +1,6 @@
 // import EligibilityCard from "./EligibilityCard";
-import ToggleCard from "./ToggleCard";
-// import ToggleCardKids from "./ToggleCardChildren";
+// import ToggleCard from "./ToggleCard";
+import ToggleCardGeneral from "./ToggleCardGeneral";
 import "./style.css";
 
 const getHelpData = [
@@ -43,14 +43,16 @@ const GetHelp = () => {
         ></img>
       </div>
 
-      {getHelpData.map((cardData) => {
+      {/* {getHelpData.map((cardData) => {
         return (
           <ToggleCard
             cardTitle={cardData.cardTitle}
             cardBody={cardData.cardBody}
           />
         );
-      })}
+      })} */}
+
+
       <img
         className="mapImage"
         src="https://www.givefood.org.uk/needs/at/vauxhall/map.png"
