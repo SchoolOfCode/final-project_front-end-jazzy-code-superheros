@@ -9,12 +9,13 @@ const Cms = () => {
       domain="ylfb.eu.auth0.com"
       clientId="zrlZu6p7qj4yAdHBVzmFyygtZoYTIyfW"
       redirectUri="http://localhost:3000/admin"
+      audience="https://ylfb.eu.auth0.com/api/v2/"
+      scope="read:current_user update:current_user_metadata"
     >
-      <LoginButton/>
+      <LoginButton />
       <LogoutButton />
-      <Profile/>
+      <Profile />
     </Auth0Provider>
-
   );
 };
 
