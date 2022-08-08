@@ -52,10 +52,12 @@ const GetHelp = ({ foodBankData }) => {
             If you are in urgent need of assistance please contact your local
             community foodbank directly. Even if they are not able to
             accommodate you, they will be best placed to help relieve the
-            immediate pressure.<br/><br/> Otherwise, as a rule, you will need someone to
-            provide a referral. For example: a charity, GP, or social worker.
-            One of the easiest ways to ask for a referral (which we would
-            recommend), regardless of your location, is to contact your{" "}
+            immediate pressure.
+            <br />
+            <br /> Otherwise, as a rule, you will need someone to provide a
+            referral. For example: a charity, GP, or social worker. One of the
+            easiest ways to ask for a referral (which we would recommend),
+            regardless of your location, is to contact your{" "}
             <a href="https://www.citizensadvice.org.uk/about-us/contact-us/contact-us/search-for-your-local-citizens-advice/">
               nearest Citizens Advice office
             </a>
@@ -104,20 +106,24 @@ const GetHelp = ({ foodBankData }) => {
           </p>
         </D>
       </ToggleCardGeneral>
-      <ToggleCardGeneral cardTitle={"Specific Information"}>
-        <D>
-          <p>
-            The information on this page is currently quite generic due to all
-            of the differing rules.{" "}
-          </p>
-          <p>
-            At this time, for more specific information on your selected
-            foodbank please see their website below:{" "}
-          </p>
-          <a></a>
-        </D>
-      </ToggleCardGeneral>
 
+      {foodBankData.urls.homepage ? (
+        <ToggleCardGeneral cardTitle={"Specific Information"}>
+          <D>
+            <p>
+              The information on this page is currently quite generic due to all
+              of the differing rules.{" "}
+            </p>
+            <p>
+              At this time, for more specific information on your selected
+              foodbank please see their website:{" "}
+            </p>
+            <a href={foodBankData.urls.homepage}>
+              {foodBankData.urls.homepage}
+            </a>
+          </D>
+        </ToggleCardGeneral>
+      ) : null}
       <img
         className="mapImage"
         src="https://www.givefood.org.uk/needs/at/vauxhall/map.png"
