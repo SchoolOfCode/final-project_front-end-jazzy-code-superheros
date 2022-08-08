@@ -1,21 +1,37 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import needsData from "./needsData";
+import { useState } from "react";
 
 const FormData = () => {
+  const [needs, setNeeds] = useState(needsData);
+
+  function handleAdd(e) {
+    e.preventDefault();
+    console.log(needs);
+  }
+
+  function handleDelete(e) {
+    e.preventDefault();
+
+    setNeeds(needs.filter((item) => item.id !== Number(e.target.value)));
+    console.log(needs);
+  }
+
   return (
     <Formik
       initialValues={{
         name: "",
         address: "",
         postcode: "",
-        phone:"",
-        email:"",
-        imgUrl:"",
-        needs:[""],
-        distance:"",
-        lat_lng:"",
+        phone: "",
+        email: "",
+        imgUrl: "",
+        needs: "",
+        distance: "",
+        lat_lng: "",
       }}
       onSubmit={(values, actions) => {
+        console.log("These are the values:", values);
         alert(JSON.stringify(values, null, 2));
         actions.setSubmitting(false);
       }}
@@ -34,8 +50,22 @@ const FormData = () => {
         return errors;
       }}
     >
-      {() => (
-        <Form name="contact" data-netlify="true" method="POST">
+      {({
+        values,
+        errors,
+        touched,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        isSubmitting,
+        /* and other goodies */
+      }) => (
+        <Form
+          name="needs-form"
+          data-netlify="true"
+          method="POST"
+          onSubmit={handleSubmit}
+        >
           <div className="row">
             <div className="col-25">
               <label htmlFor="name">Name: </label>
@@ -98,28 +128,46 @@ const FormData = () => {
               </p>
             </div>
           </div>
-       { needsData.map((needsData)=>{
-        return (  <div className="row">
-        <div className="col-25">
-          <label htmlFor="needs">Needs </label>
-        </div>
-        <div className="col-75">
-          <Field className="inputs" name="needs" placeholder="Needs" />
-          <button>-</button>
-          <button>+</button>
-          <p className="error-message">
-            <ErrorMessage name="needs" />
-          </p>
-        </div>
-      </div>)
-       })}
+          <div className="row">
+            <div className="col-25">
+              <label htmlFor="needs">Needs </label>
+            </div>
+            <div className="col-75">
+              <Field
+                className="inputs"
+                name="needs"
+                placeholder="Needs"
+                onChange={handleChange}
+              />
+              {console.log(values)}
+
+              <button onClick={handleAdd}>+</button>
+              <p className="error-message">
+                <ErrorMessage name="needs" />
+              </p>
+            </div>
+          </div>
+          {needs.map((needsData) => {
+            return (
+              <p>
+                {needsData.name}
+                <button value={needsData.id} onClick={handleDelete}>
+                  -
+                </button>
+              </p>
+            );
+          })}
 
           <div className="row">
             <div className="col-25">
               <label htmlFor="distance">Distance </label>
             </div>
             <div className="col-75">
-              <Field className="inputs" name="distance" placeholder="Distance" />
+              <Field
+                className="inputs"
+                name="distance"
+                placeholder="Distance"
+              />
               <p className="error-message">
                 <ErrorMessage name="distance" />
               </p>
@@ -130,7 +178,11 @@ const FormData = () => {
               <label htmlFor="lat_lng">Latitude and Longitude</label>
             </div>
             <div className="col-75">
-              <Field className="inputs" name="lat_lng" placeholder="Latitude and Longitude" />
+              <Field
+                className="inputs"
+                name="lat_lng"
+                placeholder="Latitude and Longitude"
+              />
               <p className="error-message">
                 <ErrorMessage name="lat_lng" />
               </p>
