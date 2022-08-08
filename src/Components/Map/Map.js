@@ -1,5 +1,5 @@
 import { useState, useCallback, memo} from 'react'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import "./Map.css";
 
 const containerStyle = {
@@ -18,6 +18,7 @@ const MyComponent = ({ foodBankData }) => {
   const latLng = foodBankData ? foodBankData.lat_lng.split(`,`) : [];
   console.log(latLng);
 
+ 
   let center = {
     lat: Number(latLng[0]),
     lng: Number(latLng[1])
@@ -32,6 +33,7 @@ const MyComponent = ({ foodBankData }) => {
   }, [])
   console.log(map)
 
+
   const onUnmount = useCallback(function callback(map) {
     setMap(null)
   }, [])
@@ -42,12 +44,20 @@ const MyComponent = ({ foodBankData }) => {
         ClassName='map'
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={10}
+        zoom={5}
         onLoad={onLoad}
         onUnmount={onUnmount}
-      >
+        >
+       <Marker 
+       key="marker_1"
+       position={center} />
+       
+
+      
         { /* Child components, such as markers, info windows, etc. */ }
-      </GoogleMap>
+      </GoogleMap>     
+  
+
       </div>
   ) : <div ClassName='map'></div>
 }
