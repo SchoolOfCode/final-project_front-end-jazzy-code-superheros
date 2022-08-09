@@ -4,22 +4,9 @@ import Button from "../Button";
 import Container from "../Map/Map.js";
 import "./style.css";
 import D from "../StyledDiv";
-import { motion } from "framer-motion";
+import  StyleD  from "../MotionDiv";
 
-const StyledDiv = motion.div;
 
-const StyleD = ({ children, delay = 0 }) => {
-  return (
-    <StyledDiv
-      initial={{ y: 10, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, delay }}
-      mb={6}
-    >
-      {children}
-    </StyledDiv>
-  );
-};
 
 const GiveHelp = ({ foodBankData }) => {
   return (
