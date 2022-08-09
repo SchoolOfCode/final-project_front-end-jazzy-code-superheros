@@ -4,6 +4,7 @@ import Button from "../Button";
 import Container from "../Map/Map.js";
 import "./style.css";
 import D from "../StyledDiv";
+import { motion } from 'framer-motion';
 
 const GiveHelp = ({ foodBankData }) => {
   return (
