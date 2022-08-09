@@ -4,13 +4,14 @@ import LogoutButton from "./LogOutButton";
 import Profile from "./UserProfile";
 
 const Cms = () => {
+  console.log(process.env.REACT_APP_DOMAIN);
   return (
     <Auth0Provider
-      domain="ylfb.eu.auth0.com"
-      clientId="zrlZu6p7qj4yAdHBVzmFyygtZoYTIyfW"
-      redirectUri="http://localhost:3000/admin"
-      audience="https://ylfb.eu.auth0.com/api/v2/"
-      scope="read:current_user update:current_user_metadata"
+      domain={process.env.REACT_APP_DOMAIN}
+      clientId={process.env.REACT_APP_CLIENTID}
+      redirectUri={process.env.REACT_APP_REDIRECTURI}
+      audience={process.env.REACT_APP_AUDIENCE}
+      scope={process.env.REACT_APP_SCOPE}
     >
       <LoginButton />
       <LogoutButton />

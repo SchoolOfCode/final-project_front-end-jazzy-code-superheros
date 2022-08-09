@@ -34,15 +34,15 @@ const FormData = () => {
   return (
     <Formik
       initialValues={{
-        name: "",
-        address: "",
-        postcode: "",
-        phone: "",
-        email: "",
-        imgUrl: "",
-        needs: "",
-        distance: "",
-        lat_lng: "",
+        name: undefined,
+        address: undefined,
+        postcode: undefined,
+        phone: undefined,
+        email: undefined,
+        imgUrl: undefined,
+        needs: undefined,
+        distance: undefined,
+        lat_lng: undefined,
       }}
       onSubmit={(values, actions) => {
         console.log("These are the values:", values);
