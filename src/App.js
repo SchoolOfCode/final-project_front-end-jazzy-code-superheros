@@ -61,7 +61,7 @@ function App() {
 
   const foodbankName = submitedBank;
 
-  const rootUrl = `https://www.givefood.org.uk/api/2/foodbanks/search/?address=`;
+  const rootUrl = `https://yourlocalfoodbank.herokuapp.com/foodbanks/search/`;
 
   const url = `${rootUrl}${foodbankName}`;
 

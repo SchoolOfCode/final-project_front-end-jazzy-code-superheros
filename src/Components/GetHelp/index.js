@@ -100,20 +100,22 @@ const GetHelp = ({ foodBankData }) => {
         </D>
       </ToggleCardGeneral>
 
-      {foodBankData.urls.homepage ? (
+      {foodBankData?.urls?.homepage ? (
         <ToggleCardGeneral cardTitle={"Specific Information"}>
           <D>
             <p>
               The information on this page is currently quite generic due to all
               of the differing rules.{" "}
             </p>
+            {foodBankData?.urls?.homepage !== undefined ?
+            <>
             <p>
               At this time, for more specific information on your selected
               foodbank please see their website:{" "}
             </p>
             <a href={foodBankData.urls.homepage}>
               {foodBankData.urls.homepage}
-            </a>
+            </a> </>: null }
           </D>
         </ToggleCardGeneral>
       ) : null}
