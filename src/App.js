@@ -20,9 +20,11 @@ import LandingPage from "./Components/LandingPage";
 import ContactPage from "./Components/ContactPage";
 
 function App() {
+
   let [inputFoodBank, setInputFoodBank] = useState();
   let [submitedBank, setSubmitedBank] = useState();
   let [foodBankData, setFoodBankData] = useState();
+
 
   console.log(`App rerenders`);
 
@@ -62,6 +64,7 @@ function App() {
   const url = `${rootUrl}${foodbankName}`;
 
   //Fetch hook to request the data from the API
+
   const searchArray = useFetch(url, foodbankName);
 
   //dev feedback only remove
@@ -78,6 +81,7 @@ function App() {
 
   return (
     <div className="App">
+
       <div className="container">
       {foodBankData ? (
         <Router>
@@ -107,11 +111,7 @@ function App() {
                 />
               }
             ></Route>
-            <Route path="/gethelp" element={<GetHelp 
-            foodBankData={foodBankData} 
-                />
-              }
-            ></Route>
+            <Route path="/gethelp" element={<GetHelp foodBankData={foodBankData} />}></Route>
             <Route
               path="/givehelp"
               element={<GiveHelp foodBankData={foodBankData} />}
@@ -130,6 +130,7 @@ function App() {
             handleChange={handleChange}
             handleClick={handleClick}
             handleEnter={handleEnter}
+
           />
         </div>
       )}

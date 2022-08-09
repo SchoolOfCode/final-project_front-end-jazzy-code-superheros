@@ -3,7 +3,7 @@ import { FaArrowCircleDown } from "react-icons/fa";
 import { FaArrowCircleUp } from "react-icons/fa";
 import "./style.css";
 
-const ToggleCardKids = ({ cardTitle, cardBody, children }) => {
+const ToggleCardGeneral = ({ cardTitle, cardBody, children }) => {
   const [isTogged, setIsTogged] = useState(false);
 
   const handleToggle = () => {
@@ -29,4 +29,4 @@ const ToggleCardKids = ({ cardTitle, cardBody, children }) => {
   );
 };
 
-export default ToggleCardKids;
+export default ToggleCardGeneral;

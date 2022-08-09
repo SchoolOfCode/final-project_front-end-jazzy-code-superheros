@@ -1,5 +1,5 @@
 import { List } from "../List";
-import ToggleCardKids from "../GetHelp/ToggleCardChildren";
+import ToggleCardGeneral from "../GetHelp/ToggleCardGeneral";
 import Button from "../Button";
 import Container from "../Map/Map.js"
 import "./style.css";
@@ -17,18 +17,18 @@ const GiveHelp = ({ foodBankData }) => {
         ></img>
       </div>
 
-      <ToggleCardKids
+      <ToggleCardGeneral
         cardTitle="Donate Your Money"
         cardBody="Any financial contribution you can make will enable us to continue serving our community"
       >
         <Button nameButton="Donate" />
-      </ToggleCardKids>
+      </ToggleCardGeneral>
 
-      <ToggleCardKids cardTitle="Donate Items">
+      <ToggleCardGeneral cardTitle="Donate Items">
         <List foodBankData={foodBankData} />
-      </ToggleCardKids>
+      </ToggleCardGeneral>
 
-      <ToggleCardKids
+      <ToggleCardGeneral
         cardTitle="Donate Your Time"
         cardBody="Placeholder for form"
       />
