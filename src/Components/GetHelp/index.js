@@ -1,6 +1,7 @@
 // import EligibilityCard from "./EligibilityCard";
 // import ToggleCard from "./ToggleCard";
 import ToggleCardGeneral from "./ToggleCardGeneral";
+import Container from "../Map/Map.js";
 import P from "../StyledPara";
 import D from "../StyledDiv";
 import "./style.css";
@@ -18,14 +19,7 @@ const GetHelp = ({ foodBankData }) => {
         ></img>
       </div>
 
-      {/* {getHelpData.map((cardData) => {
-        return (
-          <ToggleCard
-            cardTitle={cardData.cardTitle}
-            cardBody={cardData.cardBody}
-          />
-        );
-      })} */}
+  
 
       <ToggleCardGeneral cardTitle={"Using a Foodbank"}>
         <P>
@@ -123,11 +117,8 @@ const GetHelp = ({ foodBankData }) => {
           </D>
         </ToggleCardGeneral>
       ) : null}
-      <img
-        className="mapImage"
-        src="https://www.givefood.org.uk/needs/at/vauxhall/map.png"
-        alt="map location"
-      />
+      <Container foodBankData={foodBankData}/>
+
     </div>
   );
 };
