@@ -22,7 +22,9 @@ const ToggleCard = ({ cardTitle, cardBody }) => {
         )}
       </button>
       <div className={isTogged ? "togged" : "panel"}>
-        <p className="toggleText">{cardBody}</p>
+        <p style={{ alignText: "justify-content" }} className="toggleText">
+          {cardBody}
+        </p>
       </div>
     </div>
   );
