@@ -9,7 +9,9 @@
 .margin0{
     margin: 0px;
 }
-
+.select-bank:hover{
+    cursor: pointer;
+}
 .landing-container {
     background-color: white;
     height: 100%;
