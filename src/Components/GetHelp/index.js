@@ -74,16 +74,15 @@ const GetHelp = ({ foodBankData }) => {
         <D>
           <p>You will want to have the following information ready: </p>
           <ul>
-            <li>Your name</li>
-            <li>Your address</li>
-            <li>Your telephone number</li>
-            <li>Your number of people in your household</li>
+            <li>- Your name & address</li>
+            <li>- Your telephone number</li>
+            <li>- Your number of people in your household</li>
             <li>
-              Any specific dietary requirements (e.g. if you are a diabetic)
+              - Any specific dietary requirements (e.g. if you are a diabetic)
             </li>
-            <li>What cooking facilities you have</li>
+            <li>- What cooking facilities you have</li>
             <li>
-              What day you need the food parcel for (i.e. on a Tuesday or
+              - What day you need the food parcel for (i.e. on a Tuesday or
               Friday)
             </li>
           </ul>
