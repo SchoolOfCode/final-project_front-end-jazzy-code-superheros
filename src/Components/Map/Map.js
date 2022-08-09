@@ -14,9 +14,9 @@ const MyComponent = ({ foodBankData }) => {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   })
 
-  console.log(foodBankData.lat_lng);
+  // console.log(foodBankData.lat_lng);
   const latLng = foodBankData ? foodBankData.lat_lng.split(`,`) : [];
-  console.log(latLng);
+  // console.log(latLng);
 
  
   let center = {
