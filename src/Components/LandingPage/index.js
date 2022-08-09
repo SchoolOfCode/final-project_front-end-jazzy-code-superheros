@@ -23,9 +23,9 @@ const LandingPage = ({
         handleChange={handleChange}
         handleEnter={handleEnter}
        className="input-landing"/>
-       <div>
-       <h4>Are you an Admin or a FoodBank Manager ?</h4>
-       <button className="loginbutton"> Login / Sign up Now </button>
+       <div className="admincontainer">
+       <h4 className="margin0">Are you an Admin or a FoodBank Manager ?</h4>
+       <button className="loginbutton"> Login <br></br>Sign up Now </button>
        </div>
     
       {searchArray ? <h2 className="margin0">Please select a Food Bank: </h2> : null}
