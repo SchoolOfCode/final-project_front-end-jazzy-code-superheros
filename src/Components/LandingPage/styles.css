@@ -1,0 +1,28 @@
+.search-results {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 90%;
+    background-color: white;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+.margin0{
+    margin: 0px;
+}
+
+.landing-container {
+    background-color: white;
+    height: 100%;
+
+}
+.search-results{
+    background-color: #cfcfcf;
+}
+.search-results-container {
+    padding-bottom: 5px;
+}
+.img-logo{
+    
+    max-height: 300px;
+    max-width: fit-content;
+}

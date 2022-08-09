@@ -20,8 +20,11 @@ import LandingPage from "./Components/LandingPage";
 import ContactPage from "./Components/ContactPage";
 
 function App() {
-  let [inputFoodBank, setInputFoodBank] = useState("waterloo");
-  let [submitedBank, setSubmitedBank] = useState(inputFoodBank);
+
+  let [inputFoodBank, setInputFoodBank] = useState();
+  let [submitedBank, setSubmitedBank] = useState();
+  let [foodBankData, setFoodBankData] = useState();
+
 
   console.log(`App rerenders`);
 
@@ -56,12 +59,13 @@ function App() {
 
   const foodbankName = submitedBank;
 
-  const rootUrl = `https://www.givefood.org.uk/api/2/foodbank/`;
+  const rootUrl = `https://www.givefood.org.uk/api/2/foodbanks/search/?address=`;
 
-  const url = `${rootUrl}${foodbankName}/`;
+  const url = `${rootUrl}${foodbankName}`;
 
   //Fetch hook to request the data from the API
-  const foodBankData = useFetch(url, foodbankName);
+
+  const searchArray = useFetch(url, foodbankName);
 
   //dev feedback only remove
   console.log(`foodBankData from fetch >>>`, foodBankData);
@@ -77,46 +81,61 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
-        <Nav />
-        <Routes>
-          <Route
-            path="/landingpage"
-            element={
-              <LandingPage
-                handleChange={handleChange}
-                handleClick={handleClick}
-                handleEnter={handleEnter}
-              />
-            }
-          ></Route>
-          <Route
-            exact
-            path="/"
-            element={
-              <Home
-                foodBankData={foodBankData}
-                handleChange={handleChange}
-                handleClick={handleClick}
-                handleEnter={handleEnter}
-              />
-            }
-          ></Route>
-          <Route
-            path="/gethelp"
-            element={<GetHelp foodBankData={foodBankData} />}
-          ></Route>
-          <Route
-            path="/givehelp"
-            element={<GiveHelp foodBankData={foodBankData} />}
-          ></Route>
-          <Route
-            path="/contact"
-            element={<ContactPage foodBankData={foodBankData} />}
+
+      <div className="container">
+      {foodBankData ? (
+        <Router>
+          <Nav />
+          <Routes>
+            <Route
+              path="/search"
+              element={
+                <LandingPage
+                  searchArray={searchArray}
+                  setFoodBankData={setFoodBankData}
+                  handleChange={handleChange}
+                  handleClick={handleClick}
+                  handleEnter={handleEnter}
+                />
+              }
+            ></Route>
+            <Route
+              exact
+              path="/"
+              element={
+                <Home
+                  foodBankData={foodBankData}
+                  handleChange={handleChange}
+                  handleClick={handleClick}
+                  handleEnter={handleEnter}
+                />
+              }
+            ></Route>
+            <Route path="/gethelp" element={<GetHelp foodBankData={foodBankData} />}></Route>
+            <Route
+              path="/givehelp"
+              element={<GiveHelp foodBankData={foodBankData} />}
+            ></Route>
+            <Route
+              path="/contact"
+              element={<ContactPage foodBankData={foodBankData} />}
+            />
+          </Routes>
+        </Router>
+      ) : (
+        <div>
+          <LandingPage
+            searchArray={searchArray}
+            setFoodBankData={setFoodBankData}
+            handleChange={handleChange}
+            handleClick={handleClick}
+            handleEnter={handleEnter}
+
           />
-        </Routes>
-      </Router>
+        </div>
+      )}
       <Footer />
+      </div>
     </div>
   );
 }
