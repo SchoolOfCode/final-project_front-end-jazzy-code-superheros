@@ -30,6 +30,7 @@ const MyComponent = ({ foodBankData }) => {
     const bounds = new window.google.maps.LatLngBounds(center);
     map.fitBounds(bounds);
     setMap(map)
+    // eslint-disable-next-line 
   }, [])
   console.log(map)
 
