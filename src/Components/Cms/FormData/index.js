@@ -7,11 +7,11 @@ const FormData = ({ fetchedFoodbankData }) => {
   const [inputNeed, setInputNeed] = useState(null);
   console.log("needs", needs);
 
-  function handleAdd(e) {
-    e.preventDefault();
-    console.log("e.target.value :>> ");
-    // setNeeds([...needs, e.target.value]);
-  }
+  // function handleAdd(e) {
+  //   e.preventDefault();
+  //   console.log("e.target.value :>> ");
+  //   // setNeeds([...needs, e.target.value]);
+  // }
 
   function handleDelete(e) {
     e.preventDefault();
@@ -39,11 +39,36 @@ const FormData = ({ fetchedFoodbankData }) => {
   //    </Formik>
   // )
 
+  const postSubmission = async (formBody) => {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: formBody,
+    };
+    const rootUrl = `https://yourlocalfoodbank.herokuapp.com/foodbank`;
+    let res = await fetch(rootUrl, requestOptions);
+    let data = await res.json();
+    console.log("data :>> ", data);
+  };
+
+  const patchSubmission = async (formBody) => {
+    const requestOptions = {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: formBody,
+    };
+    let foodbankId = "62f3c8d6aef4343e899cbcc9";
+    const rootUrl = `https://yourlocalfoodbank.herokuapp.com/foodbank/${foodbankId}`;
+    let res = await fetch(rootUrl, requestOptions);
+    let data = await res.json();
+    console.log("data :>> ", data);
+  };
+
   return (
     <Formik
       // enableReinitialize={true}
       initialValues={{
-        name: fetchedFoodbankData.name,
+        name: undefined,
         address: undefined,
         postcode: undefined,
         phone: undefined,
@@ -54,11 +79,15 @@ const FormData = ({ fetchedFoodbankData }) => {
         // lat_lng: undefined,
       }}
       onSubmit={(values, actions) => {
-        console.log("These are the values:", values);
         values.needs = needs;
+        console.log("these are the formik needs", values.needs);
+        console.log("These are the values:", values);
+
         alert(JSON.stringify(values, null, 2));
+
+        patchSubmission(JSON.stringify(values, null, 2));
         actions.setSubmitting(false);
-        values.needs = "";
+        values.needs = [];
       }}
       validate={(values) => {
         const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -85,7 +114,9 @@ const FormData = ({ fetchedFoodbankData }) => {
         /* and other goodies */
       }) => {
         console.log(errors);
-        console.log(fetchedFoodbankData);
+        {
+          /* console.log(fetchedFoodbankData); */
+        }
         return (
           <Form name="needs-form" data-netlify="true" method="POST">
             <div className="row">
@@ -97,7 +128,7 @@ const FormData = ({ fetchedFoodbankData }) => {
                   className="inputs"
                   name="name"
                   placeholder="Name"
-                  value={fetchedFoodbankData.name}
+                  // value={fetchedFoodbankData.name}
                 />
                 <p className="error-message">
                   <ErrorMessage name="name" />
@@ -112,7 +143,7 @@ const FormData = ({ fetchedFoodbankData }) => {
                 className="inputs"
                 name="address"
                 placeholder="Address"
-                value={fetchedFoodbankData.address}
+                // value={fetchedFoodbankData.address}
               />
               <p className="error-message">
                 <ErrorMessage name="address" />
@@ -126,7 +157,7 @@ const FormData = ({ fetchedFoodbankData }) => {
                 className="inputs"
                 name="postcode"
                 placeholder="Post-Code"
-                value={fetchedFoodbankData.postcode}
+                // value={fetchedFoodbankData.postcode}
               />
               <p className="error-message">
                 <ErrorMessage name="postcode" />
@@ -141,7 +172,7 @@ const FormData = ({ fetchedFoodbankData }) => {
                   className="inputs"
                   name="phone"
                   placeholder="Phone"
-                  value={fetchedFoodbankData.phone}
+                  // value={fetchedFoodbankData.phone}
                 />
                 <p className="error-message">
                   <ErrorMessage name="phone" />
@@ -157,7 +188,7 @@ const FormData = ({ fetchedFoodbankData }) => {
                   className="inputs"
                   name="email"
                   placeholder="Email"
-                  value={fetchedFoodbankData.email}
+                  // value={fetchedFoodbankData.email}
                 />
                 <p className="error-message">
                   <ErrorMessage name="email" />

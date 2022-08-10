@@ -62,7 +62,7 @@ const Profile = () => {
 
     getUserMetadata();
   }, [getAccessTokenSilently, user?.sub]);
-
+  console.log("userFoodBank :>> ", userFoodBank);
   return (
     isAuthenticated && (
       <div>
