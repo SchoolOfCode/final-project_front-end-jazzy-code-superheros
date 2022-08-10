@@ -61,13 +61,29 @@ function App() {
 
   const foodbankName = submitedBank;
 
-  const rootUrl = `https://yourlocalfoodbank.herokuapp.com/foodbanks/search/`;
+  const rootUrl = `https://yourlocalfoodbank.herokuapp.com/`;
 
-  const url = `${rootUrl}${foodbankName}`;
+  const extSearch = `${rootUrl}foodbanks/search/${foodbankName}`;
+
+  const intSearch = `${rootUrl}foodbank/search/${foodbankName}`
 
   //Fetch hook to request the data from the API
 
-  const searchArray = useFetch(url, foodbankName);
+  const extFetchdata = useFetch(extSearch, foodbankName);
+
+  const intFetchdata = useFetch(intSearch, foodbankName);
+
+  const extFetchdataResults = extFetchdata?.success ? extFetchdata.payload : [];
+
+  //dev feedback only remove
+  console.log(`extFetchdataResults and time >>>`, Date(), extFetchdataResults)
+
+  const intFetchdataResults = intFetchdata?.success ? intFetchdata.payload : [];
+
+  //dev feedback only remove
+  console.log(`intFetchdataResults and time >>>`, Date(), intFetchdataResults)
+
+  const searchArray = intFetchdataResults.concat(extFetchdataResults).filter((item) => item !== null)
 
   //dev feedback only remove
   console.log(`foodBankData from fetch >>>`, foodBankData);

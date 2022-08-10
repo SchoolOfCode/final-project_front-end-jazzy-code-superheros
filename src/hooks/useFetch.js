@@ -14,12 +14,12 @@ const getData = async () => {
     //dev feedback only remove
     console.log(`data in func >>>`, data);
 
-    if (data === "I am so sorry, there doesnt seem to be any results here. Please could you try another search term?") {
-      console.log(`in if within custom hook, this is the time and data >>`, Date(), data)
-      setData(null)
-      return;
-    }
-    console.log(`in if within custom hook, this is the time and data >>`, Date(), data)
+    // if (data === "I am so sorry, there doesnt seem to be any results here. Please could you try another search term?") {
+    //   console.log(`in if within custom hook, this is the time and data >>`, Date(), data)
+    //   setData(null)
+    //   return;
+    // }
+    console.log(`within custom hook, this is the time and data >>`, Date(), data)
     setData(data);
   };
   //Render the data with the home page
