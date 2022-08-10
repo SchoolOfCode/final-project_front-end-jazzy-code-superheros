@@ -47,7 +47,7 @@ const FormData = ({ fetchedFoodbankData }) => {
         phone: undefined,
         email: undefined,
         imgUrl: undefined,
-        needs: needs,
+        needs: undefined,
         distance: undefined,
         lat_lng: undefined,
       }}
