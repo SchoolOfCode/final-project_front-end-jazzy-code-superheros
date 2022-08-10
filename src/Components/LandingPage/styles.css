@@ -71,8 +71,8 @@ html {
 .text {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: absolute;
-    top: 47%;
-    left: 50%;
+    top: 55%;
+    left: 45%;
     transform: translate(-50%, -50%);
     text-align: start;
     color:  #333333;
@@ -80,7 +80,7 @@ html {
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color:  #333333;
     animation: fadeIn 2s;
 
@@ -90,13 +90,14 @@ p {
     font-size: 1.1em;
     font-weight: 2em;
     color:  #333333;
-    width: 70%;
+    width: 75%;
     animation: fadeIn 3s; 
 }
 
 h2 {
-    font-size: 1em;
+    font-size: 0.8em;
     color:  #333333;
+    width: 75%;
     animation: fadeIn 4s;
 
 }
@@ -109,4 +110,5 @@ Input {
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
+
 

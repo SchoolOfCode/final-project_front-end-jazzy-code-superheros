@@ -1,6 +1,5 @@
 import "./styles.css";
 import Input from "../Input/Input";
-import Button from "../Button/index.js";
 import eggsBGMobile from "../../img/eggsBGMobile.jpg";
 import logo from "../../img/logo.png";
 
@@ -37,8 +36,6 @@ const LandingPage = ({
             looking to use our free service to connect with your local community
             click on the About Us button below. 
           </h2>
-          <Button />
-
         </div>
       </div>
       <div className="foodbank-list">
