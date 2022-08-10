@@ -79,7 +79,12 @@ const FormData = ({ fetchedFoodbankData }) => {
                 <label htmlFor="name">Name: </label>
               </div>
               <div className="col-75">
-                <Field className="inputs" name="name" placeholder="Name" />
+                <Field
+                  className="inputs"
+                  name="name"
+                  placeholder="Name"
+                  value={fetchedFoodbankData.name}
+                />
                 <p className="error-message">
                   <ErrorMessage name="name" />
                 </p>
@@ -89,7 +94,12 @@ const FormData = ({ fetchedFoodbankData }) => {
               <label htmlFor="address">Address: </label>
             </div>
             <div className="col-75">
-              <Field className="inputs" name="address" placeholder="Address" />
+              <Field
+                className="inputs"
+                name="address"
+                placeholder="Address"
+                value={fetchedFoodbankData.address}
+              />
               <p className="error-message">
                 <ErrorMessage name="address" />
               </p>
@@ -102,6 +112,7 @@ const FormData = ({ fetchedFoodbankData }) => {
                 className="inputs"
                 name="postcode"
                 placeholder="Post-Code"
+                value={fetchedFoodbankData.postcode}
               />
               <p className="error-message">
                 <ErrorMessage name="postcode" />
@@ -112,7 +123,12 @@ const FormData = ({ fetchedFoodbankData }) => {
                 <label htmlFor="phone">Phone </label>
               </div>
               <div className="col-75">
-                <Field className="inputs" name="phone" placeholder="Phone" />
+                <Field
+                  className="inputs"
+                  name="phone"
+                  placeholder="Phone"
+                  value={fetchedFoodbankData.phone}
+                />
                 <p className="error-message">
                   <ErrorMessage name="phone" />
                 </p>
@@ -123,7 +139,12 @@ const FormData = ({ fetchedFoodbankData }) => {
                 <label htmlFor="email">Email</label>
               </div>
               <div className="col-75">
-                <Field className="inputs" name="email" placeholder="Email" />
+                <Field
+                  className="inputs"
+                  name="email"
+                  placeholder="Email"
+                  value={fetchedFoodbankData.email}
+                />
                 <p className="error-message">
                   <ErrorMessage name="email" />
                 </p>
@@ -138,6 +159,7 @@ const FormData = ({ fetchedFoodbankData }) => {
                   className="inputs"
                   name="imgurl"
                   placeholder="Image Url"
+                  value={fetchedFoodbankData.imgurl}
                 />
                 <p className="error-message">
                   <ErrorMessage name="imgurl" />
@@ -162,10 +184,10 @@ const FormData = ({ fetchedFoodbankData }) => {
                 </p>
               </div>
             </div>
-            {needs.map((needsData) => {
+            {fetchedFoodbankData.needs.map((needsData) => {
               return (
                 <p>
-                  {needsData.name}
+                  {needsData}
                   <button value={needsData.id} onClick={handleDelete}>
                     -
                   </button>
@@ -182,6 +204,7 @@ const FormData = ({ fetchedFoodbankData }) => {
                   className="inputs"
                   name="distance"
                   placeholder="Distance"
+                  value={fetchedFoodbankData.distance_mi}
                 />
                 <p className="error-message">
                   <ErrorMessage name="distance" />
@@ -197,6 +220,7 @@ const FormData = ({ fetchedFoodbankData }) => {
                   className="inputs"
                   name="lat_lng"
                   placeholder="Latitude and Longitude"
+                  value={fetchedFoodbankData.lat_lng}
                 />
                 <p className="error-message">
                   <ErrorMessage name="lat_lng" />
