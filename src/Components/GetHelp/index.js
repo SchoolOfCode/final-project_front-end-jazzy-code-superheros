@@ -2,7 +2,6 @@
 // import ToggleCard from "./ToggleCard";
 import ToggleCardGeneral from "./ToggleCardGeneral";
 import Container from "../Map/Map.js";
-import P from "../StyledPara";
 import D from "../StyledDiv";
 import "./style.css";
 import StyleD from "../MotionDiv";
@@ -22,16 +21,18 @@ const GetHelp = ({ foodBankData }) => {
 
       <StyleD delay={0.1}>
         <ToggleCardGeneral cardTitle={"Using a Foodbank"}>
-          <P>
-            Life is unpredictable, and everyone faces unexpected challenges. We
-            know it can be hard to ask for help. It absolutely shouldn't be;
-            regardless, it can be. <br />
-            <br />
-            Foodbanks rely on the support of their local communities to support
-            people in crisis, which is why they are often best placed to help
-            you in your area.
-          </p>
-        </D>
+          <D>
+            <p>
+
+              Life is unpredictable, and everyone faces unexpected challenges. We
+              know it can be hard to ask for help. It absolutely shouldn't be;
+              regardless, it can be. <br />
+              <br />
+              Foodbanks rely on the support of their local communities to support
+              people in crisis, which is why they are often best placed to help
+              you in your area.
+            </p>
+          </D>
       </ToggleCardGeneral>
 
       </StyleD>
