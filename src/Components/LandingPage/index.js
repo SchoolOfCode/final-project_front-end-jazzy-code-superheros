@@ -29,6 +29,7 @@ const LandingPage = ({
        </div>
     
       {searchArray ? <h2 className="margin0">Please select a Food Bank: </h2> : null}
+      <div className="Result">
       {array.map((item, index) => {
         return (
           <div className="search-results-container">
@@ -44,6 +45,7 @@ const LandingPage = ({
           </div>
         );
       })}
+      </div>
     </div>
   );
 };
