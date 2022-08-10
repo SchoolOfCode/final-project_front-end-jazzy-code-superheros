@@ -1,14 +1,16 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import needsData from "./needsData";
+// import needsData from "./needsData";
 import { useState } from "react";
-import { nanoid } from "nanoid";
 
 const FormData = ({ fetchedFoodbankData }) => {
   const [needs, setNeeds] = useState(fetchedFoodbankData.needs);
+  const [inputNeed, setInputNeed] = useState(null);
   console.log("needs", needs);
 
   function handleAdd(e) {
     e.preventDefault();
+    console.log("e.target.value :>> ");
+    // setNeeds([...needs, e.target.value]);
   }
 
   function handleDelete(e) {
@@ -79,6 +81,7 @@ const FormData = ({ fetchedFoodbankData }) => {
         /* and other goodies */
       }) => {
         console.log(errors);
+        console.log(values.needs);
         return (
           <Form name="needs-form" data-netlify="true" method="POST">
             <div className="row">
@@ -185,7 +188,15 @@ const FormData = ({ fetchedFoodbankData }) => {
                   onChange={handleChange}
                 />
 
-                <button onClick={handleAdd}>+</button>
+                <button
+                  onClick={() => {
+                    setNeeds([values.needs, ...needs]);
+                    values.needs = "";
+                  }}
+                  type="submit"
+                >
+                  +
+                </button>
                 <p className="error-message">
                   <ErrorMessage name="needs" />
                 </p>
