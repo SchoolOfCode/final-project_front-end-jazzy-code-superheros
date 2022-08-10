@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { useFetch } from "../../../hooks/useFetch";
 
 import FormData from "../FormData";
 
 const Profile = () => {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
   const [userMetadata, setUserMetadata] = useState(null);
-  const [userFoodBank, setUserFoodBank] = useState();
+  const [userFoodBank, setUserFoodBank] = useState("vauxhall");
 
+  const fetchedFoodbankData = useFetch(
+    `https://yourlocalfoodbank.herokuapp.com/foodbanks/search/${userFoodBank}/`,
+    userMetadata
+  );
+
+  console.log(fetchedFoodbankData);
   useEffect(() => {
     const getUserMetadata = async () => {
       const domain = "ylfb.eu.auth0.com";
@@ -41,15 +48,16 @@ const Profile = () => {
   return (
     isAuthenticated && (
       <div>
-        <img src={user.picture} alt={user.name} />
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
+        <h1>Admin Page</h1>
+        <p>Your foodbank: {userFoodBank}</p>
+
+        <FormData fetchedFoodbankData={fetchedFoodbankData[0]}></FormData>
+        <h2>Username: {user.name}</h2>
+        <p>User Email: {user.email}</p>
         <h3>User Metadata</h3>
         {userMetadata ? (
           <>
             <pre>{JSON.stringify(userMetadata, null, 2)}</pre>
-            <FormData></FormData>
-            <p>Your foodbank: {userFoodBank}</p>
           </>
         ) : (
           "No user metadata defined"

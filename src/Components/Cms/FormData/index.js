@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import needsData from "./needsData";
 import { useState } from "react";
 
-const FormData = () => {
+const FormData = ({ fetchedFoodbankData }) => {
   const [needs, setNeeds] = useState(needsData);
 
   function handleAdd(e) {
@@ -34,7 +34,7 @@ const FormData = () => {
   return (
     <Formik
       initialValues={{
-        name: undefined,
+        name: fetchedFoodbankData.name,
         address: undefined,
         postcode: undefined,
         phone: undefined,
