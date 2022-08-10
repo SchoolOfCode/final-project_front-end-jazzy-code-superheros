@@ -70,7 +70,6 @@ function App() {
   //Fetch hook to request the data from the API
 
   const extFetchdata = useFetch(extSearch, foodbankName);
-
   const intFetchdata = useFetch(intSearch, foodbankName);
 
   const extFetchdataResults = extFetchdata?.success ? extFetchdata.payload : [];
