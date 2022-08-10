@@ -48,15 +48,17 @@ const FormData = ({ fetchedFoodbankData }) => {
         postcode: undefined,
         phone: undefined,
         email: undefined,
-        imgUrl: undefined,
+        // imgUrl: undefined,
         needs: undefined,
-        distance: undefined,
-        lat_lng: undefined,
+        // distance: undefined,
+        // lat_lng: undefined,
       }}
       onSubmit={(values, actions) => {
         console.log("These are the values:", values);
+        values.needs = needs;
         alert(JSON.stringify(values, null, 2));
         actions.setSubmitting(false);
+        values.needs = "";
       }}
       validate={(values) => {
         const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -78,10 +80,12 @@ const FormData = ({ fetchedFoodbankData }) => {
         handleBlur,
         handleSubmit,
         isSubmitting,
+        submitForm,
+
         /* and other goodies */
       }) => {
         console.log(errors);
-        console.log(values.needs);
+        console.log(fetchedFoodbankData);
         return (
           <Form name="needs-form" data-netlify="true" method="POST">
             <div className="row">
@@ -160,7 +164,7 @@ const FormData = ({ fetchedFoodbankData }) => {
                 </p>
               </div>
             </div>
-            <div className="row">
+            {/* <div className="row">
               <div className="col-25">
                 <label htmlFor="imgurl">Image Url </label>
               </div>
@@ -175,7 +179,7 @@ const FormData = ({ fetchedFoodbankData }) => {
                   <ErrorMessage name="imgurl" />
                 </p>
               </div>
-            </div>
+            </div> */}
             <div className="row">
               <div className="col-25">
                 <label htmlFor="needs">Needs </label>
@@ -189,11 +193,11 @@ const FormData = ({ fetchedFoodbankData }) => {
                 />
 
                 <button
+                  type="button"
                   onClick={() => {
                     setNeeds([values.needs, ...needs]);
                     values.needs = "";
                   }}
-                  type="submit"
                 >
                   +
                 </button>
@@ -212,7 +216,7 @@ const FormData = ({ fetchedFoodbankData }) => {
                 </p>
               );
             })}
-
+            {/* 
             <div className="row">
               <div className="col-25">
                 <label htmlFor="distance">Distance </label>
@@ -244,12 +248,13 @@ const FormData = ({ fetchedFoodbankData }) => {
                   <ErrorMessage name="lat_lng" />
                 </p>
               </div>
-            </div>
+            </div> */}
             <div className="col-100">
               <button
                 type="submit"
                 disabled={isSubmitting}
                 className="submit-admin"
+                onClick={submitForm}
               >
                 Send
               </button>
