@@ -64,28 +64,48 @@ const FormData = ({ fetchedFoodbankData }) => {
     console.log("data :>> ", data);
   };
 
+  const getModifiedValues = (values, initialValues) => {
+    let modifiedValues = {};
+
+    if (values) {
+      Object.entries(values).forEach((entry) => {
+        let key = entry[0];
+        let value = entry[1];
+
+        if (value !== initialValues[key]) {
+          modifiedValues[key] = value;
+        }
+      });
+    }
+
+    return modifiedValues;
+  };
+
+  let initialValues = {
+    name: "",
+    address: "",
+    postcode: "",
+    phone: "",
+    email: "",
+    // imgUrl: undefined,
+    needs: "",
+    // distance: undefined,
+    // lat_lng: undefined,
+  };
+
   return (
     <Formik
       // enableReinitialize={true}
-      initialValues={{
-        name: undefined,
-        address: undefined,
-        postcode: undefined,
-        phone: undefined,
-        email: undefined,
-        // imgUrl: undefined,
-        needs: undefined,
-        // distance: undefined,
-        // lat_lng: undefined,
-      }}
+      initialValues={initialValues}
       onSubmit={(values, actions) => {
         values.needs = needs;
         console.log("these are the formik needs", values.needs);
         console.log("These are the values:", values);
+        let modifiedVals = getModifiedValues(values, initialValues);
+        console.log("modded", modifiedVals);
+        alert(JSON.stringify(modifiedVals, null, 2));
 
-        alert(JSON.stringify(values, null, 2));
-
-        patchSubmission(JSON.stringify(values, null, 2));
+        patchSubmission(JSON.stringify(modifiedVals, null, 2));
         actions.setSubmitting(false);
         values.needs = [];
       }}
