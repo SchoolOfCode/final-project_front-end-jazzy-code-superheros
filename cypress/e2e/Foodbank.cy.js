@@ -1,3 +1,10 @@
+
+   Cypress.on('uncaught:exception', (err, runnable) => {
+   // returning false here prevents Cypress from
+ // failing the test
+   return false
+   })
+
 describe('visiting the website', () => {
   it('passes', () => {
     cy.visit('https://your-local-foodbank.netlify.app/')
@@ -10,8 +17,9 @@ describe('visiting the website', () => {
     // which are the two default items.
   
     cy.visit('https://your-local-foodbank.netlify.app/')
-    cy.get('button').then(($button) => {
-      return new Cypress.Promise((resolve, reject) => {
-        // do something custom here
-      })
-    })})
+    cy.get('#inputbox').click('center').type('camden')
+    cy.get(".button-input").click('center').then(() => {
+      console.log("This is to check the log")  // Log to check the async behaviour
+  })
+
+  });
