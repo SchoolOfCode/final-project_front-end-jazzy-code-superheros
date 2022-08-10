@@ -4,7 +4,8 @@ import { useState } from "react";
 import { nanoid } from "nanoid";
 
 const FormData = ({ fetchedFoodbankData }) => {
-  const [needs, setNeeds] = useState(needsData);
+  const [needs, setNeeds] = useState(fetchedFoodbankData.needs);
+  console.log("needs", needs);
 
   function handleAdd(e) {
     e.preventDefault();
@@ -13,7 +14,11 @@ const FormData = ({ fetchedFoodbankData }) => {
   function handleDelete(e) {
     e.preventDefault();
 
-    setNeeds(needs.filter((item) => item.id !== Number(e.target.value)));
+    setNeeds(needs.filter((item, index) => index !== Number(e.target.value)));
+
+    // setNeeds(needs.filter((item) => item.id !== Number(e.target.value)));
+    console.log("needs", needs);
+    console.log("e.target.value :>> ", e.target.value);
   }
   // return (
   //   <Formik
@@ -34,6 +39,7 @@ const FormData = ({ fetchedFoodbankData }) => {
 
   return (
     <Formik
+      // enableReinitialize={true}
       initialValues={{
         name: fetchedFoodbankData.name,
         address: undefined,
@@ -41,7 +47,7 @@ const FormData = ({ fetchedFoodbankData }) => {
         phone: undefined,
         email: undefined,
         imgUrl: undefined,
-        needs: undefined,
+        needs: needs,
         distance: undefined,
         lat_lng: undefined,
       }}
@@ -185,13 +191,11 @@ const FormData = ({ fetchedFoodbankData }) => {
                 </p>
               </div>
             </div>
-            {fetchedFoodbankData.needs.map((needsData, index) => {
-              console.log(index);
-
+            {needs.map((needsData, index) => {
               return (
                 <p key={index}>
                   {needsData}
-                  <button value={needsData.id} onClick={handleDelete}>
+                  <button value={index} onClick={handleDelete}>
                     -
                   </button>
                 </p>
