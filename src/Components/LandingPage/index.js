@@ -1,5 +1,6 @@
 import "./styles.css";
 import Input from "../Input/Input";
+import Button from "../Button/index.js";
 import eggsBGMobile from "../../img/eggsBGMobile.jpg";
 import logo from "../../img/logo.png";
 
@@ -9,6 +10,7 @@ const LandingPage = ({
   handleEnter,
   setFoodBankData,
   searchArray,
+
 }) => {
   const array = searchArray ? searchArray.slice(0, 5) : [];
   console.log("Landing page rerenders");
@@ -33,8 +35,10 @@ const LandingPage = ({
           <h2>
             For general information or if you're a charitable organisation
             looking to use our free service to connect with your local community
-            (click here button)
+            click on the About Us button below. 
           </h2>
+          <Button />
+
         </div>
       </div>
       <div className="foodbank-list">
