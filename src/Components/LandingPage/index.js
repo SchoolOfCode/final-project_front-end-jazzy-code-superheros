@@ -37,9 +37,11 @@ const LandingPage = ({
               key={index}
               onClick={() => setFoodBankData(searchArray[index])}
             >
-              <h3 className="select-bank">{item.name}</h3>
-              <p>{item.address}</p>
-              <p>Distance from you {item.distance_mi.toFixed(1)} miles</p>
+              <h3 className="select-bank">{item?.name}</h3>
+              <p>{item?.address}</p>
+              {item?.distance_mi ? 
+              <p>Distance from you {item?.distance_mi?.toFixed(1)} miles</p> :
+              null}
             </div>
           </div>
         );
