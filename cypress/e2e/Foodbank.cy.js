@@ -23,13 +23,15 @@ describe('visiting the website', () => {
   });
 
   
-  it('Search with a postcode and wait to see if it will display the results', () => {
+  it('Search with a postcode and wait to see if it will display the results and if the next page renders', () => {
     cy.visit('https://your-local-foodbank.netlify.app/')
     cy.get('#inputbox').click('center').type('nw5 2dp')
     cy.get(".button-input").click('center').then(() => {
       cy.contains('Please select a Food Bank:')
       cy.get('.search-results-container').should('not.have.text', 'Lewisham')
       cy.get('.search-results-container').should('have.length', 5)
-      cy.get('.search-results-container').contains('Chalk Farm').click()
+      cy.get('.search-results-container').contains('Chalk Farm').click().then(() =>{
+        cy.get('.ButtonContainer').contains('Give Help')
+      })
   })
 });
