@@ -68,7 +68,7 @@ const Profile = () => {
       <div>
         <h1>Admin Page</h1>
         <p>Your foodbank: {userFoodBank}</p>
-        <FormData fetchedFoodbankData={foodbankData[0]}></FormData>
+        <FormData fetchedFoodbankData={foodbankData.payload[0]}></FormData>
         <h2>Username: {user.name}</h2>
         <p>User Email: {user.email}</p>
         <h3>User Metadata</h3>

@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import needsData from "./needsData";
 import { useState } from "react";
+import { nanoid } from "nanoid";
 
 const FormData = ({ fetchedFoodbankData }) => {
   const [needs, setNeeds] = useState(needsData);
@@ -184,9 +185,11 @@ const FormData = ({ fetchedFoodbankData }) => {
                 </p>
               </div>
             </div>
-            {fetchedFoodbankData.needs.map((needsData) => {
+            {fetchedFoodbankData.needs.map((needsData, index) => {
+              console.log(index);
+
               return (
-                <p>
+                <p key={index}>
                   {needsData}
                   <button value={needsData.id} onClick={handleDelete}>
                     -
