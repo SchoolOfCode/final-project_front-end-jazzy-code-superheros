@@ -118,8 +118,8 @@ const GetHelp = ({ foodBankData }) => {
                 At this time, for more specific information on your selected
                 foodbank please see their website:{" "}
               </p>
-              <a href={foodBankData.urls.homepage}>
-                {foodBankData.urls.homepage}
+              <a href={foodBankData.homepage}>
+                {foodBankData.homepage}
               </a>
             </D>
           </ToggleCardGeneral>
