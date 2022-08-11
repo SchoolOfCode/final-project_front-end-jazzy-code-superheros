@@ -4,23 +4,12 @@ import { useState } from "react";
 
 const FormData = ({ fetchedFoodbankData }) => {
   const [needs, setNeeds] = useState(fetchedFoodbankData.needs);
-  const [inputNeed, setInputNeed] = useState(null);
   console.log("needs", needs);
-
-  // function handleAdd(e) {
-  //   e.preventDefault();
-  //   console.log("e.target.value :>> ");
-  //   // setNeeds([...needs, e.target.value]);
-  // }
 
   function handleDelete(e) {
     e.preventDefault();
 
     setNeeds(needs.filter((item, index) => index !== Number(e.target.value)));
-
-    // setNeeds(needs.filter((item) => item.id !== Number(e.target.value)));
-    console.log("needs", needs);
-    console.log("e.target.value :>> ", e.target.value);
   }
   // return (
   //   <Formik
@@ -57,7 +46,7 @@ const FormData = ({ fetchedFoodbankData }) => {
       headers: { "Content-Type": "application/json" },
       body: formBody,
     };
-    let foodbankId = "62f3c8d6aef4343e899cbcc9";
+    let foodbankId = "";
     const rootUrl = `https://yourlocalfoodbank.herokuapp.com/foodbank/${foodbankId}`;
     let res = await fetch(rootUrl, requestOptions);
     let data = await res.json();
@@ -106,18 +95,19 @@ const FormData = ({ fetchedFoodbankData }) => {
         alert(JSON.stringify(modifiedVals, null, 2));
 
         patchSubmission(JSON.stringify(modifiedVals, null, 2));
+        // postSubmission(JSON.stringify(modifiedVals, null, 2));
         actions.setSubmitting(false);
         values.needs = [];
       }}
       validate={(values) => {
         const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
         const errors = {};
-        if (!values.name) {
-          errors.name = "Name Required";
-        }
-        if (!values.email || !emailRegex.test(values.email)) {
-          errors.email = "Valid Email Required";
-        }
+        // if (!values.name) {
+        //   errors.name = "Name Required";
+        // }
+        // if (!values.email || !emailRegex.test(values.email)) {
+        //   errors.email = "Valid Email Required";
+        // }
         return errors;
       }}
     >

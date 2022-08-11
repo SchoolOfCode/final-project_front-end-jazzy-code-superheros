@@ -9,7 +9,7 @@ const Profile = () => {
   const [userMetadata, setUserMetadata] = useState(null);
   const [userFoodBank, setUserFoodBank] = useState("vauxhall");
   const [foodbankData, setFoodbankData] = useState(null);
-
+  const [foodbankId, setFoodbankId] = useState("62f4cd5bfd2ea8e0823cdb64");
   // const fetchedFoodbankData = useFetch(
   //   `https://yourlocalfoodbank.herokuapp.com/foodbanks/search/${userFoodBank}/`,
   //   userMetadata
@@ -26,9 +26,12 @@ const Profile = () => {
 
       setFoodbankData(data);
     };
-    const url = `https://yourlocalfoodbank.herokuapp.com/foodbanks/search/${userFoodBank}/`;
-    getData(url);
-  }, [userFoodBank]);
+    // const rootUrl = `https://yourlocalfoodbank.herokuapp.com/foodbanks/search/${userFoodBank}/`;
+    const rootUrl = `https://yourlocalfoodbank.herokuapp.com/foodbank/${foodbankId}`;
+    console.log("rootUrl :>> ", rootUrl);
+    // console.log("userMetadata :>> ", foodbankId);
+    getData(rootUrl);
+  }, [userMetadata]);
 
   // console.log(fetchedFoodbankData);
 
@@ -55,6 +58,7 @@ const Profile = () => {
 
         setUserMetadata(user_metadata);
         setUserFoodBank(user_metadata.foodbank);
+        setFoodbankId(userMetadata.foodbank_id);
       } catch (e) {
         console.log(e.message);
       }
@@ -63,22 +67,37 @@ const Profile = () => {
     getUserMetadata();
   }, [getAccessTokenSilently, user?.sub]);
   console.log("userFoodBank :>> ", userFoodBank);
+  console.log("userMetadata :>> ", userMetadata);
   return (
     isAuthenticated && (
       <div>
-        <h1>Admin Page</h1>
-        <p>Your foodbank: {userFoodBank}</p>
+        <h1>Admin</h1>
+        <p>
+          <span style={{ "font-weight": "bold" }}>Foodbank:</span>{" "}
+          {foodbankData.payload[0].name}
+          <br />
+          <span style={{ "font-weight": "bold" }}>Address:</span>{" "}
+          {foodbankData.payload[0].address}
+          <br />
+          <span style={{ "font-weight": "bold" }}>Phone:</span>{" "}
+          {foodbankData.payload[0].phone}
+          <br />
+          <span style={{ "font-weight": "bold" }}>Email:</span>{" "}
+          {foodbankData.payload[0].email}
+        </p>
         <FormData fetchedFoodbankData={foodbankData.payload[0]}></FormData>
-        <h2>Username: {user.name}</h2>
+        <hr />
+        <br />
+        <h3>Username: {user.name}</h3>
         <p>User Email: {user.email}</p>
-        <h3>User Metadata</h3>
+        {/* <h3>User Metadata</h3>
         {userMetadata ? (
           <>
             <pre>{JSON.stringify(userMetadata, null, 2)}</pre>
           </>
         ) : (
           "No user metadata defined"
-        )}
+        )} */}
       </div>
     )
   );
