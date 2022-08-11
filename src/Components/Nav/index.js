@@ -23,7 +23,7 @@ export const Nav = () => {
               alt="Your Local Food Bank Logo"
             />
           </div>
-
+          {/* eslint-disable-next-line */}
           <a href="#" className="toggleButton" onClick={handleToggle}>
             <span className="bar" />
 

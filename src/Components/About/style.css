@@ -1,17 +1,28 @@
 .AboutUsContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  gap: 10px;
-  width: 100%;
+  height: 300px;
+
+
+  background-color: white;
+  padding: 15px;
+
+  font-family: 'roboto';
+
+
 }
 
 .ImgAboutUs {
+  border-radius: 0px;
   height: 300px;
-  width: 350px;
-  border-radius: 10px;
+
+  width: 100%;
+  object-fit: cover;
 }
+
+
 
 .TextContainer {
   align-self: center;
@@ -23,6 +34,7 @@
 
 .justify {
   text-align: center;
+
 }
 
 .TextContainer>h3 {
@@ -32,6 +44,8 @@
 .Message {
   max-width: 600px;
 }
+
+
 
 @media (max-width: 800px) {
   .AboutUsContainer {
@@ -46,5 +60,24 @@
     height: 150px;
     width: 100%;
     object-fit: cover;
+  }
+
+  .AboutUsContainer {
+
+
+    font-family: 'roboto';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 10px;
+    width: 90%;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+
+    font-family: 'roboto';
+
+
   }
 }

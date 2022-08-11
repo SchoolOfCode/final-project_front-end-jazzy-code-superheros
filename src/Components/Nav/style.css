@@ -109,6 +109,10 @@
 @media(min-width: 800px) {
 
 
+  #navLinks li:hover {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+  }
 
   .toggleButton {
 

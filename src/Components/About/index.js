@@ -1,14 +1,17 @@
 import "./style.css";
-import vegetables from "../../img/vegetables.jpg";
+import Button from "../Button";
 
 //The props from the home page are being passed down to render on the About Us component, This page on line 10 is being condicional
 //Because of the async function on the home page
 const AboutUs = ({ foodBankData }) => {
-  console.log(`within the AboutUs component this is the time and foodBankData >>`, Date(), foodBankData);
+  console.log(
+    `within the AboutUs component this is the time and foodBankData >>`,
+    Date(),
+    foodBankData
+  );
   return (
     <div className="AboutUsContainer">
-      <img className="ImgAboutUs" src={vegetables} alt="vegetables" />
-
+      <h1> {foodBankData ? foodBankData.name : null} </h1>
       {foodBankData ? (
         <div className="TextContainer">
           {/* <h3>Your Support is Really Powerful.​</h3> */}
@@ -19,8 +22,6 @@ const AboutUs = ({ foodBankData }) => {
             the difference YOU can make "
           </p> */}
 
-          <br></br>
-
           <p className="justify">
             <b>Address: </b>
             {foodBankData.address}
@@ -29,17 +30,19 @@ const AboutUs = ({ foodBankData }) => {
           <p className="justify">
             <b>Email:</b> {foodBankData.email}
           </p>
-          {foodBankData?.urls?.homepage !== undefined ? 
-          <p className="justify">
-            <b>Website:</b>{" "}
-            <a href={foodBankData.urls.homepage}>
-              {foodBankData.urls.homepage}
-            </a>
-          </p> : null}
+          {foodBankData?.urls?.homepage !== undefined ? (
+            <p className="justify">
+              <b>Website:</b>{" "}
+              <a href={foodBankData.urls.homepage}>
+                {foodBankData.urls.homepage}
+              </a>
+            </p>
+          ) : null}
 
           <p className="justify">
             <b>Phone:</b> {foodBankData.phone}
           </p>
+          <Button nameButton="Change Foodbank" onClick={() => {}} />
         </div>
       ) : null}
     </div>
