@@ -42,7 +42,7 @@ const GiveHelp = ({ foodBankData }) => {
               Your local foodbank will be grateful for whatever you can share.
               However, there are usually items that are more in need.
             </p>
-            <p style={{ "font-weight": "bold" }}>
+            <p style={{ "fontWeight": "bold" }}>
               If {foodBankData.name} has any special requests we have listed
               them below:
             </p>

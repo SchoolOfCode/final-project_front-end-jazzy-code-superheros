@@ -13,8 +13,8 @@ const LandingPage = ({
   searchArray,
 }) => {
   const array = searchArray ? searchArray.slice(0, 5) : [];
-  console.log("Landing page rerenders");
-  console.log(searchArray);
+  //console.log("Landing page rerenders");
+  //console.log(`searchArray >>`, searchArray);
   return (
     <div className="landing-container">
       <img src={foodbanklogo} className="img-logo" alt="logo"></img>
@@ -35,10 +35,10 @@ const LandingPage = ({
       {searchArray ? <h2 className="margin0">Please select a Food Bank: </h2> : null}
       {array.map((item, index) => {
         return (
-          <div className="search-results-container">
+          <div key={index} className="search-results-container">
             <div
               className="search-results"
-              key={index}
+              
               onClick={() => setFoodBankData(searchArray[index])}
             >
               <Link className='landingPageLink' to="/">
