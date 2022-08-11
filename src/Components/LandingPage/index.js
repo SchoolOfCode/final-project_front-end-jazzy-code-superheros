@@ -2,6 +2,7 @@ import "./styles.css";
 import Input from "../Input/Input";
 import Button from "../Button/index.js";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import eggsBGMobile from "../../img/eggsBGMobile.jpg";
 import logo from "../../img/logo.png";
 
@@ -23,8 +24,8 @@ const LandingPage = ({
       <div className="intro">
         <img src={eggsBGMobile} className="background-img" alt="" />
         <img src={logo} className="logo" alt="logo" />
-        <div className="text">
-          <h1>We're here to help connect people to their local foodbanks</h1>
+        <div className="landing-text">
+          <h1 className="h1-landing">We're here to help connect people to their local foodbanks</h1>
           <p className="h1-p">
             To see what's available in your area search using your postcode or
             town below
@@ -35,7 +36,7 @@ const LandingPage = ({
             handleEnter={handleEnter}
             className="input-landing"
           />
-          <h2>
+          <h2 className="h2-landing">
             For general information or if you're a charitable organisation
             looking to use our free service to connect with your local community
             click on the About Us button below.
@@ -51,12 +52,14 @@ const LandingPage = ({
         </div>
       </div>
       <div className="admin-container">
-        <h3>Are you an Admin or a FoodBank Manager?</h3>
-        <button className="loginbutton"> Login <br></br>Sign up Now </button>  
+        <h3 className="h3-landing">Are you an Admin or a FoodBank Manager?</h3>
+        <Link to="/admin">
+          <button className="loginbutton"> Login <br></br>Sign up Now </button>  
+        </Link>
       </div>
       <div className="foodbank-list">
         {searchArray ? (
-          <h2 className="margin0">Please select a Food Bank: </h2>
+          <h4 className="h4-landing">Please select a Food Bank: </h4>
         ) : null}
         {array.map((item, index) => {
           return (
@@ -65,9 +68,13 @@ const LandingPage = ({
                 className="search-results"
                 onClick={() => setFoodBankData(searchArray[index])}
               >
-                <h4 className="select-bank">{item.name}</h4>
-                <p>{item.address}</p>
-                <p>Distance from you {item.distance_mi.toFixed(1)} miles</p>
+                <Link className='landingPageLink' to="/">
+                  <h4 className="select-bank">{item.name}</h4>
+                 <p>{item.address}</p>
+                 {item?.distance_mi ?
+                  <p>Distance from you {item?.distance_mi?.toFixed(1)} miles</p> :
+                  null}
+                </Link>
               </div>
             </section>
           );
