@@ -9,12 +9,37 @@ img {
 
 .gethelp {
   background-color: #cfcfcf;
-  padding-top: 20px;
+
   padding-bottom: 20px;
+
 }
 
-.page-header {
+.get-help-header {
   margin-top: 0;
+  text-align: center;
+  color: #006D77;
+  text-decoration: underline overline;
+  text-underline-offset: 10px;
+  text-decoration-color: #83C5BE;
+
+
+  text-decoration-thickness: 4px;
+  font-size: 30px;
+
+}
+
+.get-help-header-div {
+
+  padding: 25px;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: fit-content;
+
+
+}
+
+.imageDiv {
+  margin-bottom: 20px;
 }
 
 
