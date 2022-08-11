@@ -7,7 +7,10 @@ import "./style.css";
 import StyleD from "../MotionDiv";
 
 const GetHelp = ({ foodBankData }) => {
-  console.log("foodBankData :>> ", foodBankData);
+  
+  //dev feedback only remove
+  //console.log("foodBankData :>> ", foodBankData);
+  
   return (
     <div className="gethelp">
       <h1 className="page-header">Get Help</h1>

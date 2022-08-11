@@ -4,11 +4,12 @@ import Button from "../Button";
 //The props from the home page are being passed down to render on the About Us component, This page on line 10 is being condicional
 //Because of the async function on the home page
 const AboutUs = ({ foodBankData }) => {
-  console.log(
-    `within the AboutUs component this is the time and foodBankData >>`,
-    Date(),
-    foodBankData
-  );
+
+  
+  //dev feedback only remove
+  //console.log(`within the AboutUs component this is the time and foodBankData >>`, Date(), foodBankData);
+  
+
   return (
     <div className="AboutUsContainer">
       <h1> {foodBankData ? foodBankData.name : null} </h1>
