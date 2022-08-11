@@ -1,17 +1,41 @@
-.ButtonContainer{
+.ButtonContainer {
     display: flex;
     flex-direction: row;
     gap: 20px;
     justify-content: center;
-  
+
 }
 
-.Home{
+.Home {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background-color: #cfcfcf;
 }
 
-.Home>h1{
-    margin:10px
+.Home>h1 {
+    margin: 10px
+}
+
+.ImgAboutUs {
+    margin-bottom: 15px;
+
+
+}
+
+
+
+@media(min-width: 800px) {
+
+    .half-page {
+        width: 50%;
+
+    }
+
+    #home-page-flex-div {
+        display: flex;
+        flex-direction: rows;
+    }
+
+
 }

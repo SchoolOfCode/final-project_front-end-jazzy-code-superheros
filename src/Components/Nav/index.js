@@ -23,16 +23,15 @@ export const Nav = () => {
               alt="Your Local Food Bank Logo"
             />
           </div>
-
-          <a href="/" className="toggleButton" onClick={handleToggle}>
+          {/* eslint-disable-next-line */}
+          <a href="#" className="toggleButton" onClick={handleToggle}>
             <span className="bar" />
 
             <span className="bar" />
 
             <span className="bar" />
           </a>
-
-          <div id="navLinks" className={isActive ? `active` : null}>
+          <div id="navLinks" className={!isActive ? `active` : null}>
             <ul>
               <li>
                 <Link to="/">Home</Link>

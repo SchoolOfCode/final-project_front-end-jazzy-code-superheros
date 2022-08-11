@@ -26,18 +26,16 @@ const GetHelp = ({ foodBankData }) => {
         <ToggleCardGeneral cardTitle={"Using a Foodbank"}>
           <D>
             <p>
-
-              Life is unpredictable, and everyone faces unexpected challenges. We
-              know it can be hard to ask for help. It absolutely shouldn't be;
-              regardless, it can be. <br />
+              Life is unpredictable, and everyone faces unexpected challenges.
+              We know it can be hard to ask for help. It absolutely shouldn't
+              be; regardless, it can be. <br />
               <br />
-              Foodbanks rely on the support of their local communities to support
-              people in crisis, which is why they are often best placed to help
-              you in your area.
+              Foodbanks rely on the support of their local communities to
+              support people in crisis, which is why they are often best placed
+              to help you in your area.
             </p>
           </D>
-      </ToggleCardGeneral>
-
+        </ToggleCardGeneral>
       </StyleD>
       <StyleD delay={0.2}>
         <ToggleCardGeneral cardTitle={"Eligibility & Referrals"}>
@@ -121,9 +119,7 @@ const GetHelp = ({ foodBankData }) => {
                 At this time, for more specific information on your selected
                 foodbank please see their website:{" "}
               </p>
-              <a href={foodBankData.homepage}>
-                {foodBankData.homepage}
-              </a>
+              <a href={foodBankData.homepage}>{foodBankData.homepage}</a>
             </D>
           </ToggleCardGeneral>
         </StyleD>

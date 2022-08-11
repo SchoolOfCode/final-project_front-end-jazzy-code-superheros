@@ -23,13 +23,14 @@ import Cms from "./Components/Cms";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
-
   let [inputFoodBank, setInputFoodBank] = useState();
   let [submitedBank, setSubmitedBank] = useState();
   let [foodBankData, setFoodBankData] = useState();
 
 
+
   //console.log(`App rerenders`);
+
 
   function handleChange(e) {
     setInputFoodBank(e.target.value);
@@ -67,7 +68,7 @@ function App() {
 
   const extSearch = `${rootUrl}foodbanks/search/${foodbankName}`;
 
-  const intSearch = `${rootUrl}foodbank/search/${foodbankName}`
+  const intSearch = `${rootUrl}foodbank/search/${foodbankName}`;
 
   //Fetch hook to request the data from the API
 
@@ -77,14 +78,20 @@ function App() {
   const extFetchdataResults = extFetchdata?.success ? extFetchdata.payload : [];
 
   //dev feedback only remove
+
   //console.log(`extFetchdataResults and time >>>`, Date(), extFetchdataResults)
+
 
   const intFetchdataResults = intFetchdata?.success ? intFetchdata.payload : [];
 
   //dev feedback only remove
+
   //console.log(`intFetchdataResults and time >>>`, Date(), intFetchdataResults)
 
-  const searchArray = intFetchdataResults.concat(extFetchdataResults).filter((item) => item !== null)
+
+  const searchArray = intFetchdataResults
+    .concat(extFetchdataResults)
+    .filter((item) => item !== null);
 
   //dev feedback only remove
   //console.log(`searchArray >>>`, searchArray);
@@ -103,10 +110,10 @@ function App() {
   console.log("isLoggedIn >>>", isAuthenticated);
   return (
     <div className="App">
-
       <div className="container">
         <Router>
           {foodBankData ? <Nav /> : null}
+
           <Routes>
             <Route path="/admin" element={<Cms />}></Route>
             <Route path="/">
@@ -136,7 +143,10 @@ function App() {
                       />
                     }
                   ></Route>
-                  <Route path="/gethelp" element={<GetHelp foodBankData={foodBankData} />}></Route>
+                  <Route
+                    path="/gethelp"
+                    element={<GetHelp foodBankData={foodBankData} />}
+                  ></Route>
                   <Route
                     path="/givehelp"
                     element={<GiveHelp foodBankData={foodBankData} />}

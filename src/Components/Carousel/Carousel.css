@@ -5,12 +5,13 @@
   justify-content: center;
   align-items: center;
 }
+
 .Carousel-Container {
   color: white;
   background-color: #252a34;
   display: flex;
   flex-direction: column;
-  border-radius: 3px;
+
 }
 
 .img-slider {
@@ -19,16 +20,20 @@
   border-radius: 50%;
   object-fit: cover;
 }
+
 .text-container {
   font-size: medium;
 }
-.slide-active > h3 {
+
+.slide-active>h3 {
   margin: 10px;
 }
-.slide-active > p {
+
+.slide-active>p {
   font-size: 15px;
 }
-.testimony-container{
+
+.testimony-container {
   width: 300px;
 }
 
@@ -43,6 +48,7 @@
   user-select: none;
   position: absolute;
 }
+
 .left-arrow {
   height: 30px;
   width: 50px;
@@ -54,16 +60,19 @@
   user-select: none;
   position: absolute;
 }
+
 @media (min-width: 800px) {
   .slide {
     opacity: 0;
     transition-duration: 1s ease;
   }
+
   .slide-active {
     opacity: 1;
     transition-duration: 1s;
     transform: scale(1.01);
   }
+
   .slide-active:hover {
     opacity: 2;
     transition-duration: 2s;
@@ -79,6 +88,7 @@
     justify-content: center;
     align-items: center;
   }
+
   .img-slider {
     width: 100px;
     height: 100px;
@@ -86,7 +96,7 @@
     object-fit: cover;
   }
 
-  .testimony-container{
+  .testimony-container {
     width: 300px;
   }
 }
