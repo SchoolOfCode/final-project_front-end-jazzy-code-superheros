@@ -50,6 +50,10 @@ const LandingPage = ({
           </div>
         </div>
       </div>
+      <div className="admin-container">
+        <h3>Are you an Admin or a FoodBank Manager?</h3>
+        <button className="loginbutton"> Login <br></br>Sign up Now </button>  
+      </div>
       <div className="foodbank-list">
         {searchArray ? (
           <h2 className="margin0">Please select a Food Bank: </h2>
@@ -62,7 +66,7 @@ const LandingPage = ({
                 key={index}
                 onClick={() => setFoodBankData(searchArray[index])}
               >
-                <h3 className="select-bank">{item.name}</h3>
+                <h4 className="select-bank">{item.name}</h4>
                 <p>{item.address}</p>
                 <p>Distance from you {item.distance_mi.toFixed(1)} miles</p>
               </div>

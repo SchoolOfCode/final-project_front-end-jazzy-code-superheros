@@ -100,7 +100,6 @@ h2 {
     color:  #333333;
     width: 80%;
     animation: fadeIn 4s;
-
 }
 
 Input {
@@ -111,6 +110,29 @@ Input {
     justify-content: center;
     padding-top: 5%;
     animation: fadeIn 6s;
+}
+.admin-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #73a397;
+    animation: fadeIn 7s;
+}
+
+h3 {
+    font-size: 1em;
+    color: white;
+    
+}
+
+.loginbutton{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-color: grey;
+    width: 100px;
+    align-self: center;
+    font-size: 0.7em;
 }
 
 @keyframes fadeIn {
