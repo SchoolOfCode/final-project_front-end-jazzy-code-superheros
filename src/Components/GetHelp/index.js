@@ -4,6 +4,7 @@ import ToggleCardGeneral from "./ToggleCardGeneral";
 import Container from "../Map/Map.js";
 import D from "../StyledDiv";
 import "./style.css";
+
 import StyleD from "../MotionDiv";
 
 const GetHelp = ({ foodBankData }) => {

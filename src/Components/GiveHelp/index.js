@@ -4,22 +4,22 @@ import Button from "../Button";
 import Container from "../Map/Map.js";
 import "./style.css";
 import D from "../StyledDiv";
-import  StyleD  from "../MotionDiv";
-
-
+import StyleD from "../MotionDiv";
 
 const GiveHelp = ({ foodBankData }) => {
   return (
     <div className="give-help">
-      <h1>Give Help</h1>
-
       <div className="imageDiv">
         <img
           className="bannerImage"
-          src="https://i.imgur.com/VWCzSCo.jpeg"
+          src="https://i.imgur.com/cXoOOUr.jpg"
           alt="container cover, people giving help"
         ></img>
       </div>
+      <div className="give-help-header-div">
+        <h1 className="give-help-header">Give Help</h1>
+      </div>
+
       <StyleD delay={0.1}>
         <ToggleCardGeneral
           cardTitle="Donate Money"
@@ -42,7 +42,7 @@ const GiveHelp = ({ foodBankData }) => {
               Your local foodbank will be grateful for whatever you can share.
               However, there are usually items that are more in need.
             </p>
-            <p style={{ "fontWeight": "bold" }}>
+            <p style={{ fontWeight: "bold" }}>
               If {foodBankData.name} has any special requests we have listed
               them below:
             </p>
