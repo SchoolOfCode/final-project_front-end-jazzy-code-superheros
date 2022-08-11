@@ -51,6 +51,6 @@ it('testing the carousel on the home page', () => {
 })
 
 it('Visit the admin page and press the button log in', () => {
-  cy.visit('https://your-local-foodbank.netlify.app/admin').contains('Log In').click('center')
+  cy.visit('https://your-local-foodbank.netlify.app/admin').contains('Log In')
 });
 
