@@ -67,7 +67,7 @@ html {
 
 
 
-.text {
+.landing-text {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: absolute;
     top: 55%;
@@ -77,7 +77,7 @@ html {
 
 }
 
-h1 {
+.h1-landing {
     font-size: 1.4rem;
     color:  #333333;
     text-align: start;
@@ -94,7 +94,7 @@ h1 {
     animation: fadeIn 3s; 
 }
 
-h2 {
+.h2-landing {
     text-align: start;
     font-size: 0.9em;
     color:  #333333;
@@ -120,7 +120,7 @@ Input {
     animation: fadeIn 7s;
 }
 
-h3 {
+.h3-landing {
     font-size: 1em;
     color: white;
     
