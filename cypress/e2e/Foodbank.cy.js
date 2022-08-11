@@ -35,3 +35,37 @@ describe('visiting the website', () => {
       })
   })
 });
+
+it('testing the carousel on the home page', () => {
+  cy.visit('https://your-local-foodbank.netlify.app/')
+  cy.get('#inputbox').click('center').type('nw5 2dp')
+  cy.get(".button-input").click('center').then(() => {
+    cy.contains('Please select a Food Bank:')
+    cy.get('.search-results-container').should('not.have.text', 'Lewisham')
+    cy.get('.search-results-container').should('have.length', 5)
+    cy.get('.search-results-container').contains('Camden').click().then(() =>{
+      cy.get('.ButtonContainer').contains('Give Help')
+      cy.get('.right-arrow').click().then(() =>{cy.get('.Carousel').should('have.text', `JoshSupporter" We are on the search for new volunteers to join our team, check out the ways you can get involved "`)})
+    })
+})
+})
+
+it('Visit the admin page and press the button log in', () => {
+  cy.visit('https://your-local-foodbank.netlify.app/admin').contains('Log In')
+});
+
+
+describe('visiting the website and testing the get help page', () => {
+  it('passes', () => {
+    cy.visit('https://your-local-foodbank.netlify.app/')
+    cy.get('#inputbox').click('center').type('camden')
+    cy.get(".button-input").click('center').then(() => {
+      cy.contains('Please select a Food Bank:')
+      cy.get('.search-results-container').should('not.have.text', 'Lewisham')
+      cy.contains('Camden').click('center')
+      cy.get('button').contains('Get Help').click('center').then(() =>{cy.get('.ToggleCardContainer').should('to.have.length', 5)})
+    
+    
+    })
+  })
+})
