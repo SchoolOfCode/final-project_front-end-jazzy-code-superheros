@@ -75,23 +75,35 @@ Once the necessary nodes have been installed you can spin up the app! First open
 - App
   - Header
     - Navbar
+- Landing page
+  - Input field
+  - Submit button
+  - Result card
 - Home
   - Give help button
+  - Get help button
+  - Information card
+  - Carousel
+- Get Help
+    - Toggle card
+      - Eligibility card
+    - Map
+- Give Help
     - Items List
       - Item 
-    - Enquiry for volunteers form
-  - Get help button
-    - Eligibility criteria card
-    - Map image
-  - Image 
-  - Information card
-    - Address 
-    - Foodbank contact info
-  - Carousel
-  - Footer
+    - Button for volunteers
+    - Map 
+- Contact Page
+  - Contact information
     - Address
-    - Socials
+    - Telephone
+    - Email
+  - Contact Form
+    - Submit button
 - CMS
+  - Form 
+    - Submit button
+
 
 # Custom Hooks
 
@@ -105,38 +117,75 @@ As the url is a parameter this can be used elsewhere for other fetches to get di
 # Components
 
 ## App Component
- Our App component displays these following components:
-   - Header
-   - Navbar
-   - Home
-   - Get Help 
-   - Give Help
-   - Image 
-   - Information card
-   - Carousel
-   - Footer
+ Our App component dynamically displays all of our pure components.
+
+  *State*
+
+  - inputFoodBank
+  - submittedBank
+  - foodBankData
 
   *Behaviour*
 
+  The App component displays our components by providing controlled states to our rendered components using the 'useState' Hook.
+  <br>
+  <br>
+  The App component also has a custom hook called 'useFetch' which we use twice, once to our server to request data from our database and the second, again to our server, but talks to the external API which is then collated to return the search results to the user.
+  <br>
+  <br>
+  It also contains the paths for each route in our navbar component.
+
+  - The ***inputFoodBank*** state is used to set whether a foodbank has been inputted in the input field. This is displayed on our landing page.
+  - The ***submittedFoodBank*** state is used to set a state for any foodbank that is submitted from the input field. This takes in ***inputFoodBank*** and checks for specific data in order to return the correct foodbanks.
+  - The ***foodBankData*** is used to store the data that is returned from the search. 
 
 ---
-## Header Component
+## Navbar Component
 
-*state*
+The Header contains our navbar component as well as our app logo. It has a burger menu nested within the navbar component.
+
+*State*
+
+- isActive
+
+*Behaviour*
+
+- The ***isActive*** state allows us to control whether the navbar is active (opened) or not (closed).
+ 
+
+---
+## Landing Page
+
+The Landing Page is the first page on our app and is what controls the information that we see throughout the rest of the app. It pulls through the Input component.
 
 *props*
 
-*Behaviour*
+- handleChange
+- handleClick
+- handleEnter
+- setFoodBankData
+- searchArray
+
+<br>
+
+The Landing page has a reusable button component and renders the 5 closest foodbanks from the area that is submitted on the search field.
 
 ---
 ## Home
 
-*state*
+The Home Component is the main page of the app and pulls through multiple components including: InputFoodBank, Button, AboutUs, Carousel and Facts. 
 
 *props*
 
+- foodBankData
+- handleChange
+- handleClick
+- handleEnter
+
 *Behaviour*
 
+- The Home Component pulls through each component listed above and renders them as well as props that pass through the ***InputFoodBank*** logic.
+- ***useNavigate*** is used within the button component which allows us to redirect to new pages without using the navbar. 
 
 ---
 ## Carousel
@@ -144,12 +193,15 @@ As the url is a parameter this can be used elsewhere for other fetches to get di
 The carousel is a pure component that displays text and an image.  
 
 *state*
+
 - slide
 
 *props*
+
 - slides
 
 *Behaviour*
+
 - Use slide state to keep track of the number of slides as well as which slide will be displayed. The props being passed down is the data from the CarouselData, so we can know the lenght of it.
 
 ---
@@ -164,61 +216,102 @@ The page will display information on:
 - The process for accessing food vouchers
 - Website
 - (optional) Specific information supplied by the foodbank admin
+- Map
 
+<br>
 
 There is a banner image on the page, and below that  a reusable card component with accordion features is rendered for each info block that is provided. At the bottom of the page is a map displaying the location of the foodbank.
 
-This page still need
+<br>
 
 ### ToggleCard
+
+*State*
+
+- isTogged
+
+*Props*
+
+- cardTitle
+- cardBody
+
+*Behaviour*
+
+- The toggle card is designed to be a resuable accordion card component which takes in title and body props. This card has been designed to display text only. There may be a more generic component created in the future.
+- The card is designed in such a way that should display just the title in a bold green, which opens up to reveal the text when clicked. The arrow symbol (react-icons/fa) should rotate 180º when toggled.
+
+<br> 
+
+### ToggleCardGeneral
 
 *state*
 
 - isTogged
 
-*Behaviour*
-
-The toggle card is designed to be a resuable accordion card component which takes in title and body props. This card has been designed to display text only. There may be a more generic component created in the future.
-
-The card is designed in such a way that should display just the title in a bold green, which opens up to reveal the text when clicked. The arrow symbol (react-icons/fa) should rotate 180º when toggled.
-
----
-## Give Help Section
-
-*state*
-
 *props*
 
+- cardTitle
+- cardBody
+- children
+
 *Behaviour*
 
+- This component works the same way as ***ToggleCard***, however this component takes in children.
+
 ---
-## ListItem Section
+## Give Help Page
+
+This is the page where users will be directed who are looking to access the service of the foodbank.
+
+The page will display information on: 
+
+- Donating money
+- List of items that is needed by the foodbank
+- A volunteer section 
+- Map
+
+*Props*
+
+- foodBankData
+
+A reusable card component with accordion features is rendered for each info block that is provided. At the bottom of the page is a map displaying the location of the foodbank.
+
+<br>
+
+### Item Component
 
 This is a Dumb component that displays a single listed item.
 
-*props*
--ListItemText 
+*Props*
+
+- ListItemText 
 
 *Behaviour*
--It returns an li element based on the props returned. It takes props of ListItemText  which is the text to be displayed within this component
 
----
-## List Section
+- It returns an li element based on the props returned. It takes props of ListItemText  which is the text to be displayed within this component
+
+<br>
+
+### Items List 
 
 This is where we display all of the items our Food bank is in need of and requires as donations.
 
-*props*
+*Props*
 
-foodBankData
+- foodBankData
 
 *Behaviour*
 
--It takes props as the object passed down via prop drilling from the fetch request to the API. It returns a section and ul containing a number of ListItem returned from a map of the data supplied by the API. Based on the structure of the the data supplied by the API it is conditionally split into an array at this level.
+- It takes props as the object passed down via prop drilling from the fetch request to the API. It returns a section and ul containing a number of ListItem returned from a map of the data supplied by the API. Based on the structure of the the data supplied by the API it is conditionally split into an array at this level.
+
+--- 
+## Contact Page
 
 
+--- 
+## CMS
 
-
-
+---
 
 ## Authors
 
