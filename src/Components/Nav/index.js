@@ -17,11 +17,7 @@ export const Nav = () => {
       <div id="innerNavDiv" className="?">
         <nav id="navBar">
           <div id="logo-container">
-            <img
-              id="nav-logo"
-              src={logo}
-              alt="Your Local Food Bank Logo"
-            />
+            <img id="nav-logo" src={logo} alt="Your Local Food Bank Logo" />
           </div>
           {/* eslint-disable-next-line */}
           <a href="#" className="toggleButton" onClick={handleToggle}>
@@ -34,27 +30,39 @@ export const Nav = () => {
           <div id="navLinks" className={!isActive ? `active` : null}>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link onClick={handleToggle} to="/">
+                  Home
+                </Link>
               </li>
 
               <li>
-                <Link to="/search">Search</Link>
+                <Link onClick={handleToggle} to="/search">
+                  Search
+                </Link>
               </li>
 
               <li>
-                <Link to="/gethelp">Get Help</Link>
+                <Link onClick={handleToggle} to="/gethelp">
+                  Get Help
+                </Link>
               </li>
 
               <li>
-                <Link to="/givehelp">Give Help</Link>
+                <Link onClick={handleToggle} to="/givehelp">
+                  Give Help
+                </Link>
               </li>
 
               <li>
-                <Link to="/faq">FAQs</Link>
+                <Link onClick={handleToggle} to="/faq">
+                  FAQs
+                </Link>
               </li>
 
               <li>
-                <Link to="/contact">Contact Us</Link>
+                <Link onClick={handleToggle} to="/contact">
+                  Contact Us
+                </Link>
               </li>
             </ul>
           </div>
