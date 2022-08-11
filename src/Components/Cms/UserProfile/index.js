@@ -29,7 +29,6 @@ const Profile = () => {
     console.log("rootUrl :>> ", rootUrl);
     getData(rootUrl);
   }, [userMetadata]);
-  /* eslint-enable */
 
   console.log("foodbankData :>> ", foodbankData);
   useEffect(() => {
@@ -62,6 +61,7 @@ const Profile = () => {
 
     getUserMetadata();
   }, [getAccessTokenSilently, user?.sub]);
+  /* eslint-enable */
 
   return (
     isAuthenticated && (
