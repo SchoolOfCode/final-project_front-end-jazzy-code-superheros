@@ -312,7 +312,7 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
                 className="submit-admin"
                 onClick={submitForm}
               >
-                Send
+                Update
               </button>
             </div>
           </Form>
