@@ -1,5 +1,5 @@
 import { useState } from "react";
-import foodbanklogo from "../../img/ylfb1.png";
+import logo from "../../img/logo.png";
 
 import { Link } from "react-router-dom";
 
@@ -19,7 +19,7 @@ export const Nav = () => {
           <div id="logo-container">
             <img
               id="nav-logo"
-              src={foodbanklogo}
+              src={logo}
               alt="Your Local Food Bank Logo"
             />
           </div>
