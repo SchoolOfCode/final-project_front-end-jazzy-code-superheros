@@ -16,15 +16,19 @@
 
 }
 .button-input{
-   text-align: center;
-    color:white;
+    color: white;
     background-color: #219D80;
-    font-size: 15px;
-    border-radius: 15px;
-    border-color: #6cd9c0;
-    height: 40px;
-    width: 90px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: none;
+    height: 50px;
+    padding-left: 35px;
+    padding-right: 35px;
     margin-bottom: 10px;
+    font-family: "roboto";
+    font-weight: 500;
+    margin-top: 14px;
+    margin-bottom: 14px;
 }
 .button-input:hover{
  cursor: pointer;
