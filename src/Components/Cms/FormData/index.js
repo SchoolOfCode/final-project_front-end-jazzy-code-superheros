@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 // import needsData from "./needsData";
 import { useState } from "react";
-
+import Button from "../AdminButton/index.js";
 const FormData = ({ fetchedFoodbankData, foodbankId }) => {
   const [needs, setNeeds] = useState(fetchedFoodbankData.needs);
   console.log("needs", needs);
@@ -238,7 +238,7 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
                   onChange={handleChange}
                 />
 
-                <button
+                <Button
                   type="button"
                   onClick={() => {
                     setNeeds([values.needs, ...needs]);
@@ -246,7 +246,7 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
                   }}
                 >
                   +
-                </button>
+                </Button>
                 <p className="error-message">
                   <ErrorMessage name="needs" />
                 </p>
@@ -257,9 +257,9 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
                 return (
                   <p key={index} className="needs-item">
                     {needsData}
-                    <button value={index} onClick={handleDelete}>
+                    <Button value={index} onClick={handleDelete}>
                       -
-                    </button>
+                    </Button>
                   </p>
                 );
               })}
