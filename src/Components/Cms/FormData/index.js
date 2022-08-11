@@ -128,7 +128,12 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
           /* console.log(fetchedFoodbankData); */
         }
         return (
-          <Form name="needs-form" data-netlify="true" method="POST">
+          <Form
+            name="needs-form"
+            data-netlify="true"
+            method="POST"
+            className="admin-form"
+          >
             <div className="row">
               <div className="col-25">
                 <label htmlFor="name">Name: </label>
@@ -160,13 +165,13 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
               </p>
             </div>
             <div className="col-25">
-              <label htmlFor="postcode">Post-code </label>
+              <label htmlFor="postcode">Postcode: </label>
             </div>
             <div className="col-75">
               <Field
                 className="inputs"
                 name="postcode"
-                placeholder="Post-Code"
+                placeholder="Postcode"
                 // value={fetchedFoodbankData.postcode}
               />
               <p className="error-message">
@@ -175,7 +180,7 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
             </div>
             <div className="row">
               <div className="col-25">
-                <label htmlFor="phone">Phone </label>
+                <label htmlFor="phone">Phone: </label>
               </div>
               <div className="col-75">
                 <Field
@@ -191,7 +196,7 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
             </div>
             <div className="row">
               <div className="col-25">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">Email: </label>
               </div>
               <div className="col-75">
                 <Field
@@ -223,7 +228,7 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
             </div> */}
             <div className="row">
               <div className="col-25">
-                <label htmlFor="needs">Needs </label>
+                <label htmlFor="needs">Needs: </label>
               </div>
               <div className="col-75">
                 <Field
@@ -247,16 +252,18 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
                 </p>
               </div>
             </div>
-            {needs.map((needsData, index) => {
-              return (
-                <p key={index}>
-                  {needsData}
-                  <button value={index} onClick={handleDelete}>
-                    -
-                  </button>
-                </p>
-              );
-            })}
+            <div className="needs-container">
+              {needs.map((needsData, index) => {
+                return (
+                  <p key={index} className="needs-item">
+                    {needsData}
+                    <button value={index} onClick={handleDelete}>
+                      -
+                    </button>
+                  </p>
+                );
+              })}
+            </div>
             {/* 
             <div className="row">
               <div className="col-25">
@@ -292,7 +299,7 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
             </div> */}
             <div className="col-100">
               <button
-                type="submit"
+                type="button"
                 disabled={isSubmitting}
                 className="submit-admin"
                 onClick={submitForm}

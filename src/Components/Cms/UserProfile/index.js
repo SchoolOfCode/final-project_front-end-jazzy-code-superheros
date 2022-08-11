@@ -10,10 +10,6 @@ const Profile = () => {
   const [userFoodBank, setUserFoodBank] = useState("vauxhall");
   const [foodbankData, setFoodbankData] = useState(null);
   const [foodbankId, setFoodbankId] = useState("62f4cd5bfd2ea8e0823cdb64");
-  // const fetchedFoodbankData = useFetch(
-  //   `https://yourlocalfoodbank.herokuapp.com/foodbanks/search/${userFoodBank}/`,
-  //   userMetadata
-  // );
 
   useEffect(() => {
     const getData = async (url) => {
@@ -29,11 +25,8 @@ const Profile = () => {
     // const rootUrl = `https://yourlocalfoodbank.herokuapp.com/foodbanks/search/${userFoodBank}/`;
     const rootUrl = `https://yourlocalfoodbank.herokuapp.com/foodbank/${foodbankId}`;
     console.log("rootUrl :>> ", rootUrl);
-    // console.log("userMetadata :>> ", foodbankId);
     getData(rootUrl);
   }, [userMetadata]);
-
-  // console.log(fetchedFoodbankData);
 
   console.log("foodbankData :>> ", foodbankData);
   useEffect(() => {
@@ -66,11 +59,10 @@ const Profile = () => {
 
     getUserMetadata();
   }, [getAccessTokenSilently, user?.sub]);
-  console.log("userFoodBank :>> ", userFoodBank);
-  console.log("userMetadata :>> ", userMetadata);
+
   return (
     isAuthenticated && (
-      <div>
+      <div className="admin-container">
         <h1>Admin</h1>
         <p>
           <span style={{ "font-weight": "bold" }}>Foodbank:</span>{" "}
@@ -90,9 +82,9 @@ const Profile = () => {
           fetchedFoodbankData={foodbankData.payload[0]}
         ></FormData>
         <hr />
-        <br />
         <h3>Username: {user.name}</h3>
         <p>User Email: {user.email}</p>
+        <hr />
         {/* <h3>User Metadata</h3>
         {userMetadata ? (
           <>

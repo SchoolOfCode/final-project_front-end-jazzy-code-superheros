@@ -1,0 +1,18 @@
+.admin-container {
+  max-width: 500px;
+  margin: 15px auto;
+}
+
+.admin-form {
+  /* display: flex;
+  flex-direction: column; */
+  /* flex-shrink: 0;  */
+  width: 400px;
+  margin: 0 auto;
+}
+
+.needs-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
