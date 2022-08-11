@@ -2,6 +2,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogOutButton";
 import Profile from "./UserProfile";
+import "./style.css";
 
 const Cms = () => {
   console.log(process.env.REACT_APP_DOMAIN);

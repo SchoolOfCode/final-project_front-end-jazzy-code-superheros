@@ -1,13 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+// import { useFetch } from "../../../hooks/useFetch";
 
 import FormData from "../FormData";
 
 const Profile = () => {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
   const [userMetadata, setUserMetadata] = useState(null);
-  const [userFoodBank, setUserFoodBank] = useState();
+  const [userFoodBank, setUserFoodBank] = useState("vauxhall");
+  const [foodbankData, setFoodbankData] = useState(null);
+  const [foodbankId, setFoodbankId] = useState("62f4cd5bfd2ea8e0823cdb64");
 
+  useEffect(() => {
+    const getData = async (url) => {
+      const response = await fetch(url);
+
+      const data = await response.json();
+
+      //dev feedback only remove
+      console.log(`data in func >>>`, data);
+
+      setFoodbankData(data);
+    };
+    // const rootUrl = `https://yourlocalfoodbank.herokuapp.com/foodbanks/search/${userFoodBank}/`;
+    const rootUrl = `https://yourlocalfoodbank.herokuapp.com/foodbank/${foodbankId}`;
+    console.log("rootUrl :>> ", rootUrl);
+    getData(rootUrl);
+  }, [userMetadata]);
+
+  console.log("foodbankData :>> ", foodbankData);
   useEffect(() => {
     const getUserMetadata = async () => {
       const domain = "ylfb.eu.auth0.com";
@@ -30,6 +51,7 @@ const Profile = () => {
 
         setUserMetadata(user_metadata);
         setUserFoodBank(user_metadata.foodbank);
+        setFoodbankId(userMetadata.foodbank_id);
       } catch (e) {
         console.log(e.message);
       }
@@ -40,20 +62,37 @@ const Profile = () => {
 
   return (
     isAuthenticated && (
-      <div>
-        <img src={user.picture} alt={user.name} />
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
-        <h3>User Metadata</h3>
+      <div className="admin-container">
+        <h1>Admin</h1>
+        <p>
+          <span style={{ "font-weight": "bold" }}>Foodbank:</span>{" "}
+          {foodbankData.payload[0].name}
+          <br />
+          <span style={{ "font-weight": "bold" }}>Address:</span>{" "}
+          {foodbankData.payload[0].address}
+          <br />
+          <span style={{ "font-weight": "bold" }}>Phone:</span>{" "}
+          {foodbankData.payload[0].phone}
+          <br />
+          <span style={{ "font-weight": "bold" }}>Email:</span>{" "}
+          {foodbankData.payload[0].email}
+        </p>
+        <FormData
+          foodbankId={foodbankId}
+          fetchedFoodbankData={foodbankData.payload[0]}
+        ></FormData>
+        <hr />
+        <h3>Username: {user.name}</h3>
+        <p>User Email: {user.email}</p>
+        <hr />
+        {/* <h3>User Metadata</h3>
         {userMetadata ? (
           <>
             <pre>{JSON.stringify(userMetadata, null, 2)}</pre>
-            <FormData></FormData>
-            <p>Your foodbank: {userFoodBank}</p>
           </>
         ) : (
           "No user metadata defined"
-        )}
+        )} */}
       </div>
     )
   );
