@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 // import needsData from "./needsData";
 import { useState } from "react";
 
-const FormData = ({ fetchedFoodbankData }) => {
+const FormData = ({ fetchedFoodbankData, foodbankId }) => {
   const [needs, setNeeds] = useState(fetchedFoodbankData.needs);
   console.log("needs", needs);
 
@@ -46,7 +46,7 @@ const FormData = ({ fetchedFoodbankData }) => {
       headers: { "Content-Type": "application/json" },
       body: formBody,
     };
-    let foodbankId = "";
+
     const rootUrl = `https://yourlocalfoodbank.herokuapp.com/foodbank/${foodbankId}`;
     let res = await fetch(rootUrl, requestOptions);
     let data = await res.json();

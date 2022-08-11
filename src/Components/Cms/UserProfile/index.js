@@ -85,7 +85,10 @@ const Profile = () => {
           <span style={{ "font-weight": "bold" }}>Email:</span>{" "}
           {foodbankData.payload[0].email}
         </p>
-        <FormData fetchedFoodbankData={foodbankData.payload[0]}></FormData>
+        <FormData
+          foodbankId={foodbankId}
+          fetchedFoodbankData={foodbankData.payload[0]}
+        ></FormData>
         <hr />
         <br />
         <h3>Username: {user.name}</h3>
