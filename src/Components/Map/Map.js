@@ -40,9 +40,9 @@ const MyComponent = ({ foodBankData }) => {
   }, [])
 
   return isLoaded ? (
-    <div ClassName='map'>
+    <div className='map'>
       <GoogleMap 
-        ClassName='map'
+        className='map'
         mapContainerStyle={containerStyle}
         center={center}
         zoom={5}
@@ -60,6 +60,6 @@ const MyComponent = ({ foodBankData }) => {
   
 
       </div>
-  ) : <div ClassName='map'></div>
+  ) : <div className='map'></div>
 }
 export default memo(MyComponent)
