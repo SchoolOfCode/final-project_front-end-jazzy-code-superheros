@@ -24,15 +24,14 @@ export const Nav = () => {
             />
           </div>
 
-          <a href="/" className="toggleButton" onClick={handleToggle}>
+          <a href="#" className="toggleButton" onClick={handleToggle}>
             <span className="bar" />
 
             <span className="bar" />
 
             <span className="bar" />
           </a>
-
-          <div id="navLinks" className={isActive ? `active` : null}>
+          <div id="navLinks" className={!isActive ? `active` : null}>
             <ul>
               <li>
                 <Link to="/">Home</Link>
