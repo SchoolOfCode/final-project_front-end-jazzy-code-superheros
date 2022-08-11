@@ -58,6 +58,7 @@ function App() {
     //console.log(inputBox.value);
 
     setSubmitedBank(inputFoodBank);
+    window.scrollTo(0, 1500);
     // 👇️ clear input field
     inputBox.value = "";
   }
