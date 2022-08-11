@@ -7,9 +7,11 @@ import FormData from "../FormData";
 const Profile = () => {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
   const [userMetadata, setUserMetadata] = useState(null);
-  const [userFoodBank, setUserFoodBank] = useState("vauxhall");
+  // const [userFoodBank, setUserFoodBank] = useState("vauxhall");
   const [foodbankData, setFoodbankData] = useState(null);
   const [foodbankId, setFoodbankId] = useState("62f4cd5bfd2ea8e0823cdb64");
+
+  /* eslint-disable */
 
   useEffect(() => {
     const getData = async (url) => {
@@ -27,6 +29,7 @@ const Profile = () => {
     console.log("rootUrl :>> ", rootUrl);
     getData(rootUrl);
   }, [userMetadata]);
+  /* eslint-enable */
 
   console.log("foodbankData :>> ", foodbankData);
   useEffect(() => {
