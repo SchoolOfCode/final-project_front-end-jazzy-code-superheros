@@ -1,6 +1,7 @@
 import "./style.css";
 import React from "react";
 import ContactCard from "./ContactCard";
+import StyleD from "../MotionDiv";
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
@@ -15,11 +16,14 @@ const ContactPage = ({ foodBankData }) => {
           alt="container cover, people giving help"
         ></img>
       </div>
+      <StyleD delay={0.1}>
       <ContactCard title={foodBankData ? foodBankData.name : null}>
-        <p>Address: {foodBankData ? foodBankData.address : null}</p>
-        <p>Phone: {foodBankData ? foodBankData.phone : null}</p>
-        <p>Email: {foodBankData ? foodBankData.email : null}</p>
+        <p><span style={{"font-weight": "bold"}}>Address:</span> {foodBankData ? foodBankData.address : null}</p>
+        <p><span style={{"font-weight": "bold"}}>Phone:</span> {foodBankData ? foodBankData.phone : null}</p>
+        <p><span style={{"font-weight": "bold"}}>Email:</span> {foodBankData ? foodBankData.email : null}</p>
       </ContactCard>
+      </StyleD>
+      <StyleD delay={0.2}>
       <ContactCard title="Website Admin">
         <p>
           To get in touch with the website administrators, please fill in and
@@ -55,7 +59,7 @@ const ContactPage = ({ foodBankData }) => {
               <Form name="contact" data-netlify="true" method="POST">
                 <div className="row">
                   <div className="col-25">
-                    <label htmlFor="name">Name: </label>
+                    <label htmlFor="name"><span style={{"font-weight": "bold"}}>Name:</span> </label>
                   </div>
                   <div className="col-75">
                     <Field className="inputs" name="name" placeholder="Name" />
@@ -65,7 +69,7 @@ const ContactPage = ({ foodBankData }) => {
                   </div>
                 </div>
                 <div className="col-25">
-                  <label htmlFor="email">Email: </label>
+                  <label htmlFor="email"><span style={{"font-weight": "bold"}}>Email:</span> </label>
                 </div>
                 <div className="col-75">
                   <Field className="inputs" name="email" placeholder="Email" />
@@ -74,7 +78,7 @@ const ContactPage = ({ foodBankData }) => {
                   </p>
                 </div>
                 <div className="col-25">
-                  <label htmlFor="message">Message: </label>
+                  <label htmlFor="message"><span style={{"font-weight": "bold"}}>Message:</span> </label>
                 </div>
                 <div className="col-75">
                   <Field
@@ -96,6 +100,7 @@ const ContactPage = ({ foodBankData }) => {
           </Formik>
         </div>
       </ContactCard>
+      </StyleD>
     </div>
   );
 };

@@ -1,10 +1,9 @@
 import "./style.css";
 
-const Button = ({ nameButton, onClick, type, children }) => {
+const Button = ({ nameButton, onClick }) => {
   return (
-    <button type={type} className="MainButton" onClick={onClick}>
+    <button className="MainButton" onClick={onClick}>
       {nameButton}
-      {children}
     </button>
   );
 };
