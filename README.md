@@ -270,7 +270,7 @@ The page will display information on:
 - A volunteer section 
 - Map
 
-*Props*
+*Props* 
 
 - foodBankData
 
