@@ -4,9 +4,10 @@ import { Nav } from "./Components/Nav";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-//this import no longer required unless we add
-//more functionality - remove once dev complete
-import { useState, useEffect } from "react";
+
+//add useEffect back in if testing whether App unmounts see useEffect 
+//a few lines above the JSX
+import { useState/*, useEffect*/ } from "react";
 
 //custom hooks
 import { useFetch } from "./hooks/useFetch";
@@ -28,7 +29,7 @@ function App() {
   let [foodBankData, setFoodBankData] = useState();
 
 
-  console.log(`App rerenders`);
+  //console.log(`App rerenders`);
 
   function handleChange(e) {
     setInputFoodBank(e.target.value);
@@ -43,7 +44,8 @@ function App() {
       // 👇️ clear input field
       inputBox.value = "";
 
-      console.log(inputFoodBank);
+      //dev feedback only remove
+      //console.log(inputFoodBank);
     }
   }
 
@@ -52,7 +54,7 @@ function App() {
     const inputBox = document.getElementById("inputbox");
 
     // Send value to server
-    console.log(inputBox.value);
+    //console.log(inputBox.value);
 
     setSubmitedBank(inputFoodBank);
     // 👇️ clear input field
@@ -61,25 +63,40 @@ function App() {
 
   const foodbankName = submitedBank;
 
-  const rootUrl = `https://www.givefood.org.uk/api/2/foodbanks/search/?address=`;
+  const rootUrl = `https://yourlocalfoodbank.herokuapp.com/`;
 
-  const url = `${rootUrl}${foodbankName}`;
+  const extSearch = `${rootUrl}foodbanks/search/${foodbankName}`;
+
+  const intSearch = `${rootUrl}foodbank/search/${foodbankName}`
 
   //Fetch hook to request the data from the API
 
-  const searchArray = useFetch(url, foodbankName);
+  const extFetchdata = useFetch(extSearch, foodbankName);
+  const intFetchdata = useFetch(intSearch, foodbankName);
+
+  const extFetchdataResults = extFetchdata?.success ? extFetchdata.payload : [];
 
   //dev feedback only remove
-  console.log(`foodBankData from fetch >>>`, foodBankData);
-  console.log(`inputFoodBank state >>>`, inputFoodBank);
-  console.log(`submitedBank state >>>`, submitedBank);
+  //console.log(`extFetchdataResults and time >>>`, Date(), extFetchdataResults)
+
+  const intFetchdataResults = intFetchdata?.success ? intFetchdata.payload : [];
 
   //dev feedback only remove
-  useEffect(() => {
-    return () => {
-      console.log(`App is unmounting!`);
-    };
-  }, []);
+  //console.log(`intFetchdataResults and time >>>`, Date(), intFetchdataResults)
+
+  const searchArray = intFetchdataResults.concat(extFetchdataResults).filter((item) => item !== null)
+
+  //dev feedback only remove
+  //console.log(`searchArray >>>`, searchArray);
+  //console.log(`inputFoodBank state >>>`, inputFoodBank);
+  //console.log(`submitedBank state >>>`, submitedBank);
+
+  //dev feedback only remove
+  // useEffect(() => {
+  //   return () => {
+  //     console.log(`App is unmounting!`);
+  //   };
+  // }, []);
 
   const { isAuthenticated } = useAuth0();
 

@@ -2,10 +2,10 @@ import { ListItem } from "../ListItem";
 import "./style.css";
 
 export const List = ({ foodBankData }) => {
-  const itemsNeeded = foodBankData ? foodBankData.needs.needs.split(`\n`) : [];
+  const itemsNeeded = foodBankData ? foodBankData.needs : [];
 
   //dev feedback only - remove
-  console.log(itemsNeeded);
+  //console.log(itemsNeeded);
 
   return (
     <section className={foodBankData ? `itemsNeededList` : null}>

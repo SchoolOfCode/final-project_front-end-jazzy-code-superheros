@@ -6,13 +6,13 @@ export const useFetch = (url,dependency) => {
 
   const [data, setData] = useState();
 
-  const getData = async () => {
+const getData = async () => {
     const response = await fetch(url);
 
     const data = await response.json();
 
     //dev feedback only remove
-    console.log(`data in func >>>`, data);
+    //console.log(`within custom hook, this is the time and data >>`, Date(), data)
 
     setData(data);
   };

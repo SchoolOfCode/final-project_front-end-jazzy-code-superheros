@@ -24,15 +24,18 @@ const MyComponent = ({ foodBankData }) => {
     lng: Number(latLng[1])
   }
 
+  // eslint-disable-next-line 
   const [map, setMap] = useState(null)
 
   const onLoad = useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds(center);
-    map.fitBounds(bounds);
+    //const bounds = new window.google.maps.LatLngBounds(center);
+    //map.fitBounds(bounds);
     setMap(map)
     // eslint-disable-next-line 
   }, [])
-  console.log(map)
+  
+  //dev feedback only remove  
+  //console.log(map)
 
 
   const onUnmount = useCallback(function callback(map) {
@@ -40,12 +43,12 @@ const MyComponent = ({ foodBankData }) => {
   }, [])
 
   return isLoaded ? (
-    <div ClassName='map'>
+    <div className='map'>
       <GoogleMap 
-        ClassName='map'
+        className='map'
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={5}
+        zoom={10}
         onLoad={onLoad}
         onUnmount={onUnmount}
         >
@@ -60,6 +63,6 @@ const MyComponent = ({ foodBankData }) => {
   
 
       </div>
-  ) : <div ClassName='map'></div>
+  ) : <div className='map'></div>
 }
 export default memo(MyComponent)

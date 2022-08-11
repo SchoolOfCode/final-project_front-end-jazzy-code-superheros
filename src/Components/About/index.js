@@ -4,7 +4,10 @@ import vegetables from "../../img/vegetables.jpg";
 //The props from the home page are being passed down to render on the About Us component, This page on line 10 is being condicional
 //Because of the async function on the home page
 const AboutUs = ({ foodBankData }) => {
-  console.log(foodBankData);
+  
+  //dev feedback only remove
+  //console.log(`within the AboutUs component this is the time and foodBankData >>`, Date(), foodBankData);
+  
   return (
     <div className="AboutUsContainer">
       <img className="ImgAboutUs" src={vegetables} alt="vegetables" />
@@ -29,13 +32,13 @@ const AboutUs = ({ foodBankData }) => {
           <p className="justify">
             <b>Email:</b> {foodBankData.email}
           </p>
-
+          {foodBankData?.urls?.homepage !== undefined ? 
           <p className="justify">
             <b>Website:</b>{" "}
             <a href={foodBankData.urls.homepage}>
               {foodBankData.urls.homepage}
             </a>
-          </p>
+          </p> : null}
 
           <p className="justify">
             <b>Phone:</b> {foodBankData.phone}

@@ -2,13 +2,15 @@
 // import ToggleCard from "./ToggleCard";
 import ToggleCardGeneral from "./ToggleCardGeneral";
 import Container from "../Map/Map.js";
-import P from "../StyledPara";
 import D from "../StyledDiv";
 import "./style.css";
 import StyleD from "../MotionDiv";
 
 const GetHelp = ({ foodBankData }) => {
-  console.log("foodBankData :>> ", foodBankData);
+  
+  //dev feedback only remove
+  //console.log("foodBankData :>> ", foodBankData);
+  
   return (
     <div className="gethelp">
       <h1 className="page-header">Get Help</h1>
@@ -22,18 +24,20 @@ const GetHelp = ({ foodBankData }) => {
 
       <StyleD delay={0.1}>
         <ToggleCardGeneral cardTitle={"Using a Foodbank"}>
-          <P>
-            Life is unpredictable, and everyone faces unexpected challenges. We
-            know it can be hard to ask for help. It absolutely shouldn't be;
-            regardless, it can be. <br />
-            <br />
-            There are over 2500 foodbanks which are there to act as a support
-            for anyone to lean on when times are tough. Asking for a hand when
-            difficulties arise will not be met with judgement, stigma or pity -
-            these organisations are run with the aim of building a kinder
-            community that checks that nobody is left behind.
-          </P>
-        </ToggleCardGeneral>
+          <D>
+            <p>
+
+              Life is unpredictable, and everyone faces unexpected challenges. We
+              know it can be hard to ask for help. It absolutely shouldn't be;
+              regardless, it can be. <br />
+              <br />
+              Foodbanks rely on the support of their local communities to support
+              people in crisis, which is why they are often best placed to help
+              you in your area.
+            </p>
+          </D>
+      </ToggleCardGeneral>
+
       </StyleD>
       <StyleD delay={0.2}>
         <ToggleCardGeneral cardTitle={"Eligibility & Referrals"}>
@@ -105,7 +109,7 @@ const GetHelp = ({ foodBankData }) => {
         </ToggleCardGeneral>
       </StyleD>
 
-      {foodBankData.urls.homepage ? (
+      {foodBankData?.homepage ? (
         <StyleD delay={0.5}>
           <ToggleCardGeneral cardTitle={"Specific Information"}>
             <D>
@@ -117,8 +121,8 @@ const GetHelp = ({ foodBankData }) => {
                 At this time, for more specific information on your selected
                 foodbank please see their website:{" "}
               </p>
-              <a href={foodBankData.urls.homepage}>
-                {foodBankData.urls.homepage}
+              <a href={foodBankData.homepage}>
+                {foodBankData.homepage}
               </a>
             </D>
           </ToggleCardGeneral>
