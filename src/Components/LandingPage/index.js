@@ -1,6 +1,7 @@
 import "./styles.css";
 import Input from "../Input/Input";
 import foodbanklogo from "../../img/ylfb1.png";
+import { Link } from "react-router-dom";
 
 
 
@@ -24,8 +25,11 @@ const LandingPage = ({
         handleEnter={handleEnter}
        className="input-landing"/>
        <div className="admincontainer">
+       
        <h4 className="margin0">Are you an Admin or a FoodBank Manager ?</h4>
-       <button className="loginbutton"> Login <br></br>Sign up Now </button>
+       <Link to="/admin">
+        <button className="loginbutton"> Login <br></br>Sign up Now </button>
+       </Link>
        </div>
     
       {searchArray ? <h2 className="margin0">Please select a Food Bank: </h2> : null}
@@ -37,11 +41,13 @@ const LandingPage = ({
               key={index}
               onClick={() => setFoodBankData(searchArray[index])}
             >
-              <h3 className="select-bank">{item?.name}</h3>
-              <p>{item?.address}</p>
-              {item?.distance_mi ? 
-              <p>Distance from you {item?.distance_mi?.toFixed(1)} miles</p> :
-              null}
+              <Link className='landingPageLink' to="/">
+                <h3 className="select-bank">{item?.name}</h3>
+                <p>{item?.address}</p>
+                {item?.distance_mi ? 
+                <p>Distance from you {item?.distance_mi?.toFixed(1)} miles</p> :
+                null}
+              </Link>
             </div>
           </div>
         );
