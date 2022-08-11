@@ -34,7 +34,7 @@ const MyComponent = ({ foodBankData }) => {
   }, [])
   
   //dev feedback only remove  
-  console.log(map)
+  //console.log(map)
 
 
   const onUnmount = useCallback(function callback(map) {

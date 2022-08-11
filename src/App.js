@@ -4,7 +4,10 @@ import { Nav } from "./Components/Nav";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import { useState, useEffect } from "react";
+
+//add useEffect back in if testing whether App unmounts see useEffect 
+//a few lines above the JSX
+import { useState/*, useEffect*/ } from "react";
 
 //custom hooks
 import { useFetch } from "./hooks/useFetch";
