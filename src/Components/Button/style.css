@@ -1,11 +1,12 @@
 .MainButton{
+    text-align: center;
     color:white;
     background-color: #219D80;
-    font-size: 20px;
-    border-radius: 10px;
+    font-size: 15px;
+    border-radius: 15px;
     border-color: #6cd9c0;
-    height: 55px;
-    width: 110px;
+    height: 40px;
+    width: 90px;
     margin-bottom: 10px;
 }
 @media (min-width:800px) {

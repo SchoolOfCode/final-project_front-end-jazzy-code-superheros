@@ -1,5 +1,7 @@
 import "./styles.css";
 import Input from "../Input/Input";
+import Button from "../Button/index.js";
+import { useNavigate } from "react-router-dom";
 import eggsBGMobile from "../../img/eggsBGMobile.jpg";
 import logo from "../../img/logo.png";
 
@@ -9,11 +11,13 @@ const LandingPage = ({
   handleEnter,
   setFoodBankData,
   searchArray,
-
 }) => {
   const array = searchArray ? searchArray.slice(0, 5) : [];
   console.log("Landing page rerenders");
   console.log(searchArray);
+
+  const navigate = useNavigate();
+
   return (
     <section>
       <div className="intro">
@@ -21,7 +25,7 @@ const LandingPage = ({
         <img src={logo} className="logo" alt="logo" />
         <div className="text">
           <h1>We're here to help connect people to their local foodbanks</h1>
-          <p>
+          <p className="h1-p">
             To see what's available in your area search using your postcode or
             town below
           </p>
@@ -34,8 +38,16 @@ const LandingPage = ({
           <h2>
             For general information or if you're a charitable organisation
             looking to use our free service to connect with your local community
-            click on the About Us button below. 
+            click on the About Us button below.
           </h2>
+          <div className="about-button">
+            <Button
+              nameButton="About Us"
+              onClick={() => {
+                navigate("/aboutus");
+              }}
+            />
+          </div>
         </div>
       </div>
       <div className="foodbank-list">
@@ -63,4 +75,3 @@ const LandingPage = ({
 };
 
 export default LandingPage;
-

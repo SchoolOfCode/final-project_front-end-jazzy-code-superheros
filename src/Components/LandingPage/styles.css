@@ -52,11 +52,10 @@ html {
     position: block;
     width: 100%;
     height: auto;
-
 }
 
 .logo {
-    width: 80%;
+    width: 100%;
     height: auto;
     align-items: center;
     position: absolute;
@@ -74,7 +73,6 @@ html {
     top: 55%;
     left: 45%;
     transform: translate(-50%, -50%);
-    text-align: start;
     color:  #333333;
 
 }
@@ -82,11 +80,13 @@ html {
 h1 {
     font-size: 1.4rem;
     color:  #333333;
+    text-align: start;
     animation: fadeIn 2s;
 
 }
 
-p {
+.h1-p {
+    text-align: start;
     font-size: 1.1em;
     font-weight: 2em;
     color:  #333333;
@@ -95,9 +95,10 @@ p {
 }
 
 h2 {
-    font-size: 0.8em;
+    text-align: start;
+    font-size: 0.9em;
     color:  #333333;
-    width: 75%;
+    width: 80%;
     animation: fadeIn 4s;
 
 }
@@ -105,10 +106,32 @@ h2 {
 Input {
     animation: fadeIn 5s;
 }
+.about-button {
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+    animation: fadeIn 6s;
+}
 
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
 
+  .search-results {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 90%;
+    background-color: white;
+    border-radius: 5px;
+    margin: 0 auto;
+    text-align: center;
+}
 
+.search-results{
+    background-color: #cfcfcf;
+    text-align: center;
+}
+.search-results-container {
+    padding-bottom: 5px;
+}
