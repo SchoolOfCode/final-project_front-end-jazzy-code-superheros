@@ -24,6 +24,7 @@ const MyComponent = ({ foodBankData }) => {
     lng: Number(latLng[1])
   }
 
+  // eslint-disable-next-line 
   const [map, setMap] = useState(null)
 
   const onLoad = useCallback(function callback(map) {
