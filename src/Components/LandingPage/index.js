@@ -30,16 +30,18 @@ const LandingPage = ({
             To see what's available in your area search using your postcode or
             town below
           </p>
-          <Input
-            handleClick={handleClick}
-            handleChange={handleChange}
-            handleEnter={handleEnter}
-            className="input-landing"
-          />
+          <div className="input-box">
+            <Input
+              handleClick={handleClick}
+              handleChange={handleChange}
+              handleEnter={handleEnter}
+              className="input-landing"
+            />
+          </div>
           <h2 className="h2-landing">
             For general information or if you're a charitable organisation
             looking to use our free service to connect with your local community
-            click on the About Us button below.
+            click on the<br></br> About Us button below.
           </h2>
           <div className="about-button">
             <Button

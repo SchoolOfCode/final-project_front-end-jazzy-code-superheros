@@ -70,7 +70,7 @@ html {
 .landing-text {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: absolute;
-    top: 55%;
+    top: 57%;
     left: 45%;
     transform: translate(-50%, -50%);
     color:  #333333;
@@ -95,14 +95,15 @@ html {
 }
 
 .h2-landing {
-    text-align: start;
-    font-size: 0.9em;
+    text-align: start;    
+    font-size: 0.8em;
     color:  #333333;
     width: 80%;
     animation: fadeIn 4s;
 }
 
-Input {
+.input-box {
+    padding-top: 5%;
     animation: fadeIn 5s;
 }
 .about-button {
@@ -140,7 +141,7 @@ Input {
     100% { opacity: 1; }
   }
 
-  .search-results {
+.search-results {
     margin-top: 30px;
     margin-bottom: 20px;
     width: 90%;
@@ -154,6 +155,7 @@ Input {
     background-color: #cfcfcf;
     text-align: center;
 }
+
 .search-results-container {
     padding-bottom: 5px;
 }
