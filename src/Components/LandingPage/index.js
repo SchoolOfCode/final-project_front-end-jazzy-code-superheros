@@ -35,10 +35,10 @@ const LandingPage = ({
       {searchArray ? <h2 className="margin0">Please select a Food Bank: </h2> : null}
       {array.map((item, index) => {
         return (
-          <div className="search-results-container">
+          <div key={index} className="search-results-container">
             <div
               className="search-results"
-              key={index}
+              
               onClick={() => setFoodBankData(searchArray[index])}
             >
               <Link className='landingPageLink' to="/">
