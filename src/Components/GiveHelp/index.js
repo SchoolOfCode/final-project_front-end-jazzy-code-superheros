@@ -4,9 +4,7 @@ import Button from "../Button";
 import Container from "../Map/Map.js";
 import "./style.css";
 import D from "../StyledDiv";
-import  StyleD  from "../MotionDiv";
-
-
+import StyleD from "../MotionDiv";
 
 const GiveHelp = ({ foodBankData }) => {
   return (
@@ -30,6 +28,10 @@ const GiveHelp = ({ foodBankData }) => {
         this helps with funding further services and community groups to help those in need.
         "
         >
+          <p>
+            Please follow the link below to {foodBankData.name}'s website to
+            find how to donate directly:{" "}
+          </p>
           <a href={foodBankData.homepage} target="_blank" rel="noreferrer">
             <Button nameButton="Donate" />
           </a>
@@ -42,7 +44,7 @@ const GiveHelp = ({ foodBankData }) => {
               Your local foodbank will be grateful for whatever you can share.
               However, there are usually items that are more in need.
             </p>
-            <p style={{ "fontWeight": "bold" }}>
+            <p style={{ fontWeight: "bold" }}>
               If {foodBankData.name} has any special requests we have listed
               them below:
             </p>
