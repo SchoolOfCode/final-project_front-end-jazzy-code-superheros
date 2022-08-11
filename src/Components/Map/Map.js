@@ -27,11 +27,13 @@ const MyComponent = ({ foodBankData }) => {
   const [map, setMap] = useState(null)
 
   const onLoad = useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds(center);
-    map.fitBounds(bounds);
+    //const bounds = new window.google.maps.LatLngBounds(center);
+    //map.fitBounds(bounds);
     setMap(map)
     // eslint-disable-next-line 
   }, [])
+  
+  //dev feedback only remove  
   console.log(map)
 
 
@@ -45,7 +47,7 @@ const MyComponent = ({ foodBankData }) => {
         className='map'
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={5}
+        zoom={10}
         onLoad={onLoad}
         onUnmount={onUnmount}
         >
