@@ -13,8 +13,8 @@ const LandingPage = ({
   searchArray,
 }) => {
   const array = searchArray ? searchArray.slice(0, 5) : [];
-  console.log("Landing page rerenders");
-  console.log(searchArray);
+  //console.log("Landing page rerenders");
+  //console.log(`searchArray >>`, searchArray);
   return (
     <div className="landing-container">
       <img src={foodbanklogo} className="img-logo" alt="logo"></img>

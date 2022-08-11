@@ -4,8 +4,6 @@ import { Nav } from "./Components/Nav";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-//this import no longer required unless we add
-//more functionality - remove once dev complete
 import { useState, useEffect } from "react";
 
 //custom hooks
@@ -28,7 +26,7 @@ function App() {
   let [foodBankData, setFoodBankData] = useState();
 
 
-  console.log(`App rerenders`);
+  //console.log(`App rerenders`);
 
   function handleChange(e) {
     setInputFoodBank(e.target.value);
@@ -43,7 +41,8 @@ function App() {
       // 👇️ clear input field
       inputBox.value = "";
 
-      console.log(inputFoodBank);
+      //dev feedback only remove
+      //console.log(inputFoodBank);
     }
   }
 
@@ -52,7 +51,7 @@ function App() {
     const inputBox = document.getElementById("inputbox");
 
     // Send value to server
-    console.log(inputBox.value);
+    //console.log(inputBox.value);
 
     setSubmitedBank(inputFoodBank);
     // 👇️ clear input field
@@ -75,26 +74,26 @@ function App() {
   const extFetchdataResults = extFetchdata?.success ? extFetchdata.payload : [];
 
   //dev feedback only remove
-  console.log(`extFetchdataResults and time >>>`, Date(), extFetchdataResults)
+  //console.log(`extFetchdataResults and time >>>`, Date(), extFetchdataResults)
 
   const intFetchdataResults = intFetchdata?.success ? intFetchdata.payload : [];
 
   //dev feedback only remove
-  console.log(`intFetchdataResults and time >>>`, Date(), intFetchdataResults)
+  //console.log(`intFetchdataResults and time >>>`, Date(), intFetchdataResults)
 
   const searchArray = intFetchdataResults.concat(extFetchdataResults).filter((item) => item !== null)
 
   //dev feedback only remove
-  console.log(`foodBankData from fetch >>>`, foodBankData);
-  console.log(`inputFoodBank state >>>`, inputFoodBank);
-  console.log(`submitedBank state >>>`, submitedBank);
+  //console.log(`searchArray >>>`, searchArray);
+  //console.log(`inputFoodBank state >>>`, inputFoodBank);
+  //console.log(`submitedBank state >>>`, submitedBank);
 
   //dev feedback only remove
-  useEffect(() => {
-    return () => {
-      console.log(`App is unmounting!`);
-    };
-  }, []);
+  // useEffect(() => {
+  //   return () => {
+  //     console.log(`App is unmounting!`);
+  //   };
+  // }, []);
 
   const { isAuthenticated } = useAuth0();
 
