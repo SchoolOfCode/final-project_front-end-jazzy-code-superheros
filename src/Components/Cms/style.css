@@ -1,6 +1,11 @@
 .admin-container {
   max-width: 500px;
   margin: 15px auto;
+  /* padding: 0 10px 0 10px; */
+}
+
+.submit-butty {
+  padding-top: 15px;
 }
 
 .admin-form {

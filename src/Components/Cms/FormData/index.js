@@ -28,6 +28,9 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
   //    </Formik>
   // )
 
+  // This is the post route, which is currently
+  // not being used for the mvp
+  /* eslint-disable */
   const postSubmission = async (formBody) => {
     const requestOptions = {
       method: "POST",
@@ -39,6 +42,7 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
     let data = await res.json();
     console.log("data :>> ", data);
   };
+  /* eslint-enable */
 
   const patchSubmission = async (formBody) => {
     const requestOptions = {
@@ -99,8 +103,10 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
         actions.setSubmitting(false);
         values.needs = [];
       }}
+      // We have disabled validation for now,
+      // as not necessary for patch requests
       validate={(values) => {
-        const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+        // const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
         const errors = {};
         // if (!values.name) {
         //   errors.name = "Name Required";
@@ -124,9 +130,7 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
         /* and other goodies */
       }) => {
         console.log(errors);
-        {
-          /* console.log(fetchedFoodbankData); */
-        }
+
         return (
           <Form
             name="needs-form"
@@ -253,6 +257,9 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
               </div>
             </div>
             <div className="needs-container">
+              <p style={{ fontWeight: "bold", textAlign: "left" }}>
+                Current list of needs:{" "}
+              </p>
               {needs.map((needsData, index) => {
                 return (
                   <p key={index} className="needs-item">
@@ -297,7 +304,8 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
                 </p>
               </div>
             </div> */}
-            <div className="col-100">
+            <hr />
+            <div className="col-100 submit-butty">
               <button
                 type="button"
                 disabled={isSubmitting}
