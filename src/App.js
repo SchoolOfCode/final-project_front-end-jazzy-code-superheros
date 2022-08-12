@@ -18,6 +18,7 @@ import GetHelp from "./Components/GetHelp";
 import GiveHelp from "./Components/GiveHelp";
 import Footer from "./Components/Footer/footer";
 import LandingPage from "./Components/LandingPage";
+import AboutUsPage from "./Components/AboutUsPage";
 import ContactPage from "./Components/ContactPage";
 import Cms from "./Components/Cms";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -156,8 +157,13 @@ function App() {
                     path="/contact"
                     element={<ContactPage foodBankData={foodBankData} />}
                   />
+                      <Route
+                    path="/AboutUsPage"
+                    element={<AboutUsPage />}
+                  ></Route>
                 </>
               ) : (
+                <>
                 <Route
                   path="/"
                   element={
@@ -170,6 +176,11 @@ function App() {
                     />
                   }
                 />
+                <Route
+                    path="/AboutUsPage"
+                    element={<AboutUsPage />}
+                  ></Route>
+                  </>
               )}
             </Route>
           </Routes>
