@@ -4,7 +4,7 @@ import Button from "../Button/index.js";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import eggsBGMobile from "../../img/eggsBGMobile.jpg";
-import logo from "../../img/logo.png";
+import logo from "../../img/logo1.png";
 
 const LandingPage = ({
   handleChange,
@@ -15,16 +15,19 @@ const LandingPage = ({
 }) => {
   const array = searchArray ? searchArray.slice(0, 5) : [];
   // console.log("Landing page rerenders");
-   console.log(searchArray);
+  // console.log(searchArray);
 
   const navigate = useNavigate();
 
   return (
     <body>
-      <section>
+      <section className="first">
         <div className="intro">
-          <img src={eggsBGMobile} className="background-img" alt="" />
-          <img src={logo} className="logo" alt="logo" />
+          {/* <img src={eggsBGMobile} className="background-img" alt="" /> */}
+          <div className="container-img">
+          {/* <img src={logo} className="logo" alt="logo"  /> */}
+          </div>
+        
           <div className="landing-text">
             <h1 className="h1-landing">
               We're here to help connect people to their local foodbanks
@@ -55,7 +58,6 @@ const LandingPage = ({
               />
             </div>
           </div>
-        </div>
         <div className="admin-container">
           <h3 className="h3-landing">
             Are you an Admin or a FoodBank Manager?
@@ -66,7 +68,8 @@ const LandingPage = ({
               Login <br></br>Sign up Now{" "}
             </button>
           </Link>
-        </div>
+        </div>   
+      </div>
       </section>
       
       <section className="foodbank-list">
