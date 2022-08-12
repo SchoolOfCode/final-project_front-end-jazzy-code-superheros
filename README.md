@@ -20,6 +20,8 @@ This is currently the MVP for Your Local Food Bank, V.1.0:
 - Input for item donations currently needed
 - Contact information
 
+<br>
+
 ## Installation
 
 Clone the two repositories (frontend and backend) down to your machine. Open up two terminals and use one to navigate to front end, and one to navigate to the back.
@@ -55,19 +57,25 @@ Once the necessary nodes have been installed you can spin up the app! First open
  npm start
 ```
 
+<br>
+
 ## Tech Stack
 
 **Languages:** JavaScript, HTML5, CSS3
 <br></br>
 **Libraries & Frameworks:** Node, React.js, Jest, Supertest, React Testing Library
 
+<br>
+
 ## Roadmap
 
 **Upcoming Features:**
 
-- Navbar
-- Home page
-- Get Help section
+- Admin Contact form working
+- Beneficiary log in
+- CMS - Creating your own foodbank 
+
+<br>
 
 ## Component Tree
 
@@ -88,15 +96,13 @@ Once the necessary nodes have been installed you can spin up the app! First open
     - Eligibility card
   - Map
 - Give Help
+  - Toggle Card
   - Items List
     - Item
   - Button for volunteers
   - Map
 - Contact Page
   - Contact information
-    - Address
-    - Telephone
-    - Email
   - Contact Form
     - Submit button
 - CMS
@@ -309,6 +315,31 @@ _Behaviour_
 
 ## Contact Page
 
+This page allows the user to view the selected foodbank's contact information as well as send a message to the website administrators using Formik. 
+
+_State_
+
+- Formik stores its own state (accessible via the values state)
+
+_Props_
+
+- foodBankData
+
+_Behaviour_
+
+- The Contact page stores the formik logic. 
+- ***foodbankData*** is passed down into the Contact Card.
+
+<br>
+
+### Contact Card
+
+A reusable card component that stores text.
+
+_Props_
+
+- props
+
 ---
 
 ## CMS
@@ -316,6 +347,8 @@ _Behaviour_
 This is the page designed for admins of foodbanks to supply and update information about their branch. Currently this only updates via a patch request, with view to build in logic to create new entries when not already in our database.
 
 This page pulls a number of components, mostly relating to Auth0.
+
+<br>
 
 ### AdminButton
 
@@ -327,6 +360,8 @@ _props_
 - type
 - children
 - className
+
+<br>
 
 ### FormData
 
@@ -343,9 +378,13 @@ _Behaviour_
 
 - This page handles the Formik form to take in data from the user. The needs state takes in the array of needs retrieved from the database. This allows the user to add items individually and update the data base when submitted.
 
+<br>
+
 ### LoginButton & LogOutButton
 
 These are buttons pulling in the loginWithRedirect & logout functions from Auth0.
+
+<br>
 
 ### UserProfile
 
@@ -357,6 +396,7 @@ _state_
 - foodbankData
 - foodbankId
 
+---
 ## Authors
 
 - [@Simran Toor](https://www.github.com/simran-toor)
