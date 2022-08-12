@@ -9,7 +9,6 @@
 .contact {
   background-color: #cfcfcf;
   height: 100%;
-  padding-top: 20px;
   padding-bottom: 20px;
 
 }
@@ -53,20 +52,33 @@ img {
 }
 
 .col-100 {
-    text-align: right;
-    width: 100%;
-    margin-top: 5px;
-    
+  text-align: right;
+  width: 100%;
+  margin-top: 5px;
+
+}
+
+textarea {
+  font-family: "roboto";
 }
 
 
 .submit-admin {
-  background-color: #04AA6D;
   color: white;
-  padding: 12px 20px;
+  background-color: #219D80;
+  font-size: 14px;
+  border-radius: 25px;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  height: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+
+  margin-bottom: 10px;
+  font-family: "roboto";
+  font-weight: 500;
+  margin-top: 14px;
+  margin-bottom: 14px;
 }
 
 
@@ -91,6 +103,30 @@ textarea,
   margin: 0 auto;
 }
 
+.contact-header {
+  margin-top: 0;
+  text-align: center;
+  color: #006D77;
+  text-decoration: underline overline;
+  text-underline-offset: 10px;
+  text-decoration-color: #83C5BE;
+
+
+  text-decoration-thickness: 4px;
+  font-size: 30px;
+
+}
+
+.contact-header-div {
+
+  padding: 25px;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: fit-content;
+
+
+}
+
 
 @media(max-width: 800px) {
 
@@ -107,8 +143,8 @@ textarea,
 
   .col-100 {
     text-align: center;
-    
-}
+
+  }
 
   .col-25,
   .col-75,

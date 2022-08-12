@@ -30,7 +30,7 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
 
   // This is the post route, which is currently
   // not being used for the mvp
-  
+
   /* eslint-disable */
   const postSubmission = async (formBody) => {
     const requestOptions = {
@@ -245,12 +245,13 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
 
                 <Button
                   type="button"
+                  className="add-button"
                   onClick={() => {
                     setNeeds([values.needs, ...needs]);
                     values.needs = "";
                   }}
                 >
-                  +
+                  Add
                 </Button>
                 <p className="error-message">
                   <ErrorMessage name="needs" />
@@ -261,11 +262,16 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
               <p style={{ fontWeight: "bold", textAlign: "left" }}>
                 Current list of needs:{" "}
               </p>
+              <br></br>
               {needs.map((needsData, index) => {
                 return (
                   <p key={index} className="needs-item">
                     {needsData}
-                    <Button value={index} onClick={handleDelete}>
+                    <Button
+                      className="minus-button"
+                      value={index}
+                      onClick={handleDelete}
+                    >
                       -
                     </Button>
                   </p>

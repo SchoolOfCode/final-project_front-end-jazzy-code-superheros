@@ -4,22 +4,24 @@ import ToggleCardGeneral from "./ToggleCardGeneral";
 import Container from "../Map/Map.js";
 import D from "../StyledDiv";
 import "./style.css";
+
 import StyleD from "../MotionDiv";
 
 const GetHelp = ({ foodBankData }) => {
-  
   //dev feedback only remove
   //console.log("foodBankData :>> ", foodBankData);
-  
+
   return (
     <div className="gethelp">
-      <h1 className="page-header">Get Help</h1>
       <div className="imageDiv">
         <img
           className="bannerImage"
-          src="https://i.imgur.com/VWCzSCo.jpeg"
+          src="https://i.imgur.com/YeYG3uz.jpg"
           alt="container cover, people giving help"
         ></img>
+      </div>
+      <div className="get-help-header-div">
+        <h1 className="get-help-header">Get Help</h1>
       </div>
 
       <StyleD delay={0.1}>
