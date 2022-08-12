@@ -1,9 +1,16 @@
 import "./style.css";
 import Button from "../Button";
 
+import { useNavigate } from "react-router-dom";
+
+  
+
 //The props from the home page are being passed down to render on the About Us component, This page on line 10 is being condicional
 //Because of the async function on the home page
 const AboutUs = ({ foodBankData }) => {
+
+  const navigate = useNavigate();
+
   //dev feedback only remove
   //console.log(`within the AboutUs component this is the time and foodBankData >>`, Date(), foodBankData);
 
@@ -43,7 +50,7 @@ const AboutUs = ({ foodBankData }) => {
           <p className="justify">
             <b>Phone:</b> {foodBankData.phone}
           </p>
-          <Button nameButton="Change Foodbank" onClick={() => {}} />
+          <Button nameButton="Change Foodbank" onClick={()=> navigate("/search")} />
         </div>
       ) : null}
     </div>
