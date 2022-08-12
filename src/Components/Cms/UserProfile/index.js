@@ -66,7 +66,11 @@ const Profile = () => {
   return (
     isAuthenticated && (
       <div className="admin-container">
-        <h1>Admin</h1>
+        <h1 id="admin-header">Admin</h1>
+        <p id="admin-instructions">
+          To change your foodbank's data, update the fields below and click on
+          'Update' at the bottom of the page{" "}
+        </p>
         <p>
           <span style={{ "font-weight": "bold" }}>Foodbank:</span>{" "}
           {foodbankData.payload[0].name}

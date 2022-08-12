@@ -58,14 +58,27 @@ img {
 
 }
 
+textarea {
+  font-family: "roboto";
+}
+
 
 .submit-admin {
-  background-color: #04AA6D;
   color: white;
-  padding: 12px 20px;
+  background-color: #219D80;
+  font-size: 14px;
+  border-radius: 25px;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  height: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+
+  margin-bottom: 10px;
+  font-family: "roboto";
+  font-weight: 500;
+  margin-top: 14px;
+  margin-bottom: 14px;
 }
 
 
