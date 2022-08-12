@@ -1,0 +1,29 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #EDF7F5; */
+    background-image: url("../../../img/orange4.jpg");
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: 100% 100vh;
+    padding: 20px;
+    height: 100vh; /* You must set a specified height */
+    justify-content: center;
+}
+@media (max-width:900px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* background-color: #EDF7F5; */
+        background-image: url("../../../img/orange.jpeg");
+        background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: 100% 100%;
+        padding: 20px;
+        height: 100vh; /* You must set a specified height */
+        justify-content: center;
+    } 
+}
