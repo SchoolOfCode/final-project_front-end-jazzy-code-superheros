@@ -3,8 +3,6 @@ import Input from "../Input/Input";
 import Button from "../Button/index.js";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import eggsBGMobile from "../../img/eggsBGMobile.jpg";
-import logo from "../../img/logo1.png";
 
 const LandingPage = ({
   handleChange,
@@ -23,9 +21,7 @@ const LandingPage = ({
     <body>
       <section className="first">
         <div className="intro">
-          {/* <img src={eggsBGMobile} className="background-img" alt="" /> */}
           <div className="container-img">
-          {/* <img src={logo} className="logo" alt="logo"  /> */}
           </div>
         
           <div className="landing-text">
