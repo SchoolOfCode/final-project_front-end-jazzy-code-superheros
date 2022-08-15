@@ -103,6 +103,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 10px;
+    padding-top: 2%;
     animation: fadeIn 7s;
 }
 
