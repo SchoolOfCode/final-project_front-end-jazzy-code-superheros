@@ -1,6 +1,5 @@
 import "./styles.css";
 import Input from "../Input/Input";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const LandingPage = ({
@@ -14,7 +13,6 @@ const LandingPage = ({
   // console.log("Landing page rerenders");
   // console.log(searchArray);
 
-  const navigate = useNavigate();
 
   return (
     <body>
