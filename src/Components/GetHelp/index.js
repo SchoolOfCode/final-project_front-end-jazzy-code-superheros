@@ -126,9 +126,10 @@ const GetHelp = ({ foodBankData }) => {
           </ToggleCardGeneral>
         </StyleD>
       ) : null}
+      {foodBankData?.lat_lng !== undefined ?
       <StyleD delay={0.6}>
         <Container foodBankData={foodBankData} />
-      </StyleD>
+      </StyleD> : null}
     </div>
   );
 };
