@@ -121,6 +121,12 @@
     align-self: center;
     font-size: 0.7em;
 }
+.nonsense-css-1 {
+    padding-top: 147px;
+}
+.nonsense-css-2 {
+    color: rgba(255, 255, 255, 0);
+} 
 
 @keyframes fadeIn {
     0% { opacity: 0; }
