@@ -1,7 +1,5 @@
 import "./styles.css";
 import Input from "../Input/Input";
-import Button from "../Button/index.js";
-import AboutUsPage from "../AboutUsPage";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
