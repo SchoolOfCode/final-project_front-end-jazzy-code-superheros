@@ -74,7 +74,6 @@ const LandingPage = ({
         {array.map((item, index) => {
           return (
             <div className="search-results-container" key={index}>
-            <h4 className="h4-landing">Please select a Food Bank: </h4>
               <div
                 className="search-results"
                 onClick={() => setFoodBankData(searchArray[index])}
