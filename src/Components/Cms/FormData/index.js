@@ -8,7 +8,7 @@ const FormData = ({ fetchedFoodbankData, foodbankId }) => {
 
   function handleDelete(e) {
     e.preventDefault();
-
+    console.log("e.target.value :>> ", e.target.value);
     setNeeds(needs.filter((item, index) => index !== Number(e.target.value)));
   }
   // return (
