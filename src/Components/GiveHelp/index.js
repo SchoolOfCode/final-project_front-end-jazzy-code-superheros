@@ -65,9 +65,10 @@ const GiveHelp = ({ foodBankData }) => {
           </a>
         </ToggleCardGeneral>
       </StyleD>
+      {foodBankData?.lat_lng !== undefined ?
       <StyleD delay={0.4}>
         <Container foodBankData={foodBankData} />
-      </StyleD>
+      </StyleD> : null}
     </div>
   );
 };

@@ -11,7 +11,7 @@ const LandingPage = ({
 }) => {
   const array = searchArray ? searchArray.slice(0, 5) : [];
   // console.log("Landing page rerenders");
-  // console.log(searchArray);
+  //console.log(searchArray);
 
 
   return (
@@ -68,13 +68,12 @@ const LandingPage = ({
       </section>
       
       <section className="foodbank-list">
-        {searchArray ? (
+        {searchArray.length > 0 ? (
           <h4 className="h4-landing">Please select a Food Bank: </h4>
         ) : null}
         {array.map((item, index) => {
           return (
             <div className="search-results-container" key={index}>
-            <h4 className="h4-landing">Please select a Food Bank: </h4>
               <div
                 className="search-results"
                 onClick={() => setFoodBankData(searchArray[index])}
