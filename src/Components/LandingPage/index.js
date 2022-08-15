@@ -41,7 +41,9 @@ const LandingPage = ({
                 className="input-landing"
               />
             </div>
-            <h2 className="h2-landing">
+   
+  {/*not working correctly yet
+            /* <h2 className="h2-landing">
               For general information or if you're a charitable organisation
               looking to use our free service to connect with your local
               community click on the<br></br> About Us button below.
@@ -53,7 +55,7 @@ const LandingPage = ({
                   navigate("/AboutUsPage");
                 }}
               />
-            </div>
+            </div> */}
           </div>
         <div className="admin-container">
           <h3 className="h3-landing">
@@ -70,9 +72,9 @@ const LandingPage = ({
       </section>
       
       <section className="foodbank-list">
-        {/* {searchArray ? (
+        {searchArray ? (
           <h4 className="h4-landing">Please select a Food Bank: </h4>
-        ) : null} */}
+        ) : null}
         {array.map((item, index) => {
           return (
             <div className="search-results-container" key={index}>
