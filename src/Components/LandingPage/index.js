@@ -1,7 +1,5 @@
 import "./styles.css";
 import Input from "../Input/Input";
-import Button from "../Button/index.js";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const LandingPage = ({
@@ -15,7 +13,6 @@ const LandingPage = ({
   // console.log("Landing page rerenders");
   // console.log(searchArray);
 
-  const navigate = useNavigate();
 
   return (
     <body>
@@ -40,7 +37,9 @@ const LandingPage = ({
                 className="input-landing"
               />
             </div>
-            <h2 className="h2-landing">
+   
+  {/*not working correctly yet
+            /* <h2 className="h2-landing">
               For general information or if you're a charitable organisation
               looking to use our free service to connect with your local
               community click on the<br></br> About Us button below.
@@ -49,10 +48,10 @@ const LandingPage = ({
               <Button
                 nameButton="About Us"
                 onClick={() => {
-                  navigate("/aboutus");
+                  navigate("/AboutUsPage");
                 }}
               />
-            </div>
+            </div> */}
           </div>
         <div className="admin-container">
           <h3 className="h3-landing">
@@ -69,9 +68,9 @@ const LandingPage = ({
       </section>
       
       <section className="foodbank-list">
-        {/* {searchArray ? (
+        {searchArray ? (
           <h4 className="h4-landing">Please select a Food Bank: </h4>
-        ) : null} */}
+        ) : null}
         {array.map((item, index) => {
           return (
             <div className="search-results-container" key={index}>
