@@ -11,7 +11,7 @@ const LandingPage = ({
 }) => {
   const array = searchArray ? searchArray.slice(0, 5) : [];
   // console.log("Landing page rerenders");
-  console.log(searchArray);
+  //console.log(searchArray);
 
 
   return (
