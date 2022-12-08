@@ -4,10 +4,9 @@ import { Nav } from "./Components/Nav";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-
-//add useEffect back in if testing whether App unmounts see useEffect 
+//add useEffect back in if testing whether App unmounts see useEffect
 //a few lines above the JSX
-import { useState/*, useEffect*/ } from "react";
+import { useState /*, useEffect*/ } from "react";
 
 //custom hooks
 import { useFetch } from "./hooks/useFetch";
@@ -28,10 +27,7 @@ function App() {
   let [submitedBank, setSubmitedBank] = useState();
   let [foodBankData, setFoodBankData] = useState();
 
-
-
   //console.log(`App rerenders`);
-
 
   function handleChange(e) {
     setInputFoodBank(e.target.value);
@@ -66,7 +62,8 @@ function App() {
 
   const foodbankName = submitedBank;
 
-  const rootUrl = `https://yourlocalfoodbank.herokuapp.com/`;
+  // const rootUrl = `https://yourlocalfoodbank.herokuapp.com/`;
+  const rootUrl = `https://foodbank-finder.cyclic.app/`;
 
   const extSearch = `${rootUrl}foodbanks/search/${foodbankName}`;
 
@@ -83,13 +80,11 @@ function App() {
 
   //console.log(`extFetchdataResults and time >>>`, Date(), extFetchdataResults)
 
-
   const intFetchdataResults = intFetchdata?.success ? intFetchdata.payload : [];
 
   //dev feedback only remove
 
   //console.log(`intFetchdataResults and time >>>`, Date(), intFetchdataResults)
-
 
   const searchArray = intFetchdataResults
     .concat(extFetchdataResults)
@@ -157,30 +152,24 @@ function App() {
                     path="/contact"
                     element={<ContactPage foodBankData={foodBankData} />}
                   />
-                      <Route
-                    path="/AboutUsPage"
-                    element={<AboutUsPage />}
-                  ></Route>
+                  <Route path="/AboutUsPage" element={<AboutUsPage />}></Route>
                 </>
               ) : (
                 <>
-                <Route
-                  path="/"
-                  element={
-                    <LandingPage
-                      searchArray={searchArray}
-                      setFoodBankData={setFoodBankData}
-                      handleChange={handleChange}
-                      handleClick={handleClick}
-                      handleEnter={handleEnter}
-                    />
-                  }
-                />
-                <Route
-                    path="/AboutUsPage"
-                    element={<AboutUsPage />}
-                  ></Route>
-                  </>
+                  <Route
+                    path="/"
+                    element={
+                      <LandingPage
+                        searchArray={searchArray}
+                        setFoodBankData={setFoodBankData}
+                        handleChange={handleChange}
+                        handleClick={handleClick}
+                        handleEnter={handleEnter}
+                      />
+                    }
+                  />
+                  <Route path="/AboutUsPage" element={<AboutUsPage />}></Route>
+                </>
               )}
             </Route>
           </Routes>
