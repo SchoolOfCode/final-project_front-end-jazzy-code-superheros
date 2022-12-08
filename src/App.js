@@ -91,7 +91,7 @@ function App() {
     .filter((item) => item !== null);
 
   //dev feedback only remove
-  //console.log(`searchArray >>>`, searchArray);
+  //console.log(`searchArray >>>`, Date(), searchArray);
   //console.log(`inputFoodBank state >>>`, inputFoodBank);
   //console.log(`submitedBank state >>>`, submitedBank);
 

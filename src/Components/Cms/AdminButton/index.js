@@ -10,9 +10,14 @@ const StyleButton = styled.button`
   margin: 0 10px;
 `;
 
-const Button = ({ onClick, type, children, className }) => {
+const Button = ({ onClick, type, children, className, value }) => {
   return (
-    <StyleButton type={type} className={className} onClick={onClick}>
+    <StyleButton
+      type={type}
+      className={className}
+      onClick={onClick}
+      value={value}
+    >
       {children}
     </StyleButton>
   );

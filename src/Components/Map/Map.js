@@ -15,7 +15,7 @@ const MyComponent = ({ foodBankData }) => {
   })
 
   // console.log(foodBankData.lat_lng);
-  const latLng = foodBankData ? foodBankData.lat_lng.split(`,`) : [];
+  const latLng = foodBankData?.lat_lng ? foodBankData.lat_lng.split(`,`) : [];
   // console.log(latLng);
 
  
@@ -42,7 +42,7 @@ const MyComponent = ({ foodBankData }) => {
     setMap(null)
   }, [])
 
-  return isLoaded ? (
+  return (isLoaded ? (
     <div className='map'>
       <GoogleMap 
         className='map'
@@ -63,6 +63,6 @@ const MyComponent = ({ foodBankData }) => {
   
 
       </div>
-  ) : <div className='map'></div>
+  ) : <div className='map'></div>) 
 }
 export default memo(MyComponent)

@@ -54,12 +54,6 @@ export const Nav = () => {
               </li>
 
               <li>
-                <Link onClick={handleToggle} to="/faq">
-                  FAQs
-                </Link>
-              </li>
-
-              <li>
                 <Link onClick={handleToggle} to="/contact">
                   Contact Us
                 </Link>
